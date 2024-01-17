@@ -14,7 +14,7 @@ class view_products_and_categories(view_products_and_categoriesTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.repeating_panel_1.items = app_tables.product_group.search()
+    self.repeating_panel_1.items = app_tables.fin_product_group.search()
 
 
   def button_1_copy_5_click(self, **event_args):

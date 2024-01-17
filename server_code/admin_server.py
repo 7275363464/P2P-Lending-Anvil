@@ -11,7 +11,7 @@ import anvil.server
 
 @anvil.server.callable
 def product_details(product_id, product_name, product_group,product_discription, product_categories,processing_fee,  extension_fee, membership_type, interest_type, max_amount, min_amount, min_tenure, max_tenure, roi, foreclose_type, foreclosure_fee, extension_allowed, emi_payment, first_emi_payment, min_months, discount_coupons):
-  row = app_tables.product_details.add_row(product_id=product_id,
+  row = app_tables.fin_product_details.add_row(product_id=product_id,
                                            product_name = product_name,
                                            product_group=product_group,
                                            product_discription = product_discription,
@@ -41,7 +41,7 @@ def product_details(product_id, product_name, product_group,product_discription,
 
 @anvil.server.callable
 def manage_products(groups,category):
-  row = app_tables.product_categories.add_row(product_group=groups,product_category=category)
+  row = app_tables.fin_product_categories.add_row(product_group=groups,product_category=category)
 
 
 @anvil.server.callable

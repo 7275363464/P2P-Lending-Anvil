@@ -12,18 +12,18 @@ class vlfr(vlfrTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.repeating_panel.items=app_tables.foreclosure.search()
+    self.repeating_panel.items=app_tables.fin_foreclosure.search()
 
-    self.repeating_panel_1.items = app_tables.foreclosure.search(status=q.like('approved%'))
+    self.repeating_panel_1.items = app_tables.fin_foreclosure.search(status=q.like('approved%'))
     self.label_5.text = str(len(self.repeating_panel_1.items))
 
-    self.repeating_panel_2.items = app_tables.foreclosure.search(status=q.like('rejected%'))
+    self.repeating_panel_2.items = app_tables.fin_foreclosure.search(status=q.like('rejected%'))
     self.label_6.text = str(len(self.repeating_panel_2.items))
 
-    self.repeating_panel_3.items = app_tables.foreclosure.search(status=q.like('under process%'))
+    self.repeating_panel_3.items = app_tables.fin_foreclosure.search(status=q.like('under process%'))
     self.label_5_copy.text = str(len(self.repeating_panel_3.items))
 
-    self.repeating_panel_4.items = app_tables.foreclosure.search(status=q.like('under process%'))
+    self.repeating_panel_4.items = app_tables.fin_foreclosure.search(status=q.like('under process%'))
     self.new_request.text = str(len(self.repeating_panel_4.items))
 
     self.all.text = str(len(self.repeating_panel.items))

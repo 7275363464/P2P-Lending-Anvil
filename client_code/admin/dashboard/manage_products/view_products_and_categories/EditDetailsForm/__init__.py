@@ -27,7 +27,7 @@ class EditDetailsForm(EditDetailsFormTemplate):
         # Check if the updated value is the same as the existing value
         if updated_group != self.selected_row['name'].lower():
             # Convert the existing group names to lowercase for case-insensitive comparison
-            existing_names_lower = [row['name'].lower() for row in app_tables.product_group.search()]
+            existing_names_lower = [row['name'].lower() for row in app_tables.fin_product_group.search()]
             
             if updated_group in existing_names_lower:
                 alert(f'Group "{self.text_box_1.text}" already exists. Please choose a different name.')
@@ -68,7 +68,7 @@ class EditDetailsForm(EditDetailsFormTemplate):
             self.selected_row.delete()
 
             # Delete the corresponding rows from the product_categories table
-            categories_to_delete = app_tables.product_categories.search(q.any_of(name_group=group_name))
+            categories_to_delete = app_tables.fin_product_categories.search(q.any_of(name_group=group_name))
             for category_row in categories_to_delete:
                 category_row.delete()
 

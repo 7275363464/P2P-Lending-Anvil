@@ -14,7 +14,7 @@ class view_profile(view_profileTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.data = tables.app_tables.product_details.search()
+    self.data = tables.app_tables.fin_product_details.search()
     
     self.id_list = []
     self.name_list = []

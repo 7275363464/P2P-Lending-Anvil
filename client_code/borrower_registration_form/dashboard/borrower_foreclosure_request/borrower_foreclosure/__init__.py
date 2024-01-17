@@ -24,7 +24,7 @@ class borrower_foreclosure(borrower_foreclosureTemplate):
         self.label_5.text = "Foreclosure Request Rejected"
         self.label_8.text = "Foreclosure is not available for this product.."
         product_id_to_search = selected_row['product_id']
-        data = tables.app_tables.product_details.search(product_id=product_id_to_search)
+        data = tables.app_tables.fin_product_details.search(product_id=product_id_to_search)
         self.foreclosure_type_lst = []    
         for i in data:
             self.foreclosure_type_lst.append(i['foreclose_type'])
@@ -34,7 +34,7 @@ class borrower_foreclosure(borrower_foreclosureTemplate):
 
         # Check status for the selected loan ID
         loan_id = selected_row['loan_id']
-        foreclosure_rows = app_tables.foreclosure.search(loan_id=loan_id)
+        foreclosure_rows = app_tables.fin_foreclosure.search(loan_id=loan_id)
 
         approved_status = False
         rejected_status = False
@@ -64,7 +64,7 @@ class borrower_foreclosure(borrower_foreclosureTemplate):
             self.button_5.visible = True
         else:
             # If there is no approved or reject status, check if the loan ID is in foreclosure table
-            existing_requests = app_tables.foreclosure.search(loan_id=loan_id)
+            existing_requests = app_tables.fin_foreclosure.search(loan_id=loan_id)
             if len(existing_requests) == 0 and self.foreclose_type.text != "Not Eligible":
                 # If the loan ID is not in the foreclosure table, make "Foreclose" button and button2 visible
                 self.button_foreclose.visible = True
@@ -91,7 +91,7 @@ class borrower_foreclosure(borrower_foreclosureTemplate):
         self.selected_row = selected_row
 
         # Calculate months_difference
-        loan_details_row = app_tables.loan_details.get(loan_id=loan_id)
+        loan_details_row = app_tables.fin_loan_details.get(loan_id=loan_id)
         borrower_last_payment_done = selected_row['borrower_last_payment_done']
         borrower_first_payment_done = loan_details_row['borrower_first_payment_done']
         product_id = selected_row['product_id']
@@ -107,14 +107,14 @@ class borrower_foreclosure(borrower_foreclosureTemplate):
         self.label_tpm.text = f"{self.months_difference} months"
 
         # Check if a row with the given loan_id exists
-        rows = app_tables.loan_details.search(loan_id=loan_id)
+        rows = app_tables.fin_loan_details.search(loan_id=loan_id)
 
         if rows:
             # If the row exists, get the first one (assuming loan_id is unique)
             self.loan_details_row = rows[0]
         else:
             # If the row does not exist, create a new one
-            self.loan_details_row = app_tables.loan_details.add_row(loan_id=loan_id)
+            self.loan_details_row = app_tables.fin_loan_details.add_row(loan_id=loan_id)
 
         # Add months_difference to the loan_details table
         self.loan_details_row['total_payments_made'] = self.months_difference

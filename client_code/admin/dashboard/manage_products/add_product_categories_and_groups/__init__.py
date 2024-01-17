@@ -13,7 +13,7 @@ class add_product_categories_and_groups(add_product_categories_and_groupsTemplat
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
-    options = app_tables.product_group.search()
+    options = app_tables.fin_product_group.search()
     option_strings = [option['name'] for option in options]
     self.drop_down_1.items = option_strings
     self.drop_down_1.selected_value = option_strings[0] if option_strings else None
@@ -35,7 +35,7 @@ class add_product_categories_and_groups(add_product_categories_and_groupsTemplat
   
           # Create a new row in the product_categories table for each category
           for category in categories_list:
-              app_tables.product_categories.add_row(
+              app_tables.fin_product_categories.add_row(
                   name_group=selected_group,
                   name_categories=category
               )

@@ -435,7 +435,6 @@ db_schema:
     - name: min_months
       admin_ui: {width: 200}
       type: number
-  users_device: {title: users_device}
   fin_foreclosure:
     title: fin_foreclosure
     client: full
@@ -628,7 +627,14 @@ db_schema:
     - name: emi_status
       admin_ui: {width: 200, order: 9}
       type: bool
-  fin_product_group: {title: fin_product_group}
+  fin_product_group:
+    client: full
+    server: full
+    columns:
+    - name: name
+      admin_ui: {width: 200, order: 0}
+      type: string
+    title: fin_product_group
   wallet_bank_account_table:
     title: fin_wallet_bank_account_table
     client: none

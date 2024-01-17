@@ -25,11 +25,11 @@ class add_group(add_groupTemplate):
             group_name_lower = group_name.lower()
 
             # Check if the group name already exists (case-insensitive)
-            if any(row['name'].lower() == group_name_lower for row in app_tables.product_group.search()):
+            if any(row['name'].lower() == group_name_lower for row in app_tables.fin_product_group.search()):
                 alert(f'Group "{group_name}" already exists. Please choose a different Group name.')
             else:
                 # Add a new row only if the group name does not exist
-                app_tables.product_group.add_row(name=group_name)
+                app_tables.fin_product_group.add_row(name=group_name)
                 self.text_box_1.text = ''
                 alert(f'Group "{group_name}" added successfully!')
                 open_form('admin.dashboard.manage_products.add_product_categories_and_groups')

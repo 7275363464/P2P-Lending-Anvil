@@ -60,7 +60,7 @@ class view_product(view_productTemplate):
         self.fetch_and_populate_data()
 
     def fetch_and_populate_data(self):
-        self.data = tables.app_tables.product_details.search()
+        self.data = tables.app_tables.fin_product_details.search()
 
         if not self.data:
             Notification("No Data Available Here!").show()

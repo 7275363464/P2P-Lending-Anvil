@@ -14,14 +14,14 @@ class edit_form(edit_formTemplate):
         self.init_components(**properties)
 
         # Any code you write here will run before the form opens.
-        self.data = tables.app_tables.product_details.search()
+        self.data = tables.app_tables.fin_product_details.search()
 
         # Fetch data from product_group table and populate the name dropdown
-        product_group_options = app_tables.product_group.search()
+        product_group_options = app_tables.fin_product_group.search()
         self.name.items = [option['name'] for option in product_group_options]
 
         # Fetch data from product_group table and populate the name dropdown
-        product_group_options = app_tables.product_categories.search()
+        product_group_options = app_tables.fin_product_categories.search()
         self.product_category.items = [option['name_categories'] for option in product_group_options]
 
         self.id_list = []
@@ -137,7 +137,7 @@ class edit_form(edit_formTemplate):
                     self.check_box_2.enabled = False
                     self.radio_button_3.selected = False
                     self.radio_button_4.selected = False
-                else:
+                elif selected_interest_type == "Variable":
                     self.radio_button_1.selected = False
                     self.radio_button_2.selected = True
                     self.radio_button_3.enabled = False
@@ -163,6 +163,9 @@ class edit_form(edit_formTemplate):
                     self.check_box_2.enabled = False
                     self.radio_button_3.selected = False
                     self.radio_button_4.selected = False
+                else:
+                    print(f"Unexpected interest type: {selected_interest_type}")
+
             else:
                 # Assuming "Variable" when intr_type is not available
                 self.radio_button_1.selected = False
@@ -223,25 +226,24 @@ class edit_form(edit_formTemplate):
             selected_product_id is None
             or self.name.selected_value is None
             or self.product_category.selected_value is None
-            or self.drop_down_2.selected_value == ""
-            or self.text_box_3.text == ""
-            or self.text_box_4.text == ""
-            or self.intr_type is None
-            or self.max_amount.text == ""
-            or self.min_amount.text == ""
-            or self.min_tenure.text == ""
-            or self.max_tenure.text == ""
-            or self.roi.text == ""
-            or self.radio_button_3.text == ""
+            # or self.drop_down_2.selected_value == ""
+            # or self.text_box_3.text == ""
+            # or self.text_box_4.text == ""
+            # or self.intr_type is None
+            # or self.max_amount.text == ""
+            # or self.min_amount.text == ""
+            # or self.min_tenure.text == ""
+            # or self.max_tenure.text == ""
+            # or self.roi.text == ""
         ):
-            Notification("Fill All Required Details").show()
+            alert("Fill All Required Details")
         else:
             selected_row = self.product_data_grid.selected_row
 
             if selected_row is not None:
                 selected_product_id = selected_row['product_id']
               
-            data = app_tables.product_details.get(product_id=selected_product_id)
+            data = app_tables.fin_product_details.get(product_id=selected_product_id)
             if data is None:
                 alert("No Data Available Here")            
             else:

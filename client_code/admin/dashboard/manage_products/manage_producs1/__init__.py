@@ -14,7 +14,7 @@ class manage_producs1(manage_producs1Template):
         # Set Form properties and Data Bindings.
         self.init_components(**properties)
 
-        options = app_tables.product_group.search()
+        options = app_tables.fin_product_group.search()
         option_strings = [option['name'] for option in options]
         self.name.items = option_strings
         self.name.selected_value =  None  
@@ -22,7 +22,7 @@ class manage_producs1(manage_producs1Template):
         # Any code you write here will run before the form opens.
         self.id = 'PD' + str(1000)  
         self.label_1.text = self.id
-        self.data = tables.app_tables.product_details.search()
+        self.data = tables.app_tables.fin_product_details.search()
 
         a = -1
         self.list_1 = []
@@ -49,7 +49,7 @@ class manage_producs1(manage_producs1Template):
         
         if self.selected_value:
             # Fetch product categories based on the selected loan type
-            product_categories = app_tables.product_categories.search(
+            product_categories = app_tables.fin_product_categories.search(
                 name_group=self.selected_value
             )
             print(f"Product Categories: {product_categories}")

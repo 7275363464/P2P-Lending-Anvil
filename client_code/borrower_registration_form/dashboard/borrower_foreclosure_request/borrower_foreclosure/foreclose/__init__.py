@@ -166,7 +166,7 @@ class foreclose(forecloseTemplate):
     total_outstanding_amount = outstanding_amount+outstanding_amount_i_amount
     
     product_id_to_search = selected_row['product_id']
-    data = tables.app_tables.product_details.search(product_id=product_id_to_search)
+    data = tables.app_tables.fin_product_details.search(product_id=product_id_to_search)
     self.foreclosure_fee_lst = []    
     for i in data:
         self.foreclosure_fee_lst.append(i['foreclosure_fee'])
@@ -213,7 +213,7 @@ class foreclose(forecloseTemplate):
         reason = self.reason_textbox.text.strip()
 
         if reason:           
-                app_tables.foreclosure.add_row(
+                app_tables.fin_foreclosure.add_row(
                     loan_id=self.selected_row['loan_id'],
                     borrower_name=self.selected_row['borrower_full_name'],
                     loan_amount=self.selected_row['loan_amount'],
