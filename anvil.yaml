@@ -23,83 +23,6 @@ runtime_options: {version: 2, client_version: '3', server_version: python3-sandb
 metadata: {title: 'P2P Bank ', description: this app provide services to person who are ready to invest and ready to give loan}
 startup_form: null
 db_schema:
-  product_details:
-    title: product_details
-    client: full
-    server: full
-    columns:
-    - name: product_categories
-      admin_ui: {width: 200}
-      type: string
-    - name: processing_fee
-      admin_ui: {order: 0.75, width: 200}
-      type: number
-    - name: extension_fee
-      admin_ui: {width: 200}
-      type: number
-    - name: membership_type
-      admin_ui: {width: 200}
-      type: string
-    - name: interest_type
-      admin_ui: {width: 200}
-      type: string
-    - name: roi
-      admin_ui: {width: 200}
-      type: number
-    - name: discount_coupons
-      admin_ui: {order: 9.5, width: 200}
-      type: string
-    - name: product_id
-      admin_ui: {order: -1, width: 200}
-      type: string
-    - name: tenure
-      admin_ui: {order: 9, width: 188}
-      type: number
-    - name: late_fee
-      admin_ui: {order: 17.5, width: 200}
-      type: number
-    - name: max_amount
-      admin_ui: {order: 9.875, width: 200}
-      type: number
-    - name: min_amount
-      admin_ui: {order: 9.75, width: 200}
-      type: number
-    - name: foreclose_type
-      admin_ui: {width: 200, order: 12}
-      type: string
-    - name: max_tenure
-      admin_ui: {width: 200, order: 9.5}
-      type: number
-    - name: min_tenure
-      admin_ui: {width: 200, order: 9.75}
-      type: number
-    - name: lapsed_status
-      admin_ui: {width: 200, order: 15}
-      type: string
-    - name: emi_payment
-      admin_ui: {order: 21, width: 319}
-      type: string
-    - name: product_discription
-      admin_ui: {width: 200, order: 0.5}
-      type: string
-    - name: extension_allowed
-      admin_ui: {width: 200, order: 16}
-      type: string
-    - name: foreclosure_fee
-      admin_ui: {width: 200, order: 15.5}
-      type: number
-    - name: product_group
-      admin_ui: {order: -3, width: 200}
-      type: string
-    - name: product_name
-      admin_ui: {width: 200, order: -2}
-      type: string
-    - name: first_emi_payment
-      admin_ui: {order: 18.5, width: 200}
-      type: number
-    - name: min_months
-      admin_ui: {order: 23, width: 200}
-      type: number
   user_profile:
     client: full
     server: full
@@ -395,6 +318,17 @@ db_schema:
     server: full
     columns: []
     title: fin_wallet_notification
+  fin_product_categories:
+    title: fin_product_categories
+    client: full
+    server: full
+    columns:
+    - name: name_categories
+      admin_ui: {width: 200}
+      type: string
+    - name: name_group
+      admin_ui: {width: 200}
+      type: string
   fin_wallet:
     client: full
     server: full
@@ -424,59 +358,129 @@ db_schema:
       admin_ui: {width: 200, order: 0.5}
       type: number
     title: fin_wallet
-  foreclosure:
+  fin_product_details:
+    title: fin_product_details
     client: full
     server: full
     columns:
-    - name: borrower_name
-      admin_ui: {width: 200, order: 1}
+    - name: product_categories
+      admin_ui: {width: 200}
       type: string
-    - name: reason
-      admin_ui: {width: 200, order: 1.5}
+    - name: extension_fee
+      admin_ui: {width: 200}
+      type: number
+    - name: membership_type
+      admin_ui: {width: 200}
       type: string
-    - name: requested_on
-      admin_ui: {width: 200, order: 7}
-      type: datetime
-    - name: loan_id
-      admin_ui: {width: 200, order: 1}
+    - name: interest_type
+      admin_ui: {width: 200}
       type: string
-    - name: status
-      admin_ui: {width: 200, order: 11}
+    - name: roi
+      admin_ui: {width: 200}
+      type: number
+    - name: product_group
+      admin_ui: {width: 200}
       type: string
+    - name: product_name
+      admin_ui: {width: 200}
+      type: string
+    - name: product_id
+      admin_ui: {width: 200}
+      type: string
+    - name: product_discription
+      admin_ui: {width: 200}
+      type: string
+    - name: processing_fee
+      admin_ui: {width: 200}
+      type: number
+    - name: tenure
+      admin_ui: {width: 188}
+      type: number
+    - name: discount_coupons
+      admin_ui: {width: 200}
+      type: string
+    - name: max_tenure
+      admin_ui: {width: 200}
+      type: number
+    - name: min_amount
+      admin_ui: {width: 200}
+      type: number
+    - name: min_tenure
+      admin_ui: {width: 200}
+      type: number
+    - name: max_amount
+      admin_ui: {width: 200}
+      type: number
+    - name: foreclose_type
+      admin_ui: {width: 200}
+      type: string
+    - name: lapsed_status
+      admin_ui: {width: 200}
+      type: string
+    - name: foreclosure_fee
+      admin_ui: {width: 200}
+      type: number
+    - name: extension_allowed
+      admin_ui: {width: 200}
+      type: string
+    - name: late_fee
+      admin_ui: {width: 200}
+      type: number
+    - name: first_emi_payment
+      admin_ui: {width: 200}
+      type: number
+    - name: emi_payment
+      admin_ui: {width: 319}
+      type: string
+    - name: min_months
+      admin_ui: {width: 200}
+      type: number
+  users_device: {title: users_device}
+  fin_foreclosure:
+    title: fin_foreclosure
+    client: full
+    server: full
+    columns:
     - name: foreclose_fee
       admin_ui: {width: 200}
       type: number
     - name: interest_rate
       admin_ui: {width: 200}
       type: number
-    - name: loan_amount
-      admin_ui: {width: 200, order: 4}
-      type: number
+    - name: borrower_name
+      admin_ui: {width: 200}
+      type: string
+    - name: loan_id
+      admin_ui: {width: 200}
+      type: string
     - name: penalty_amount
-      admin_ui: {width: 200, order: 1}
-      type: number
-    - name: total_due_amount
-      admin_ui: {width: 200, order: 8.75}
-      type: number
-    - name: foreclose_amount
-      admin_ui: {width: 200, order: 2.5}
-      type: number
-    - name: emi_amount
-      admin_ui: {width: 200, order: 4}
+      admin_ui: {width: 200}
       type: number
     - name: outstanding_amount
-      admin_ui: {width: 200, order: 1}
+      admin_ui: {width: 200}
+      type: number
+    - name: reason
+      admin_ui: {width: 200}
+      type: string
+    - name: foreclose_amount
+      admin_ui: {width: 200}
+      type: number
+    - name: loan_amount
+      admin_ui: {width: 200}
+      type: number
+    - name: emi_amount
+      admin_ui: {width: 200}
       type: number
     - name: paid_amount
-      admin_ui: {width: 200, order: 4.5}
+      admin_ui: {width: 200}
       type: number
-    title: foreclosure
-  product_group:
-    title: product_group
-    client: full
-    server: full
-    columns:
-    - name: name
+    - name: requested_on
+      admin_ui: {width: 200}
+      type: datetime
+    - name: total_due_amount
+      admin_ui: {width: 200}
+      type: number
+    - name: status
       admin_ui: {width: 200}
       type: string
   users:
@@ -793,17 +797,6 @@ db_schema:
     - name: wallet_id
       admin_ui: {width: 200, order: 11}
       type: string
-  product_categories:
-    client: full
-    server: full
-    columns:
-    - name: name_categories
-      admin_ui: {width: 200}
-      type: string
-    - name: name_group
-      admin_ui: {order: 1, width: 200}
-      type: string
-    title: product_categories
   fin_user_issues_bugreports:
     title: fin_user_issues_bugreports
     client: full
