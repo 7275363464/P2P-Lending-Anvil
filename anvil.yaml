@@ -624,6 +624,7 @@ db_schema:
     - name: emi_status
       admin_ui: {width: 200, order: 9}
       type: bool
+  fin_product_group: {title: fin_product_group}
   wallet_bank_account_table:
     title: fin_wallet_bank_account_table
     client: none
