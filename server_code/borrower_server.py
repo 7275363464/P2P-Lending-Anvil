@@ -260,3 +260,9 @@ def get_max_amount():
     data = app_tables.fin_product_details.search()
     data1_strings = [str(row['max_amount']) for row in data if str(row['max_amount']).strip()]
     return data1_strings[0] if data1_strings else None
+
+# @anvil.server.callable
+# def get_fin_product_details(product_categories):
+#     # Perform the search on the server side
+#     user_request = app_tables.fin_product_details.get(product_categories=product_categories)
+#     return user_request

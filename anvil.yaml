@@ -69,7 +69,7 @@ db_schema:
       type: number
     title: fin_wallet
   fin_product_details:
-    client: none
+    client: full
     server: full
     columns:
     - name: product_categories
