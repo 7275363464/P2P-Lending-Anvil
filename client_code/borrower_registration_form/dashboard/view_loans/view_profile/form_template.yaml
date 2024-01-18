@@ -128,6 +128,22 @@ components:
       col_xs: 6, width: 221.188}
     data_bindings:
     - {property: text, code: 'self.item[''loan_updated_status'']', writeback: false}
+  - type: Label
+    properties: {role: null, align: right, tooltip: '', border: '', foreground: '#000337',
+      visible: true, text: Payment Details, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_1
+    layout_properties: {row: MVZYDU, width_xs: 3, col_xs: 3, width: 132}
+  - type: Link
+    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: blue,
+      visible: true, text: view payment details here, font_size: null, wrap_on: mobile,
+      font: '', col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '',
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: link_1
+    layout_properties: {row: MVZYDU, width_xs: 4, col_xs: 6, width: 186}
+    event_bindings: {click: link_1_click}
 - type: Spacer
   properties: {height: 19.00000762939453}
   name: spacer_2

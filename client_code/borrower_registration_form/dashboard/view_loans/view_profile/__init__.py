@@ -40,3 +40,7 @@ class view_profile(view_profileTemplate):
 
     def button_1_click(self, **event_args):
         open_form('borrower_registration_form.dashboard.borrower_view_loans')
+
+    def link_1_click(self, **event_args):
+     
+      open_form('bank_users.borrower_dashboard.borrower_view_loans.payment_details_l_copy', selected_row=self.selected_row)
