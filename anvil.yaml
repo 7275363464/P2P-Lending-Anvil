@@ -616,6 +616,44 @@ db_schema:
     - name: emi_status
       admin_ui: {width: 200, order: 9}
       type: bool
+  fin_extends_loan:
+    client: none
+    server: full
+    columns:
+    - name: loan_id
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: borrower_customer_id
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: borrower_email_id
+      admin_ui: {width: 200, order: 2}
+      type: string
+    - name: lender_customer_id
+      admin_ui: {width: 200, order: 3}
+      type: string
+    - name: lender_email_id
+      admin_ui: {width: 200, order: 4}
+      type: string
+    - name: finial_repayment_amount
+      admin_ui: {width: 200, order: 5}
+      type: number
+    - name: finial_repayment_date
+      admin_ui: {width: 200, order: 6}
+      type: date
+    - name: finial_emi
+      admin_ui: {width: 200, order: 7}
+      type: number
+    - name: description
+      admin_ui: {width: 200, order: 8}
+      type: string
+    - name: repayment_starting_date
+      admin_ui: {width: 200, order: 9}
+      type: date
+    - name: extend_fee
+      admin_ui: {width: 200, order: 10}
+      type: number
+    title: fin_extends_loan
   fin_lender:
     title: fin_lender
     client: full
