@@ -21,7 +21,7 @@ def calulate_besem():
 
 
 def fetch_bessem(email):
-  users = app_tables.user_profile.search(email_user=email)
+  users = app_tables.fin_user_profile.search(email_user=email)
   if users:
     bessem_values = users[0]['bessem_value']
     return bessem_values

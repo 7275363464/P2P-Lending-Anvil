@@ -41,11 +41,11 @@ class dashboard(dashboardTemplate):
 
   def button_6_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form('borrower_registration_form.dashboard.borrower_view_loans')
+    open_form('borrower_registration_form.dashboard.view_loans')
 
   def outlined_button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form('borrower_registration_form.dashboard.borrower_today_dues')
+    open_form('borrower_registration_form.dashboard.today_dues')
 
   def outlined_button_3_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -53,23 +53,23 @@ class dashboard(dashboardTemplate):
 
   def outlined_button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form('borrower_registration_form.dashboard.borrower_foreclosure_request')
+    open_form('borrower_registration_form.dashboard.foreclosure_request')
 
   def outlined_button_6_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form('borrower_registration_form.dashboard.borrower_discount_coupons')
+    open_form('borrower_registration_form.dashboard.discount_coupons')
 
   def outlined_button_7_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form('bank_users.borrower.borrower_view_portfolio')
+    open_form('bank_users.borrower.view_portfolio')
 
   def about_main_form_link_click(self, **event_args):
     """This method is called when the link is clicked"""
-    open_form('bank_users.borrower_dashboard_about')
+    open_form('borrower_registration_form.dashboard.dashboard_about')
 
   def contact_main_form_link_click(self, **event_args):
     """This method is called when the link is clicked"""
-    open_form("bank_users.borrower_dashboard_contact")
+    open_form("borrower_registration_form.dashboard.dashboard_contact")
 
   def notification_link_click(self, **event_args):
     """This method is called when the link is clicked"""

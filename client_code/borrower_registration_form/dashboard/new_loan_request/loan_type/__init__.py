@@ -1,7 +1,8 @@
 from anvil import open_form, alert
-from ... import main_form_module as main_form_module
+from .. import main_form_module as main_form_module
 from ... import app_tables
 from ._anvil_designer import loan_typeTemplate
+
 class loan_type(loan_typeTemplate):
     def __init__(self, product_group, product_cat, max_amount_lb, entered_values=None, **properties):
         self.user_id = main_form_module.userId
@@ -18,7 +19,8 @@ class loan_type(loan_typeTemplate):
         # Load previously entered values when form is initialized
         self.load_entered_values(entered_values)
 
-        user_request = app_tables.fin_product_details.get(product_categories=self.prodct_cate)
+        # user_request = app_tables.fin_product_details.get(product_categories=self.prodct_cate)
+        user_request = app_tables.fin_product_details.get(product_categories=product_cat)
         if user_request:
             self.roi = user_request['roi']
             self.processing_fee = user_request['processing_fee']
@@ -208,7 +210,7 @@ class loan_type(loan_typeTemplate):
             self.label_28.text = f"₹ {loan_amount}"
             p = float(loan_amount)
             t = int(tenure)
-            r = float(self.roi/100)
+            r = float(int(self.roi)/100)
             interest_amount = p * r
             self.label_30.text = f"₹ {int(interest_amount)}"
             processing_fee_amount = float((self.processing_fee/100) * p)

@@ -121,7 +121,7 @@ class dashboard(dashboardTemplate):
       self.button_status.background = '#0876e8'  # Green color
       self.button_status.foreground = '#FFFFFF'  # White text
       # Update 'make_visibility' column in the 'lender' table to True
-      lender_row = app_tables.lender.search() # Assuming you have a row with id=1 for the lender
+      lender_row = app_tables.fin_lender.search() # Assuming you have a row with id=1 for the lender
       lender_row[0]['make_visibility'] = True
       lender_row[0].update()
     else:

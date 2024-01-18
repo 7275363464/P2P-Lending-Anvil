@@ -3,6 +3,8 @@ import anvil.server
 import anvil.tables as tables
 from anvil import DataGrid, alert, open_form
 from ._anvil_designer import checkTemplate
+from .. import main_form_module as main_form_module
+
 class check(checkTemplate):
     def __init__(self, product_group, product_cat, loan_amount, tenure_months, user_id, interest_rate, processing_fee, membership_type, product_id, total_repayment_amount, credit_limt, entered_values=None, **properties):
         self.product_group = product_group
