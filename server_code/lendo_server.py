@@ -467,6 +467,8 @@ def loan_disbursement_action(selected_row, email):
         # Get the current time in the same timezone as lender_accepted_timestamp
         current_time = datetime.now(timezone.utc)
         print("current_time:", current_time)
+
+        time_difference_seconds = 0
       
         if loan_amount > wallet_amount:
             # Check if 5 minutes have passed since lender_accepted_timestamp
