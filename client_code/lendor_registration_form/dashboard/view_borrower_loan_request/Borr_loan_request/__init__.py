@@ -271,11 +271,11 @@ class Borr_loan_request(Borr_loan_requestTemplate):
             loan_row = app_tables.fin_loan_details.get(loan_id=entered_loan_id)
             
             if loan_row:
+              loan_amount = loan_row['loan_amount']
               wallet_add = app_tables.fin_wallet.get(customer_id=entered_borrower_customer_id)
               if wallet_add:
-                loan_amount = loan_row['loan_amount']
-              wallet_add['wallet_amount'] += loan_amount
-              wallet_add.update()
+                wallet_add['wallet_amount'] += loan_amount
+                wallet_add.update()
 
               # You may want to update the loan_updated_status here if needed
               updated_loan_status = 'disbursed loan'
