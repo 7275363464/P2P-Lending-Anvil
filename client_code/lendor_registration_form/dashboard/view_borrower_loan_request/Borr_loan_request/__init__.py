@@ -267,12 +267,12 @@ class Borr_loan_request(Borr_loan_requestTemplate):
             except ValueError:
               alert("Please enter a valid customer ID.")
               return
-            # Search for the row in fin_wallet table
-            wallet_add = app_tables.fin_wallet.get(customer_id=entered_borrower_customer_id)
-            if wallet_add:
-              entered_loan_id = self.entered_loan_id
-              loan_row = app_tables.fin_loan_details.get(loan_id=entered_loan_id)
-              if loan_row:
+            entered_loan_id = self.entered_loan_id
+            loan_row = app_tables.fin_loan_details.get(loan_id=entered_loan_id)
+            
+            if loan_row:
+              wallet_add = app_tables.fin_wallet.get(customer_id=entered_borrower_customer_id)
+              if wallet_add:
                 loan_amount = loan_row['loan_amount']
               wallet_add['wallet_amount'] += loan_amount
               wallet_add.update()
