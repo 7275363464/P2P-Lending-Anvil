@@ -87,6 +87,8 @@ def add_borrower_step1(qualification,user_id):
   if row:
     row[0]['qualification'] = qualification
     row[0]['form_count']=1
+
+
     
 @anvil.server.callable
 def add_borrower_step2(status_of_user,user_id):
