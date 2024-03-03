@@ -120,7 +120,7 @@ components:
   components:
   - name: button_5
     properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
-      foreground: 'theme:On Primary', visible: true, text: ForeClousure Loans, font_size: null,
+      foreground: 'theme:On Primary', visible: true, text: Foreclosure Loans, font_size: null,
       font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
       background: '', bold: true, underline: false, icon: ''}
     type: Button

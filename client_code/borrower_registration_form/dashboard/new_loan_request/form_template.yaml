@@ -54,7 +54,7 @@ components:
     role: null
     align: full
     tooltip: ''
-    placeholder: Select product group
+    placeholder: Select Product Group
     border: ''
     enabled: true
     foreground: ''
@@ -91,7 +91,7 @@ components:
     role: null
     align: full
     tooltip: ''
-    placeholder: Select product categories
+    placeholder: Select Product Categories
     border: ''
     enabled: true
     foreground: ''
@@ -127,7 +127,7 @@ components:
     role: null
     align: full
     tooltip: ''
-    placeholder: Select product Name
+    placeholder: Select Product Name
     border: ''
     enabled: true
     foreground: ''
