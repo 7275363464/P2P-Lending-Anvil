@@ -55,9 +55,11 @@ components:
         properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
           visible: true, text: ' Products Details', font_size: 24, font: a, spacing_above: small,
           icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-          underline: true, icon: ''}
+          underline: false, icon: ''}
         name: label_1_copy
         layout_properties: {grid_position: 'YCCXUQ,ZCQSRR'}
+        data_bindings:
+        - {property: font, code: '', writeback: false}
       - name: spacer_2
         properties: {height: 16.199981689453125}
         type: Spacer
@@ -78,21 +80,6 @@ components:
           properties: {}
           type: Label
           layout_properties: {row: OUCBZA, width_xs: 3, col_xs: 5}
-        - type: Label
-          properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-            visible: true, text: Product Name, font_size: null, font: '', spacing_above: small,
-            icon_align: left, spacing_below: small, italic: false, background: '',
-            bold: true, underline: false, icon: ''}
-          name: label_2
-          layout_properties: {row: SBMUGJ, width_xs: 2, col_xs: 3}
-        - type: TextBox
-          properties: {role: outlined, align: left, hide_text: false, tooltip: '',
-            placeholder: Enter Product Name, border: '', enabled: true, foreground: '',
-            visible: true, text: '', font_size: null, font: '', spacing_above: small,
-            type: text, spacing_below: small, italic: false, background: white, bold: false,
-            underline: false}
-          name: product_name
-          layout_properties: {row: SBMUGJ, width_xs: 3, col_xs: 5}
         - type: Label
           properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
             visible: true, text: ' Product Group', font_size: null, font: '', spacing_above: small,
@@ -155,15 +142,30 @@ components:
           layout_properties: {row: KGVTRF, width_xs: 3, col_xs: 5}
         - type: Label
           properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+            visible: true, text: Product Name, font_size: null, font: '', spacing_above: small,
+            icon_align: left, spacing_below: small, italic: false, background: '',
+            bold: true, underline: false, icon: ''}
+          name: label_2
+          layout_properties: {row: JYPCHO, width_xs: 2, col_xs: 3}
+        - type: TextBox
+          properties: {role: outlined, align: left, hide_text: false, tooltip: '',
+            placeholder: Enter Product Name, border: '', enabled: true, foreground: '',
+            visible: true, text: '', font_size: null, font: '', spacing_above: small,
+            type: text, spacing_below: small, italic: false, background: white, bold: false,
+            underline: false}
+          name: product_name
+          layout_properties: {row: JYPCHO, width_xs: 3, col_xs: 5}
+        - type: Label
+          properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
             visible: true, text: ' Product Description', font_size: null, font: '',
             spacing_above: small, icon_align: left, spacing_below: small, italic: false,
             background: '', bold: true, underline: false, icon: ''}
           name: label_4_copy
           layout_properties: {row: FVXXTV, width_xs: 2, col_xs: 3}
         - type: TextArea
-          properties: {role: outlined, align: left, height: 90, tooltip: '', placeholder: Enter your product description,
-            border: '', enabled: true, foreground: '', visible: true, text: Enter your Product Description,
-            font_size: null, auto_expand: true, font: '', spacing_above: small, spacing_below: small,
+          properties: {role: outlined, align: left, height: 90, tooltip: '', placeholder: Enter your Product Description,
+            border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+            auto_expand: true, font: '', spacing_above: small, spacing_below: small,
             italic: false, background: white, bold: false, underline: false}
           name: text_area_1
           layout_properties: {row: FVXXTV, width_xs: 6, col_xs: 5}
@@ -307,14 +309,6 @@ components:
               bold: false, underline: false}
             name: max_tenure
             layout_properties: {grid_position: 'XYEYWQ,YVIEJJ JRWJMI,IRPPSM'}
-          - type: Link
-            properties: {role: null, url: '', align: right, tooltip: '', border: '',
-              foreground: '#0876E8', visible: true, text: '+Add More Interest rate ',
-              font_size: null, wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small,
-              icon_align: left, col_widths: '', spacing_below: small, italic: false,
-              background: '', bold: true, underline: false, icon: ''}
-            name: link_2
-            layout_properties: {grid_position: 'XGGTQP,CTLYKT'}
         - type: Label
           properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
             visible: true, text: ' Interest  Rate(%)', font_size: null, font: '',
@@ -487,75 +481,50 @@ components:
           layout_properties: {row: CBEBWH, width_xs: 3, col_xs: 5}
         - type: Label
           properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-            visible: true, text: Lapsed Fee, font_size: null, font: '', spacing_above: small,
+            visible: true, text: Lapsed Fee(₹), font_size: null, font: '', spacing_above: small,
             icon_align: left, spacing_below: small, italic: false, background: '',
             bold: true, underline: false, icon: ''}
           name: label_12
           layout_properties: {row: NXRXGH, width_xs: 2, col_xs: 3}
         - type: TextBox
           properties: {role: outlined, align: left, hide_text: false, tooltip: '',
-            placeholder: '', border: '', enabled: true, foreground: '', visible: true,
-            text: Enter Lapsed Fee, font_size: null, font: '', spacing_above: small,
+            placeholder: Enter Lapsed Fee, border: '', enabled: true, foreground: '',
+            visible: true, text: '', font_size: null, font: '', spacing_above: small,
             type: text, spacing_below: small, italic: false, background: '', bold: false,
             underline: false}
           name: lapsed_fee
           layout_properties: {row: NXRXGH, width_xs: 3, col_xs: 5}
         - type: Label
           properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-            visible: true, text: Defaulters Fee, font_size: null, font: '', spacing_above: small,
+            visible: true, text: Defaulters Fee(₹), font_size: null, font: '', spacing_above: small,
             icon_align: left, spacing_below: small, italic: false, background: '',
             bold: true, underline: false, icon: ''}
           name: label_13
           layout_properties: {row: PNKPBU, width_xs: 2, col_xs: 3}
         - type: TextBox
           properties: {role: outlined, align: left, hide_text: false, tooltip: '',
-            placeholder: '', border: '', enabled: true, foreground: '', visible: true,
-            text: Enter Defaulters Fee, font_size: null, font: '', spacing_above: small,
+            placeholder: Enter Defaulters Fee, border: '', enabled: true, foreground: '',
+            visible: true, text: '', font_size: null, font: '', spacing_above: small,
             type: text, spacing_below: small, italic: false, background: '', bold: false,
             underline: false}
           name: default_fee
-          layout_properties: {row: PNKPBU, width_xs: 3, col_xs: 5}
+          layout_properties: {row: PNKPBU, width_xs: 4, col_xs: 5}
           event_bindings: {pressed_enter: text_box_1_copy_pressed_enter}
         - type: Label
           properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-            visible: true, text: Non Performing Asset, font_size: null, font: '',
+            visible: true, text: Non Performing Asset(₹), font_size: null, font: '',
             spacing_above: small, icon_align: left, spacing_below: small, italic: false,
             background: '', bold: true, underline: false, icon: ''}
           name: label_14
           layout_properties: {row: PMIUUA, width_xs: 2, col_xs: 3}
         - type: TextBox
           properties: {role: outlined, align: left, hide_text: false, tooltip: '',
-            placeholder: '', border: '', enabled: true, foreground: '', visible: true,
-            text: NPA, font_size: null, font: '', spacing_above: small, type: text,
-            spacing_below: small, italic: false, background: '', bold: false, underline: false}
+            placeholder: Enter Non Performing Asset Fee, border: '', enabled: true,
+            foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small,
+            type: text, spacing_below: small, italic: false, background: '', bold: false,
+            underline: false}
           name: npa
           layout_properties: {row: PMIUUA, width_xs: 3, col_xs: 5}
-        - type: Label
-          properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-            visible: true, text: '  Discount  Coupons', font_size: null, font: '',
-            spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-            background: '', bold: true, underline: false, icon: ''}
-          name: label_14_copy
-          layout_properties: {row: UQYMNL, width_xs: 2, col_xs: 3}
-        - type: RadioButton
-          properties: {role: null, selected: false, align: left, tooltip: '', border: '',
-            enabled: true, foreground: '', value: '', visible: true, text: 'Yes',
-            font_size: null, font: '', spacing_above: small, spacing_below: small,
-            italic: false, background: '', bold: false, group_name: radioGroup2, underline: false}
-          name: radio_button_3
-          layout_properties: {row: UQYMNL, width_xs: 1, col_xs: 5}
-          event_bindings: {clicked: radio_button_3_clicked}
-        - type: RadioButton
-          properties: {role: null, selected: false, align: left, tooltip: '', border: '',
-            enabled: true, foreground: '', value: '', visible: true, text: 'NO', font_size: null,
-            font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
-            bold: false, group_name: radioGroup2, underline: false}
-          name: radio_button_4
-          layout_properties: {row: UQYMNL, width_xs: 1, col_xs: 6}
-      - name: spacer_3
-        properties: {height: 27.20001220703125}
-        type: Spacer
-        layout_properties: {grid_position: 'TIELAE,BHWHSN'}
       - type: Button
         properties: {role: outlined-button, align: center, tooltip: '', border: '',
           enabled: true, foreground: 'theme:On Primary', visible: true, text: 'Save         ',
