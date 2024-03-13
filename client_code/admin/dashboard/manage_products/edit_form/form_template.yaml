@@ -96,28 +96,13 @@ components:
             bold: true, underline: false, icon: ''}
           name: label_3_copy
           layout_properties: {row: SNCUHT, width_xs: 2, col_xs: 3}
-        - type: DropDown
-          properties:
-            role: outlined
-            align: full
-            tooltip: ''
-            placeholder: Enter product group
-            border: ''
-            enabled: true
-            foreground: ''
-            items: []
-            visible: true
-            font_size: null
-            font: ''
-            spacing_above: small
-            spacing_below: small
-            italic: false
-            background: white
-            bold: false
-            underline: false
-            include_placeholder: true
-          name: name
-          layout_properties: {row: SNCUHT, width_xs: 4, col_xs: 5}
+        - type: TextBox
+          properties: {role: outlined, align: left, hide_text: false, tooltip: '',
+            placeholder: '', border: '', enabled: true, foreground: '', visible: true,
+            text: '', font_size: null, font: '', spacing_above: small, type: text,
+            spacing_below: small, italic: false, background: '', bold: false, underline: false}
+          name: text_box_1
+          layout_properties: {row: SNCUHT, width_xs: 4, col_xs: 5, width: 191.326}
         - type: Label
           properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
             visible: true, text: ' Product Categories', font_size: null, font: '',
@@ -125,28 +110,13 @@ components:
             background: '', bold: true, underline: false, icon: ''}
           name: label_5
           layout_properties: {row: YGDQIJ, width_xs: 2, col_xs: 3}
-        - type: DropDown
-          properties:
-            role: outlined
-            align: full
-            tooltip: ''
-            placeholder: Enter product categories
-            border: ''
-            enabled: true
-            foreground: ''
-            items: []
-            visible: true
-            font_size: null
-            font: ''
-            spacing_above: small
-            spacing_below: small
-            italic: false
-            background: white
-            bold: false
-            underline: false
-            include_placeholder: true
-          name: product_category
-          layout_properties: {row: YGDQIJ, width_xs: 4, col_xs: 5}
+        - type: TextBox
+          properties: {role: outlined, align: left, hide_text: false, tooltip: '',
+            placeholder: '', border: '', enabled: true, foreground: '', visible: true,
+            text: '', font_size: null, font: '', spacing_above: small, type: text,
+            spacing_below: small, italic: false, background: '', bold: false, underline: false}
+          name: text_box_2
+          layout_properties: {row: YGDQIJ, width_xs: 4, col_xs: 5, width: 191.326}
         - type: Label
           properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
             visible: true, text: ' Product Description', font_size: null, font: '',
