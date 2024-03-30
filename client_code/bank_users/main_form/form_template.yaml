@@ -210,15 +210,15 @@ components:
     properties: {text: Lumpsum, font_size: 28, font: '', foreground: white, align: center,
       bold: true}
     name: label_25
-    layout_properties: {x: 33, y: 82.42498779296875, width: 253.788}
+    layout_properties: {x: 33, y: 82.42498779296875, width: 237.59100000000004}
   - type: Image
     properties: {source: _/theme/lumpsum-p2p-lending.webp, height: 255.19998168945312}
     name: image_2
-    layout_properties: {x: 10, y: 149.20000000000005, width: 301.79998779296875}
+    layout_properties: {x: 10, y: 149.20000000000005, width: 272.669}
   - type: Image
     properties: {source: _/theme/invest 1.png, height: 88.20001220703125}
     name: image_15
-    layout_properties: {x: 0, y: 390.38801220703135, width: 311.788}
+    layout_properties: {x: 0, y: 402.00521087646484, width: 282.66925048828125}
 - name: xy_panel_4
   properties: {height: 488.39996337890625, background: '#094586', role: elevated-card}
   type: XYPanel
@@ -227,20 +227,20 @@ components:
   - type: Image
     properties: {source: _/theme/mip-monthly-income-p2p-lending.webp, height: 265}
     name: image_13
-    layout_properties: {x: 10, y: 145.20000000000005, width: 294.39996337890625}
-  - type: Image
-    properties: {source: _/theme/New-Project-1.png, height: 88.5999755859375}
-    name: image_16
-    layout_properties: {x: 0, y: 394.78753662109375, width: 310.5999755859375}
+    layout_properties: {x: 10, y: 145.20000000000005, width: 265.8594685058594}
   - type: Label
     properties: {text: Monthly Income, font: '', font_size: 28, align: center, bold: true,
       foreground: white}
     name: label_26
-    layout_properties: {x: 10, y: 83.48751220703127, width: 285.7999755859375}
+    layout_properties: {x: 10, y: 83.48751220703127, width: 265.85946850585935}
   - type: Label
     properties: {text: Earn monthly interest, font_size: 16, align: center, foreground: white}
     name: label_3
     layout_properties: {x: 29.662506103515625, y: 23.41253662109375, width: 246.2}
+  - type: Image
+    properties: {source: _/theme/New-Project-1.png, height: 88.5999755859375}
+    name: image_16
+    layout_properties: {x: 0, y: 399.8046875, width: 282.66925048828125}
 - name: xy_panel_5
   properties: {height: 488.79998779296875, background: '#094586', role: elevated-card}
   type: XYPanel
@@ -259,11 +259,11 @@ components:
   - type: Image
     properties: {source: _/theme/Updated-Icon-01-1-1024x1024.png, height: 265}
     name: image_14
-    layout_properties: {x: 12.538000000000011, y: 143.4000000000001, width: 293.7999267578125}
+    layout_properties: {x: 12.538000000000011, y: 143.4000000000001, width: 245.9633740234375}
   - type: Image
     properties: {source: _/theme/ML-urgent.png, height: 91}
     name: image_17
-    layout_properties: {x: 0, y: 398.79999999999995, width: 306.32547558593745}
+    layout_properties: {x: 0, y: 397.7994842529297, width: 282.66925048828125}
 - name: spacer_3
   properties: {height: 50}
   type: Spacer
@@ -298,19 +298,19 @@ components:
     properties: {height: 71.60000610351562, source: _/theme/register-bean.50e7dd2.png,
       display_mode: original_size}
     name: image_18
-    layout_properties: {x: 10, y: 16.3375244140625, width: 105.39999389648438}
+    layout_properties: {x: 10, y: 16.3375244140625, width: 285.7243435058594}
   - type: Label
-    properties: {text: Simple and Easy, font_size: 20, bold: true}
+    properties: {text: Simple and Easy, font_size: 20, bold: true, align: center}
     name: label_32
-    layout_properties: {x: 10, y: 93.3375244140625, width: 160}
+    layout_properties: {x: 10, y: 93.3375244140625, width: 291.66668701171875}
   - name: label_35
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
       visible: true, text: 'Kotak is an easy to use platform to invest money online,
         get your dedicated wealth manager to build and diversify your portfolio',
       font_size: 18, font: '', spacing_above: small, icon_align: left, spacing_below: small,
       italic: false, background: '', bold: false, underline: false, icon: ''}
     type: Label
-    layout_properties: {x: 10, y: 139.3375244140625, width: 221}
+    layout_properties: {x: 10, y: 139.3375244140625, width: 291.6669999999999}
 - name: xy_panel_7
   properties: {height: 293.1999816894531}
   type: XYPanel
@@ -319,20 +319,20 @@ components:
   - type: Image
     properties: {height: 116, source: _/theme/stats-rupee_bean.58bc41f.png, display_mode: original_size}
     name: image_19
-    layout_properties: {x: 10, y: 15.3375244140625, width: 90.39996337890625}
+    layout_properties: {x: 10, y: 15.3375244140625, width: 287.200375}
   - type: Label
-    properties: {text: Greater Returns, bold: true, font_size: 20}
+    properties: {text: Greater Returns, bold: true, font_size: 20, align: center}
     name: label_33
-    layout_properties: {x: 18.662506103515625, y: 95.3375244140625, width: 160}
+    layout_properties: {x: 18.662506103515625, y: 95.3375244140625, width: 270.5}
   - name: label_37
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
       visible: true, text: 'Earn up to 2.5 times more of your FD returns with Lendbox
         low risk investment investment options, a safer and smarter way to multiply
         your savings', font_size: 18, font: '', spacing_above: small, icon_align: left,
       spacing_below: small, italic: false, background: '', bold: false, underline: false,
       icon: ''}
     type: Label
-    layout_properties: {x: 13.362518310546875, y: 141.3375244140625, width: 259.20001220703125}
+    layout_properties: {x: 13.362518310546875, y: 141.3375244140625, width: 283.8513740234375}
 - name: xy_panel_8
   properties: {height: 292.1999816894531}
   type: XYPanel
@@ -341,13 +341,14 @@ components:
   - type: Image
     properties: {height: 113, source: _/theme/money-bag-hand_bean.2c2a2a6.png, display_mode: original_size}
     name: image_20
-    layout_properties: {x: 10, y: 16.3375244140625, width: 88.39996337890625}
+    layout_properties: {x: 10, y: 16.3375244140625, width: 288.21599999999984}
   - type: Label
-    properties: {text: Monthly Cashflow, font_size: 21, bold: true}
+    properties: {text: Monthly Cashflow, font_size: 21, bold: true, align: center}
     name: label_34
-    layout_properties: {x: 10, y: 94.3375244140625, width: 212.79998779296875}
+    layout_properties: {x: 10, y: 94.3375244140625, width: 288.203}
   - name: label_36
-    properties: {underline: false, font_size: 18, text: Create passive income with regular monthly repayments as borrowers pay back with EMI's}
+    properties: {underline: false, font_size: 18, text: Create passive income with regular monthly repayments as borrowers pay back with EMI's,
+      align: center}
     type: Label
     layout_properties: {x: 10, y: 140.3375244140625, width: 288.22216796875}
 - name: spacer_17
@@ -370,7 +371,7 @@ components:
   - name: label_38
     properties: {text: Get started today, align: center, bold: true, font_size: 30}
     type: Label
-    layout_properties: {grid_position: 'VFQQUF,RWHPEN', x: 68, y: 10, width: 1200}
+    layout_properties: {grid_position: 'VFQQUF,RWHPEN', x: 68, y: 10, width: 1351.1566259765625}
   - name: xy_panel_8_copy
     properties: {height: 295}
     type: XYPanel
@@ -379,35 +380,36 @@ components:
     - name: image_20_copy
       properties: {height: 113, source: _/theme/money-bag-hand_bean.2c2a2a6.png, display_mode: original_size}
       type: Image
-      layout_properties: {x: 10, y: 16.3375244140625, width: 88.39996337890625}
+      layout_properties: {x: 10, y: 16.3375244140625, width: 329.948}
     - name: label_34_copy
-      properties: {text: Get monthly repayments, font_size: 21, bold: true}
+      properties: {text: Get monthly repayments, font_size: 21, bold: true, align: center}
       type: Label
-      layout_properties: {x: 10, y: 94.3375244140625, width: 249.2364580078125}
+      layout_properties: {x: 10, y: 94.3375244140625, width: 329.94799999999987}
     - name: label_36_copy
-      properties: {underline: false, font_size: 18, text: Receive monthly returns from the borrower and start growing your wealth. You also have the option to reinvest your earnings.}
+      properties: {underline: false, font_size: 18, text: Receive monthly returns from the borrower and start growing your wealth. You also have the option to reinvest your earnings.,
+        align: center}
       type: Label
-      layout_properties: {x: 10, y: 140.3375244140625, width: 266.972083984375}
+      layout_properties: {x: 10, y: 140.3375244140625, width: 329.9533740234375}
   - name: xy_panel_6_copy
     properties: {height: 290.3999938964844}
     type: XYPanel
-    layout_properties: {x: 75.79165522381663, y: 127.15280151367188, width: 350}
+    layout_properties: {x: 75.79165522381663, y: 127.15280151367188, width: 318.8333435058594}
     components:
     - name: image_18_copy
       properties: {height: 71.60000610351562, source: _/theme/register.png, display_mode: original_size}
       type: Image
-      layout_properties: {x: 10, y: 16.3375244140625, width: 87.61122900390625}
+      layout_properties: {x: 10, y: 16.3375244140625, width: 294.167}
     - name: label_32_copy
-      properties: {text: Register, font_size: 20, bold: true}
+      properties: {text: Register, font_size: 20, bold: true, align: center}
       type: Label
-      layout_properties: {x: 10, y: 93.3375244140625, width: 160}
+      layout_properties: {x: 10, y: 93.3375244140625, width: 294.167}
     - name: label_35_copy
-      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
         visible: true, text: Register as a lender by providing basic KYC information.,
         font_size: 18, font: '', spacing_above: small, icon_align: left, spacing_below: small,
         italic: false, background: '', bold: false, underline: false, icon: ''}
       type: Label
-      layout_properties: {x: 10, y: 139.3375244140625, width: 221}
+      layout_properties: {x: 10, y: 139.3375244140625, width: 294.167}
   - name: xy_panel_7_copy
     properties: {height: 293.1999816894531}
     type: XYPanel
@@ -416,23 +418,23 @@ components:
     - name: image_19_copy
       properties: {height: 116, source: _/theme/profile-cards_bean.6b9a100.png, display_mode: original_size}
       type: Image
-      layout_properties: {x: 10, y: 15.3375244140625, width: 87.61122900390625}
+      layout_properties: {x: 10, y: 15.3375244140625, width: 329.935}
     - name: label_33_copy
-      properties: {text: Choose your products, bold: true, font_size: 20}
+      properties: {text: Choose your products, bold: true, font_size: 20, align: center}
       type: Label
-      layout_properties: {x: 18.662506103515625, y: 95.3375244140625, width: 226}
+      layout_properties: {x: 18.662506103515625, y: 95.3375244140625, width: 286.1403740234375}
     - name: label_37_copy
-      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
         visible: true, text: Invest across variety of products and build a diversified portfolio and better returns at lower risk.,
         font_size: 18, font: '', spacing_above: small, icon_align: left, spacing_below: small,
         italic: false, background: '', bold: false, underline: false, icon: ''}
       type: Label
-      layout_properties: {x: 13.362518310546875, y: 141.3375244140625, width: 225.74954199218752}
+      layout_properties: {x: 13.362518310546875, y: 141.3375244140625, width: 319.562}
   - name: button_5
     properties: {text: Register Now, align: full, bold: true, role: filled-button,
       background: '#013065'}
     type: Button
-    layout_properties: {x: 578.0277506522834, y: 481.20831298828125, width: 200}
+    layout_properties: {x: 652.3697910308838, y: 514.6614379882812, width: 200}
 - name: spacer_19
   properties: {height: 32}
   type: Spacer
@@ -453,8 +455,8 @@ components:
   type: Spacer
   layout_properties: {grid_position: 'FGAEGL,EDOHWZ'}
 - name: image_4
-  properties: {source: _/theme/icons8-laptop-100 (1).png, display_mode: shrink_to_fit,
-    height: 140.39999389648438}
+  properties: {source: _/theme/icons8-laptop-64.png, display_mode: shrink_to_fit,
+    height: 97.41665649414062}
   type: Image
   layout_properties: {grid_position: 'BGOTWK,XXIPLN'}
 - name: label_10
@@ -463,7 +465,7 @@ components:
   layout_properties: {grid_position: 'BGOTWK,XXIPLN LDUNEZ,EMAVPJ'}
 - name: image_5
   properties: {source: _/theme/icons8-approved-webpage-100.png, background: '', role: null,
-    visible: true, height: 140}
+    visible: true, height: 98.58334350585938}
   type: Image
   layout_properties: {grid_position: 'BGOTWK,PRCSLT EVJEUH,SLMCTO'}
 - name: label_11
@@ -471,7 +473,7 @@ components:
   type: Label
   layout_properties: {grid_position: 'BGOTWK,PRCSLT OBEGGH,AVGGCR'}
 - name: image_6
-  properties: {source: _/theme/icons8-fund-100.png, height: 140}
+  properties: {source: _/theme/icons8-fund-100.png, height: 96.75}
   type: Image
   layout_properties: {grid_position: 'BGOTWK,PTRZYW BSEDZX,SAVEOO'}
 - name: label_12
@@ -480,7 +482,7 @@ components:
   type: Label
   layout_properties: {grid_position: 'BGOTWK,PTRZYW JEGIDN,XAPYYC'}
 - name: image_7
-  properties: {source: _/theme/icons8-business-goal-100.png, role: null, height: 141}
+  properties: {source: _/theme/icons8-business-goal-100.png, role: null, height: 95.91665649414062}
   type: Image
   layout_properties: {grid_position: 'BGOTWK,FKRLFV NBOARJ,FCSFDI'}
 - name: label_13
@@ -512,7 +514,7 @@ components:
   layout_properties: {grid_position: 'RUUBND,IGQGYE DAZLXX,OKHTQO', row_background: ''}
   components:
   - name: image_9
-    properties: {height: 142, source: _/theme/icons8-boxes-64.png}
+    properties: {height: 109.41665649414062, source: _/theme/icons8-boxes-64.png}
     type: Image
     layout_properties: {}
 - name: label_17
@@ -531,7 +533,7 @@ components:
   layout_properties: {grid_position: 'RUUBND,WMRMLE UHPRQJ,IEYUXN'}
   components:
   - name: image_8
-    properties: {source: _/theme/icons8-rupee-64.png, height: 137}
+    properties: {source: _/theme/icons8-rupee-64.png, height: 108.25}
     type: Image
     layout_properties: {}
 - name: label_18
@@ -549,7 +551,7 @@ components:
   layout_properties: {grid_position: 'RUUBND,UTGGPW GFNQED,PMDARC'}
   components:
   - name: image_10
-    properties: {source: _/theme/icons8-percentage-64.png, height: 137}
+    properties: {source: _/theme/icons8-percentage-64.png, height: 109.41665649414062}
     type: Image
     layout_properties: {}
 - name: label_19
