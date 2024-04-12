@@ -621,9 +621,6 @@ db_schema:
     - name: gender
       admin_ui: {order: 0.125, width: 200}
       type: string
-    - name: date_of_birth
-      admin_ui: {order: 6.875, width: 200}
-      type: date
     - name: aadhaar_photo
       admin_ui: {order: 6.953125, width: 200}
       type: media
