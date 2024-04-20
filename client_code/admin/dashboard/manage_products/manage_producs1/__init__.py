@@ -309,9 +309,9 @@ class manage_producs1(manage_producs1Template):
             max_tenure = float(self.max_tenure.text.strip())
             roi = float(self.text_box_5.text.strip())
             lapsed_fee = float(self.lapsed_fee.text.strip())
-            default_fee = float(self.default_fee.text.strip() if self.default_fee.text.strip() else 0)
-            default_fee_amount = float(self.text_box_1.text.strip() if self.text_box_1.text.strip() else 0)
-            npa = float(self.npa.text.strip() if self.npa.text.strip() else 0)
+            default_fee = float(self.default_fee.text.strip() if self.default_fee.text.strip() else None)
+            default_fee_amount = float(self.text_box_1.text.strip() if self.text_box_1.text.strip() else None)
+            npa = float(self.npa.text.strip() if self.npa.text.strip() else None)
             npa_amount = float(self.text_amount.text.strip() if self.text_amount.text.strip() else 0)
 
     
