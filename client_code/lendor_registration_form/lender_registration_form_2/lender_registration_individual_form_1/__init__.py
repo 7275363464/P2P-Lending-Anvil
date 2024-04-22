@@ -20,7 +20,7 @@ class lender_registration_individual_form_1(lender_registration_individual_form_
             self.company_name = user_data.get('company_name', '')
             self.org_type = user_data.get('organization_type', '')
             self.emp_type = user_data.get('employment_type', '')
-            self.com_type = user_data.get('occupation_type', '')
+            self.com_type = user_data.get('company_type', '')
             
             
     else:
@@ -48,8 +48,8 @@ class lender_registration_individual_form_1(lender_registration_individual_form_
     options_string = [str(option['lendor_organization_type']) for option in options]
     self.drop_down_2.items = options_string
 
-    options = app_tables.fin_occupation_type.search()
-    option_strings = [str(option['occupation_type']) for option in options]
+    options = app_tables.fin_company_type.search()
+    option_strings = [str(option['company_type']) for option in options]
     self.drop_down_3.items = option_strings
     # Any code you write here will run before the form opens.
 
@@ -57,13 +57,13 @@ class lender_registration_individual_form_1(lender_registration_individual_form_
       emp_type = self.drop_down_1.selected_value
       org_type = self.drop_down_2.selected_value
       company_name = self.text_box_1.text
-      occupation_type = self.drop_down_3.selected_value
+      com_type = self.drop_down_3.selected_value
       user_id = int(self.userId)
       
       if not emp_type or not org_type or not company_name or not com_type:
           Notification("Please fill in all required fields.").show()  
       else:
-          anvil.server.call('add_lendor_individual_form_1', emp_type, org_type,company_name,occupation_type , user_id)
+          anvil.server.call('add_lendor_individual_form_1', emp_type, org_type,company_name, com_type, user_id)
           open_form('lendor_registration_form.lender_registration_form_2.lender_registration_individual_form_2', user_id=self.userId)
     
   def button_1_click(self, **event_args):

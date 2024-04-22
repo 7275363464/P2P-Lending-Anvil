@@ -19,16 +19,13 @@ class lender_registration_Institutional_form_2(lender_registration_Institutional
     if user_data:
             self.business_type = user_data.get('business_type', '')
             self.empolyees_working = user_data.get('employees_working', '')
-            # self.year = user_data.get('year_estd', '')
-            self.business_name = user_data.get('business_name', '')
-            self.business_add = user_data.get('business_add', '')
+            self.year = user_data.get('year_estd', '')
+            
             
     else:
         self.business_type = ''
         self.empolyees_working = ''
-        # self.year = ''
-        self.business_name = ''
-        self.business_add = ''
+        self.year = ''
         
 
        #Restore previously entered data if available
@@ -36,13 +33,8 @@ class lender_registration_Institutional_form_2(lender_registration_Institutional
             self.drop_down_1.selected_value = self.business_type
     if self.empolyees_working:
            self.drop_down_2.selected_value = self.empolyees_working
-    # if self.year:
-    #        self.date_picker_1.date = self.year
-
-    if self.business_name:
-            self.text_box_1.text= self.business_name
-    if self.business_add:
-            self.text_box_2.text= self.business_add
+    if self.year:
+           self.date_picker_1.date = self.year
 
     options = app_tables.fin_lendor_business_type.search()
     options_string = [str(option['lendor_business_type']) for option in options]
@@ -56,22 +48,20 @@ class lender_registration_Institutional_form_2(lender_registration_Institutional
   def button_2_click(self, **event_args):
     business_type = self.drop_down_1.selected_value
     empolyees_working = self.drop_down_2.selected_value
-    # year = self.date_picker_1.date
-    business_name = self.text_box_1.text
-    business_add = self.text_box_2.text
+    year = self.date_picker_1.date
     user_id = self.userId
-    if not business_type or not empolyees_working or not business_add or not business_add:
+    if not business_type or not empolyees_working or not year:
       Notification("Please fill all the fields").show()
     else:
-     # today = datetime.today()
-     # months = today.year * 12 + today.month - year.year * 12 - year.month
-     anvil.server.call('add_lendor_individual_form_2',business_type,empolyees_working,business_name,business_add,user_id)
+     today = datetime.today()
+     months = today.year * 12 + today.month - year.year * 12 - year.month
+     anvil.server.call('add_lendor_institutional_form_2',business_type,empolyees_working,year,months,user_id)
      open_form('lendor_registration_form.lender_registration_form_2.lender_registration_Institutional_form_3',user_id = user_id)
     """This method is called when the button is clicked"""
 
   def button_1_click(self, **event_args):
     user_id = self.userId
-    open_form('lendor_registration_form.lender_registration_form_2',user_id = user_id)
+    open_form('lendor_registration_form.lender_registration_form_2.lender_registration_Institutional_form_1',user_id = user_id)
     """This method is called when the button is clicked"""
 
   def button_3_click(self, **event_args):

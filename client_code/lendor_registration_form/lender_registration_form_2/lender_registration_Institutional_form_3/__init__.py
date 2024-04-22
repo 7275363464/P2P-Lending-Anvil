@@ -7,8 +7,6 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
-from datetime import datetime
-
 
 class lender_registration_Institutional_form_3(lender_registration_Institutional_form_3Template):
   def __init__(self,user_id, **properties):
@@ -20,41 +18,28 @@ class lender_registration_Institutional_form_3(lender_registration_Institutional
     if user_data:
             self.industry_type = user_data.get('industry_type', '')
             self.turn_over = user_data.get('six_month_turnover', '')
-            self.year = user_data.get('year_estd', '')
     
     else:
         self.industry_type = ''
         self.turn_over = ''
-        self.year = ''
-
-    # user_data=app_tables.fin_user_profile.get(customer_id=user_id)
-    # if user_data:
-    #   self.date_picker_1.date = user_data['year_estd']
-    #   self.text_box_1.text=user_data['industry_type']
-    #   self.text_box_2.text=user_data['six_month_turnover']
-    #    #Restore previously entered data if available
+       
+       #Restore previously entered data if available
     if self.industry_type:
             self.text_box_1.text= self.industry_type
     if self.turn_over:
             self.text_box_2.text= self.turn_over
-
-    if self.year:
-           self.date_picker_1.date = self.year
     
     # Any code you write here will run before the form opens.
 
   def button_2_click(self, **event_args):
     industry_type = self.text_box_1.text
     turn_over = self.text_box_2.text
-    year = self.date_picker_1.date
     last_six_statements = self.file_loader_1.file
     user_id = self.userId
-    if not industry_type or not turn_over or not last_six_statements or not year:
+    if not industry_type or not turn_over or not last_six_statements:
       Notification("Please fill all the fields").show()
     else:
-     today = datetime.today()
-     months = today.year * 12 + today.month - year.year * 12 - year.month
-     anvil.server.call('add_lendor_institutional_form_3',year,months,industry_type,turn_over,last_six_statements,user_id)
+     anvil.server.call('add_lendor_institutional_form_3',industry_type,turn_over,last_six_statements,user_id)
      open_form('lendor_registration_form.lender_registration_form_2.lender_registration_Institutional_form_5',user_id = user_id)
     """This method is called when the button is clicked"""
 

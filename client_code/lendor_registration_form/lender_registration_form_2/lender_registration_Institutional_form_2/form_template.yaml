@@ -43,34 +43,6 @@ components:
   properties: {height: 10.857086181640625}
   type: Spacer
   layout_properties: {grid_position: 'FWDRTA,HBBODP'}
-- name: label_2_copy_1
-  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
-    text: Enter Business Name, font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: '', bold: true, underline: false,
-    icon: ''}
-  type: Label
-  layout_properties: {grid_position: 'IXTWNR,XHYGIL'}
-- name: text_box_1
-  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
-    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-    font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-    background: 'theme:On Primary', bold: false, underline: false}
-  type: TextBox
-  layout_properties: {grid_position: 'IXTWNR,ZBDPWB'}
-- name: label_1_copy
-  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
-    text: Enter Business Address, font_size: null, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-    underline: false, icon: ''}
-  type: Label
-  layout_properties: {grid_position: 'NPWCHV,UVBLHO'}
-- name: text_box_2
-  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
-    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-    font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-    background: 'theme:On Primary', bold: false, underline: false}
-  type: TextBox
-  layout_properties: {grid_position: 'NPWCHV,TYZNXG'}
 - name: label_3_copy_1
   properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
     text: Select Business Type, font_size: null, font: '', spacing_above: small, icon_align: left,
@@ -129,6 +101,20 @@ components:
     include_placeholder: true
   type: DropDown
   layout_properties: {grid_position: 'OMUYBH,CNFOWZ'}
+- name: label_2
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: Select Year of Establishment, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  type: Label
+  layout_properties: {grid_position: 'SVQNTF,XBJSFD'}
+- name: date_picker_1
+  properties: {role: null, align: left, max_date: '', pick_time: false, tooltip: '',
+    placeholder: '', border: '', enabled: true, foreground: '', visible: true, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, date: '',
+    min_date: '', background: 'theme:On Primary', bold: false, underline: false, format: ''}
+  type: DatePicker
+  layout_properties: {grid_position: 'SVQNTF,DKZTSQ'}
 - name: spacer_2
   properties: {height: 14.71417236328125}
   type: Spacer

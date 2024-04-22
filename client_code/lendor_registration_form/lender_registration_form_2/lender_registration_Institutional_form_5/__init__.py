@@ -17,40 +17,29 @@ class lender_registration_Institutional_form_5(lender_registration_Institutional
         
     if user_data:
             self.reg_off_add = user_data.get('registered_off_add', '')
-            # self.off_add_proof= user_data.get('off_add_proof', '')
-            self.din = user_data.get('din', '')
-            self.cin= user_data.get('cin', '')
+            self.off_add_proof= user_data.get('off_add_proof', '')
             
     else:
         self.reg_off_add = ''
-        # self.off_add_proof = ''
-        self.din = ''
-        self.cin = ''
+        self.off_add_proof = ''
        
        #Restore previously entered data if available
     if self.reg_off_add:
             self.text_box_1.text= self.reg_off_add
-    # if self.off_add_proof:
-    #         self.text_box_2.text= self.off_add_proof
-
-    if self.din:
-            self.text_box_3.text= self.din
-    if self.cin:
-            self.text_box_4.text= self.cin
+    if self.off_add_proof:
+            self.text_box_2.text= self.off_add_proof
     
     # Any code you write here will run before the form opens.
 
   def button_2_click(self, **event_args):
-    reg_office_add = self.text_box_1.text
-    # off_add_proof = self.text_box_2.text
-    din = self.text_box_3.text
-    cin = self.text_box_4.text
+    reg_off_add = self.text_box_1.text
+    off_add_proof = self.text_box_2.text
     proof_verification = self.file_loader_1.file
     user_id = self.userId
-    if not reg_office_add  or not proof_verification or not din or not cin:
+    if not reg_off_add or not off_add_proof or not proof_verification:
       Notification("Please all the fields").show()
     else:
-     anvil.server.call('add_lendor_institutional_form_5',din, cin,reg_office_add,proof_verification, user_id)
+     anvil.server.call('add_lendor_institutional_form_5',reg_off_add,off_add_proof,proof_verification,user_id)
      open_form('lendor_registration_form.lender_registration_form_3_marital_details',user_id=user_id)
     """This method is called when the button is clicked"""
 

@@ -90,7 +90,7 @@ class lender_registration_form_2(lender_registration_form_2Template):
             open_form('lendor_registration_form.lender_registration_form_2.lender_registration_individual_form_1',
                       user_id=user_id)
         elif lending_type == 'Institutional':
-            open_form('lendor_registration_form.lender_registration_form_2.lender_registration_Institutional_form_2',
+            open_form('lendor_registration_form.lender_registration_form_2.lender_registration_Institutional_form_1',
                       user_id=user_id)
         else:
             # Your existing code in the else block
