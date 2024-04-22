@@ -238,10 +238,6 @@ components:
       properties: {text: '  Non Performing Asset', font_size: 17, bold: true}
       type: Label
       layout_properties: {grid_position: 'VJYOJJ,KGORIJ BPGKKD,QOVAJZ'}
-    - name: spacer_18
-      properties: {height: 32}
-      type: Spacer
-      layout_properties: {grid_position: 'VJYOJJ,KGORIJ TBNEFG,UEZNWM'}
     - name: label_14
       properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
         visible: false, text: '  Non Performing Asset(%)', font_size: 17, font: '',
