@@ -581,7 +581,7 @@ components:
       properties:
         background: white
         items: [Non Performing Asset (%), Non Performing Asset (₹)]
-        placeholder: Select NPA fee type
+        placeholder: Select   Non Performing Asset fee type
         include_placeholder: true
       type: DropDown
       layout_properties: {grid_position: 'RQXERZ,BCDMZG'}
