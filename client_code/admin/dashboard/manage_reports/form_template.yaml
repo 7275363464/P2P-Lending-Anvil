@@ -1,7 +1,7 @@
 is_package: true
 container:
   type: HtmlTemplate
-  properties: {html: '@theme:standard-page.html'}
+  properties: {html: ''}
 components:
 - type: ColumnPanel
   properties: {}
@@ -29,24 +29,11 @@ components:
       underline: false, icon: ''}
     type: Label
     layout_properties: {grid_position: 'PVBOCF,DTTWHZ'}
-- type: FlowPanel
-  properties: {}
-  name: navbar_links
-  layout_properties: {slot: nav-right}
-- type: Button
-  properties: {role: elevated-button, align: center, tooltip: '', border: '', enabled: true,
-    foreground: white, visible: true, text: Back, font_size: null, font: '16', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '#05264d',
-    bold: true, underline: false, icon: 'fa:backward'}
-  name: button_1_copy_3
-  layout_properties:
-    col_widths: {}
-    grid_position: QYMBAS,YHVGJC
-  event_bindings: {click: button_1_copy_3_click}
-- name: label_1_copy
-  properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-    visible: true, text: Manage Products, font_size: 18, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-    underline: false, icon: ''}
-  type: Label
-  layout_properties: {slot: title}
+  - type: Button
+    properties: {role: elevated-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: white, visible: true, text: Back, font_size: null, font: '16', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '#05264d',
+      bold: true, underline: false, icon: 'fa:backward'}
+    name: button_1_copy_3
+    layout_properties: {grid_position: 'MADLIW,EGUINS'}
+    event_bindings: {click: button_1_copy_3_click}

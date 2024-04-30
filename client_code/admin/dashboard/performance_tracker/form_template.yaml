@@ -21,48 +21,62 @@ components:
     underline: false, icon: ''}
   type: Label
   layout_properties: {grid_position: 'BDQYON,FZRSFB'}
-- type: GridPanel
-  properties: {}
-  name: grid_panel_1
-  layout_properties:
-    col_widths: {}
-    grid_position: DVGLOS,KOEGEO
-    full_width_row: false
+- name: xy_panel_1
+  properties: {height: 394.7142028808594}
+  type: XYPanel
+  layout_properties: {grid_position: 'BRAZGF,QWFHAU'}
   components:
-  - type: Spacer
-    properties: {height: 9.999969482421875}
-    name: spacer_1
-    layout_properties: {grid_position: 'PFLPRP,MOSNPD', row: WXAOEV, width_xs: 12,
-      col_xs: 0}
   - type: ColumnPanel
     properties: {role: outlined-card, tooltip: '', border: '', foreground: '', visible: true,
       wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
       spacing_below: small, background: '#05264d'}
-    name: outlined_card_3
-    layout_properties: {row: NWWUOC, width_xs: 3, col_xs: 0, width: 85.25}
+    name: outlined_card_1
+    layout_properties: {x: 673.5537501759827, y: 248.69644165039062, width: 220.00001525878906}
     components:
     - type: Link
       properties: {role: null, url: '', align: center, tooltip: '', border: '', foreground: 'theme:On
-          Primary', visible: true, text: Total applications approved, font_size: 16,
+          Primary', visible: true, text: 'Total applications assigned ', font_size: 16,
         wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small, icon_align: left,
         col_widths: '', spacing_below: small, italic: false, background: '', bold: true,
         underline: true, icon: ''}
-      name: link_1
-      layout_properties: {grid_position: 'SBOJSV,XIOTHY'}
-      event_bindings: {click: link_1_click}
+      name: link_6
+      layout_properties: {grid_position: 'PEUYVO,TQDGMZ'}
     - type: Label
       properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:On
           Primary', visible: true, text: '', font_size: null, font: '', spacing_above: small,
         icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
         underline: false, icon: ''}
-      name: label_8
-      layout_properties: {grid_position: 'UAFQOL,BOQRED'}
+      name: label_4
+      layout_properties: {grid_position: 'MWQHUK,RRXFJL'}
+  - type: ColumnPanel
+    properties: {role: outlined-card, tooltip: '', border: '', foreground: '', visible: true,
+      wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+      spacing_below: small, background: '#05264d'}
+    name: outlined_card_5
+    layout_properties: {x: 364.28562273457646, y: 248.69644165039062, width: 220.00001525878906}
+    components:
+    - type: Link
+      properties: {role: null, url: '', align: center, tooltip: '', border: '', foreground: 'theme:On
+          Primary', visible: true, text: Total applications Under Process, font_size: 16,
+        wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small, icon_align: left,
+        col_widths: '', spacing_below: small, italic: false, background: '', bold: true,
+        underline: true, icon: ''}
+      name: link_5
+      layout_properties: {grid_position: 'QCOVZS,KFUCMG'}
+      event_bindings: {click: link_5_click}
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:On
+          Primary', visible: true, text: '', font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_13
+      layout_properties: {grid_position: 'JZJKLN,OTXGAW'}
   - type: ColumnPanel
     properties: {role: outlined-card, tooltip: '', border: '', foreground: '', visible: true,
       wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
       spacing_below: small, background: '#05264d'}
     name: outlined_card_2
-    layout_properties: {row: NWWUOC, width_xs: 3, col_xs: 4, width: 85.25}
+    layout_properties: {x: 365.5000392384827, y: 62.89287567138672, width: 220.00001525878906}
     components:
     - type: Link
       properties: {role: null, url: '', align: center, tooltip: '', border: '', foreground: 'theme:On
@@ -85,7 +99,7 @@ components:
       wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
       spacing_below: small, background: '#05264d'}
     name: outlined_card_6
-    layout_properties: {row: NWWUOC, width_xs: 3, col_xs: 8, width: 85.25}
+    layout_properties: {x: 672.6606837697327, y: 59.196434020996094, width: 220.00001525878906}
     components:
     - type: Link
       properties: {role: null, url: '', align: center, tooltip: '', border: '', foreground: 'theme:On
@@ -107,8 +121,31 @@ components:
     properties: {role: outlined-card, tooltip: '', border: '', foreground: '', visible: true,
       wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
       spacing_below: small, background: '#05264d'}
+    name: outlined_card_3
+    layout_properties: {x: 61.839287895709276, y: 58.35712432861328, width: 220.00001525878906}
+    components:
+    - type: Link
+      properties: {role: null, url: '', align: center, tooltip: '', border: '', foreground: 'theme:On
+          Primary', visible: true, text: Total applications approved, font_size: 16,
+        wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small, icon_align: left,
+        col_widths: '', spacing_below: small, italic: false, background: '', bold: true,
+        underline: true, icon: ''}
+      name: link_1
+      layout_properties: {grid_position: 'SBOJSV,XIOTHY'}
+      event_bindings: {click: link_1_click}
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:On
+          Primary', visible: true, text: '', font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_8
+      layout_properties: {grid_position: 'UAFQOL,BOQRED'}
+  - type: ColumnPanel
+    properties: {role: outlined-card, tooltip: '', border: '', foreground: '', visible: true,
+      wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+      spacing_below: small, background: '#05264d'}
     name: outlined_card_4
-    layout_properties: {row: RCKWNX, width_xs: 3, col_xs: null, width: 85.25}
+    layout_properties: {x: 56.1607295460999, y: 248.69644165039062, width: 220.00001525878906}
     components:
     - type: Link
       properties: {role: null, url: '', align: center, tooltip: '', border: '', foreground: 'theme:On
@@ -126,49 +163,17 @@ components:
         underline: false, icon: ''}
       name: label_12
       layout_properties: {grid_position: 'ZIUVXY,NDTJEC'}
-  - type: ColumnPanel
-    properties: {role: outlined-card, tooltip: '', border: '', foreground: '', visible: true,
-      wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
-      spacing_below: small, background: '#05264d'}
-    name: outlined_card_5
-    layout_properties: {row: RCKWNX, width_xs: 3, col_xs: 4, width: 85.25}
-    components:
-    - type: Link
-      properties: {role: null, url: '', align: center, tooltip: '', border: '', foreground: 'theme:On
-          Primary', visible: true, text: Total applications Under Process, font_size: 16,
-        wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small, icon_align: left,
-        col_widths: '', spacing_below: small, italic: false, background: '', bold: true,
-        underline: true, icon: ''}
-      name: link_5
-      layout_properties: {grid_position: 'QCOVZS,KFUCMG'}
-      event_bindings: {click: link_5_click}
-    - type: Label
-      properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:On
-          Primary', visible: true, text: '', font_size: null, font: '', spacing_above: small,
-        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-        underline: false, icon: ''}
-      name: label_13
-      layout_properties: {grid_position: 'JZJKLN,OTXGAW'}
-  - type: ColumnPanel
-    properties: {role: outlined-card, tooltip: '', border: '', foreground: '', visible: true,
-      wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
-      spacing_below: small, background: '#05264d'}
-    name: outlined_card_1
-    layout_properties: {row: RCKWNX, width_xs: 3, col_xs: 8, width: 85.25}
-    components:
-    - type: Link
-      properties: {role: null, url: '', align: center, tooltip: '', border: '', foreground: 'theme:On
-          Primary', visible: true, text: 'Total applications assigned ', font_size: 16,
-        wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small, icon_align: left,
-        col_widths: '', spacing_below: small, italic: false, background: '', bold: true,
-        underline: true, icon: ''}
-      name: link_6
-      layout_properties: {grid_position: 'PEUYVO,TQDGMZ'}
-    - type: Label
-      properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:On
-          Primary', visible: true, text: '', font_size: null, font: '', spacing_above: small,
-        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-        underline: false, icon: ''}
-      name: label_4
-      layout_properties: {grid_position: 'MWQHUK,RRXFJL'}
+- type: GridPanel
+  properties: {}
+  name: grid_panel_1
+  layout_properties:
+    col_widths: {}
+    grid_position: DVGLOS,KOEGEO
+    full_width_row: false
+  components:
+  - type: Spacer
+    properties: {height: 9.999969482421875}
+    name: spacer_1
+    layout_properties: {grid_position: 'PFLPRP,MOSNPD', row: WXAOEV, width_xs: 12,
+      col_xs: 0}
 is_package: true

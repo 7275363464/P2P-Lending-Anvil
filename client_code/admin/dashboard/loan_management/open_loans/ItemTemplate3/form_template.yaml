@@ -6,18 +6,6 @@ components:
   type: XYPanel
   layout_properties: {grid_position: 'VXTYJC,IVSZVH'}
   components:
-  - name: borrower_mobile
-    properties: {}
-    type: Label
-    layout_properties: {x: 77.17046980559826, y: 85.48864416778088, width: 200}
-    data_bindings:
-    - {property: text, code: 'self.item[''borrower_mobile'']', writeback: false}
-  - name: borrower_name
-    properties: {bold: true}
-    type: Label
-    layout_properties: {x: 77.06814436614513, y: 59.68181852996349, width: 200}
-    data_bindings:
-    - {property: text, code: 'self.item[''borrower_full_name'']', writeback: false}
   - name: outlined_button_1
     properties: {text: View Loan Details, role: outlined-button, align: center, font_size: null,
       background: '#05264d', foreground: 'theme:On Primary', bold: true}
@@ -86,24 +74,6 @@ components:
     layout_properties: {x: 736.1591339111328, y: 133.806884765625, width: 124.148}
     data_bindings:
     - {property: text, code: 'self.item[''product_name'']', writeback: false}
-  - name: lendor_name
-    properties: {bold: true, align: right}
-    type: Label
-    layout_properties: {x: 643.7503101806641, y: 51.386474609375, width: 178.977}
-    data_bindings:
-    - {property: text, code: 'self.item[''lender_full_name'']', writeback: false}
-  - name: lendor_mobile
-    properties: {align: right}
-    type: Label
-    layout_properties: {x: 622.7273101806641, y: 80.53417460937499, width: 200}
-    data_bindings:
-    - {property: text, code: 'self.item[''lender_mobile'']', writeback: false}
-  - name: image_1_copy
-    properties: {height: 63.399932861328125, source: 'self.item[''lender_photo'']'}
-    type: Image
-    layout_properties: {x: 840.6591339111328, y: 53.136479687500014, width: 85.1705}
-    data_bindings:
-    - {property: source, code: 'self.item[''lender_photo'']', writeback: false}
   - name: label_2
     properties: {text: 'Overall Return :', bold: true}
     type: Label
@@ -126,20 +96,44 @@ components:
     data_bindings:
     - {property: text, code: 'self.item[''product_description'']', writeback: true}
     event_bindings: {}
-  - name: loan_id
-    properties: {visible: false}
-    type: Label
-    layout_properties: {x: 0, y: 0, width: 200}
-    data_bindings:
-    - {property: text, code: 'self.item[''loan_id'']', writeback: false}
   - name: image_1
-    properties: {height: 63.399932861328125, source: 'self.item[''borrower_photo'']'}
+    properties: {height: 66.85708618164062, source: 'self.item[''borrower_photo'']'}
     type: Image
-    layout_properties: {x: 0, y: 44.49999861419201, width: 66}
+    layout_properties: {x: 13.750023979693651, y: 19.39284624531865, width: 66}
     data_bindings:
     - {property: source, code: 'self.item[''borrower_photo'']', writeback: false}
+  - name: borrower_name
+    properties: {bold: true}
+    type: Label
+    layout_properties: {x: 86.2321406789124, y: 17.428567070513964, width: 200.00001525878906}
+    data_bindings:
+    - {property: text, code: 'self.item[''borrower_full_name'']', writeback: false}
+  - name: borrower_mobile
+    properties: {}
+    type: Label
+    layout_properties: {x: 87.4821406789124, y: 54.660744804888964, width: 200.00001525878906}
+    data_bindings:
+    - {property: text, code: 'self.item[''borrower_mobile'']', writeback: false}
   - name: label_3
-    properties: {text: '---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------',
+    properties: {text: '----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------',
       foreground: grey, align: center}
     type: Label
-    layout_properties: {x: 0, y: 105.05679182708263, width: 918.5454711914062}
+    layout_properties: {x: 0, y: 98.23212542012334, width: 918.5357666015625}
+  - name: image_1_copy
+    properties: {height: 71.14279174804688, source: 'self.item[''lender_photo'']'}
+    type: Image
+    layout_properties: {x: 838.3928767628968, y: 15.446389336138964, width: 68.410455859375}
+    data_bindings:
+    - {property: source, code: 'self.item[''lender_photo'']', writeback: false}
+  - name: lendor_name
+    properties: {bold: true, align: right}
+    type: Label
+    layout_properties: {x: 634.6429988332093, y: 18.267861504107714, width: 178.96429443359375}
+    data_bindings:
+    - {property: text, code: 'self.item[''lender_full_name'']', writeback: false}
+  - name: lendor_mobile
+    properties: {align: right}
+    type: Label
+    layout_properties: {x: 617.0358210988343, y: 54.26783098652959, width: 200.00001525878906}
+    data_bindings:
+    - {property: text, code: 'self.item[''lender_mobile'']', writeback: false}
