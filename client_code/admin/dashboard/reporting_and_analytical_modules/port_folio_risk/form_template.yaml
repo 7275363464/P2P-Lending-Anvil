@@ -11,9 +11,9 @@ components:
 - name: data_grid_1
   properties:
     columns:
-    - {id: JKSDUP, title: 'Borrwer Id ', data_key: column_1, width: 185.71417236328125, expand: false}
+    - {id: JKSDUP, title: Product Name, data_key: column_1, width: 185.71417236328125, expand: false}
     - {id: VJQQOR, title: Borrower Name, data_key: column_2, width: 198.142822265625, expand: false}
-    - {id: OJLQEN, title: Product Name, data_key: column_3, width: 210.5714111328125, expand: false}
+    - {id: OJLQEN, title: Borrower Id, data_key: column_3, width: 210.5714111328125, expand: false}
     - {id: RKPOSI, data_key: column_1, title: Loan amount, width: 183.7142333984375, expand: false}
     - {id: CHTHOV, data_key: column_1, title: ''}
     role: tonal-data-grid
