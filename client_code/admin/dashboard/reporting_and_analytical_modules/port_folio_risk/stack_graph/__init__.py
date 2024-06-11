@@ -51,8 +51,8 @@ class stack_graph(stack_graphTemplate):
         y=days_left, 
         mode='lines+markers',
         name=f'Loan ID: {loan_id}',
-        marker=dict(color='#17becf'),
-        line=dict(color='#17becf')
+        marker=dict(color='#dc143c'),
+        line=dict(color='#dc143c')
       )
       traces.append(trace)
     
