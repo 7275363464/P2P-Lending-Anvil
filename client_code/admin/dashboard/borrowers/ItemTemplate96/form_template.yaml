@@ -25,17 +25,11 @@ components:
     data_bindings:
     - {property: text, code: 'self.item[''mobile'']', writeback: false}
   - name: label_3
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: grey,
-      visible: true, text: '--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------',
-      font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
-      italic: false, background: '', bold: false, underline: false, icon: ''}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: grey, visible: true, text: '--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
     type: Label
     layout_properties: {x: 0, y: 79.41071428731084, width: 937.71435546875}
   - name: label_4
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Customer ID :', font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: 'Customer ID :', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
     type: Label
     layout_properties: {x: 17.071465630084276, y: 130.8214503712952, width: 186.33334350585938}
   - name: label_11
@@ -81,15 +75,11 @@ components:
     data_bindings:
     - {property: text, code: 'self.item[''customer_id'']', writeback: false}
   - name: outlined_button_1
-    properties: {text: View Loan Details, role: outlined-button, align: center, font_size: null,
-      background: '#05264d', foreground: 'theme:On Primary', bold: true}
+    properties: {text: View Loan Details, role: outlined-button, align: center, font_size: null, background: '#05264d', foreground: 'theme:On Primary', bold: true}
     type: Button
     layout_properties: {x: 0, y: 423.16074480488896, width: 937.71435546875}
     event_bindings: {click: outlined_button_1_click}
   - name: label_8
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Ascend Score, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: Ascend Score, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
     type: Label
     layout_properties: {x: 20.642861504107714, y: 279.7321711964905, width: 171.10714721679688}

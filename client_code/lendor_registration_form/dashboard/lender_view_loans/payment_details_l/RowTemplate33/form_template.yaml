@@ -1,8 +1,7 @@
 container: {type: DataRowPanel}
 components:
 - name: column_panel_1
-  properties: {col_widths: '{"JATQTU":5,"LXNXLZ":5,"KDKVDP":5,"OUDYVR":5,"WGIQKS":5,"HFFCND":5,"EONZDD":5,"KHNVBS":5,"AIVJKH":5,"KBJVJQ":5,"WHOIYR":5,"XLEGNP":5}',
-    role: elevated-card}
+  properties: {col_widths: '{"JATQTU":5,"LXNXLZ":5,"KDKVDP":5,"OUDYVR":5,"WGIQKS":5,"HFFCND":5,"EONZDD":5,"KHNVBS":5,"AIVJKH":5,"KBJVJQ":5,"WHOIYR":5,"XLEGNP":5}', role: elevated-card}
   type: ColumnPanel
   layout_properties: {}
   components:

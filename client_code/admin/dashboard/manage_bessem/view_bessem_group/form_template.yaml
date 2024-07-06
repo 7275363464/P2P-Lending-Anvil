@@ -15,16 +15,14 @@ components:
   - name: data_grid_1
     properties:
       columns:
-      - {id: VJQQOR, title: Group Names, data_key: column_2, width: 437.39996337890625,
-        expand: false}
+      - {id: VJQQOR, title: Group Names, data_key: column_2, width: 437.39996337890625, expand: false}
       - {id: UWQTPT, data_key: column_4, title: Max Points}
       visible: false
     type: DataGrid
     components: []
     layout_properties: {grid_position: 'PCZEDG,SNPCKJ'}
   - name: label_1_copy
-    properties: {font_size: 25, align: center, background: '#98c1d9', text: Ascend Score Groups,
-      role: outlined-card}
+    properties: {font_size: 25, align: center, background: '#98c1d9', text: Ascend Score Groups, role: outlined-card}
     type: Label
     layout_properties: {grid_position: 'MHJDYQ,XEPMDJ'}
   - name: column_panel_1
@@ -45,10 +43,7 @@ components:
     type: RepeatingPanel
     layout_properties: {grid_position: 'ZIAURU,YGSSHV'}
   - type: Button
-    properties: {role: elevated-button, align: center, tooltip: '', border: '', enabled: true,
-      foreground: 'theme:On Primary', visible: true, text: Back, font_size: null,
-      font: '16', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '#05264d', bold: true, underline: false, icon: 'fa:backward'}
+    properties: {role: elevated-button, align: center, tooltip: '', border: '', enabled: true, foreground: 'theme:On Primary', visible: true, text: Back, font_size: null, font: '16', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '#05264d', bold: true, underline: false, icon: 'fa:backward'}
     name: back_btn
     layout_properties:
       col_widths: {}

@@ -13,10 +13,7 @@ components:
     name: home_button_admin_1
     layout_properties: {grid_position: 'YDSFJP,VMBZFT', full_width_row: true}
   - name: label_1_copy
-    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: Manage Products, font_size: 18, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '', visible: true, text: Manage Products, font_size: 18, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: true, underline: false, icon: ''}
     type: Label
     layout_properties: {grid_position: 'VPTESA,BRRIEZ'}
   - name: spacer_2
@@ -24,57 +21,131 @@ components:
     type: Spacer
     layout_properties: {grid_position: 'OUPQEJ,CTDJFP'}
   - type: Button
-    properties: {role: tonal-button, align: full, tooltip: '', border: '', enabled: true,
-      foreground: 'theme:On Primary', visible: true, text: '
+    properties:
+      role: tonal-button
+      align: full
+      tooltip: ''
+      border: ''
+      enabled: true
+      foreground: theme:On Primary
+      visible: true
+      text: |2
 
         ADD PRODUCT GROUP  & CATEGORIES
-
-        ', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
-      italic: false, background: '#05264d', bold: false, underline: false, icon: ''}
+      font_size: null
+      font: ''
+      spacing_above: small
+      icon_align: left
+      spacing_below: small
+      italic: false
+      background: '#05264d'
+      bold: false
+      underline: false
+      icon: ''
     name: button_1_copy_2
     layout_properties: {grid_position: 'KZKBCS,WDNEWN'}
     event_bindings: {click: button_1_copy_2_click}
   - type: Button
-    properties: {role: outlined-button, align: full, tooltip: '', border: '', enabled: true,
-      foreground: 'theme:On Primary', visible: true, text: "\n ADD PRODUCTS\n\n",
-      font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
-      italic: false, background: '#05264d', bold: false, underline: false, icon: ''}
+    properties:
+      role: outlined-button
+      align: full
+      tooltip: ''
+      border: ''
+      enabled: true
+      foreground: theme:On Primary
+      visible: true
+      text: |2+
+
+         ADD PRODUCTS
+
+      font_size: null
+      font: ''
+      spacing_above: small
+      icon_align: left
+      spacing_below: small
+      italic: false
+      background: '#05264d'
+      bold: false
+      underline: false
+      icon: ''
     name: button_1
     layout_properties: {grid_position: 'KZKBCS,KBGBNQ'}
     event_bindings: {click: button_1_click}
   - type: Button
-    properties: {role: tonal-button, align: full, tooltip: '', border: '', enabled: true,
-      foreground: 'theme:On Primary', visible: true, text: '
+    properties:
+      role: tonal-button
+      align: full
+      tooltip: ''
+      border: ''
+      enabled: true
+      foreground: theme:On Primary
+      visible: true
+      text: |2+
 
         MANAGE PRODUCTS
 
-
-        ', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
-      italic: false, background: '#05264d', bold: false, underline: false, icon: ''}
+      font_size: null
+      font: ''
+      spacing_above: small
+      icon_align: left
+      spacing_below: small
+      italic: false
+      background: '#05264d'
+      bold: false
+      underline: false
+      icon: ''
     name: button_1_copy
     layout_properties: {grid_position: 'KZKBCS,NOFGMI'}
     event_bindings: {click: button_1_copy_click}
   - type: Button
-    properties: {role: tonal-button, align: full, tooltip: '', border: '', enabled: true,
-      foreground: 'theme:On Primary', visible: true, text: '
+    properties:
+      role: tonal-button
+      align: full
+      tooltip: ''
+      border: ''
+      enabled: true
+      foreground: theme:On Primary
+      visible: true
+      text: |2+
 
         MANAGE PRODUCT GROUP
 
-
-        ', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
-      italic: false, background: '#05264d', bold: false, underline: false, icon: ''}
+      font_size: null
+      font: ''
+      spacing_above: small
+      icon_align: left
+      spacing_below: small
+      italic: false
+      background: '#05264d'
+      bold: false
+      underline: false
+      icon: ''
     name: button_1_copy_3
     layout_properties: {grid_position: 'DKDXHA,GTAYKJ'}
     event_bindings: {click: button_1_copy_3_click}
   - type: Button
-    properties: {role: tonal-button, align: full, tooltip: '', border: '', enabled: true,
-      foreground: 'theme:On Primary', visible: true, text: '
+    properties:
+      role: tonal-button
+      align: full
+      tooltip: ''
+      border: ''
+      enabled: true
+      foreground: theme:On Primary
+      visible: true
+      text: |2+
 
         MANAGE PRODUCT CATEGORIES
 
-
-        ', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
-      italic: false, background: '#05264d', bold: false, underline: false, icon: ''}
+      font_size: null
+      font: ''
+      spacing_above: small
+      icon_align: left
+      spacing_below: small
+      italic: false
+      background: '#05264d'
+      bold: false
+      underline: false
+      icon: ''
     name: button_1_copy_4
     layout_properties: {grid_position: 'DKDXHA,FCKWYS'}
     event_bindings: {click: button_1_copy_4_click}

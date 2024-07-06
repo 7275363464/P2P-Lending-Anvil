@@ -5,8 +5,7 @@ services:
   client_config: {}
   server_config: {}
 - source: /runtime/services/anvil/users.yml
-  client_config: {allow_signup: true, enable_automatically: true, use_email: true,
-    confirm_email: false, use_google: true, require_secure_passwords: true}
+  client_config: {allow_signup: true, enable_automatically: true, use_email: true, confirm_email: false, use_google: true, require_secure_passwords: true}
   server_config: {user_table: users}
 - source: /runtime/services/google.yml
   client_config: {}
@@ -31,100 +30,187 @@ metadata: {title: 'P2P Bank ', description: this app provide services to person 
 startup_form: null
 native_deps: null
 db_schema:
-  fin_reported_problems:
+  fin_loan_details:
     client: full
     server: full
     columns:
-    - name: name
-      admin_ui: {width: 200, order: 0}
+    - name: borrower_email_id
+      admin_ui: {order: -0.5, width: 200}
       type: string
-    - name: email
-      admin_ui: {width: 200, order: 1}
+    - name: borrower_full_name
+      admin_ui: {order: -0.25, width: 155}
       type: string
-    - name: mobile_number
-      admin_ui: {width: 200, order: 2}
+    - name: interest_rate
+      admin_ui: {order: 6.375, width: 124}
       type: number
-    - name: issue_occured
-      admin_ui: {width: 200, order: 3}
+    - name: loan_status
+      admin_ui: {order: 26, width: 115}
+      type: bool
+    - name: application_status
+      admin_ui: {order: 16, width: 158}
+      type: bool
+    - name: total_repayment_amount
+      admin_ui: {order: 1.5, width: 200}
+      type: number
+    - name: borrower_customer_id
+      admin_ui: {order: -1, width: 200}
+      type: number
+    - name: member_rom
+      admin_ui: {order: 15.4921875, width: 125}
       type: string
-    - name: issue_description
-      admin_ui: {width: 200, order: 4}
+    - name: loan_updated_status
+      admin_ui: {order: 0.625, width: 200}
       type: string
-    - name: report_date
-      admin_ui: {width: 200, order: 5}
+    - name: lender_full_name
+      admin_ui: {order: 6.75, width: 144}
+      type: string
+    - name: member_since
+      admin_ui: {order: 15.49609375, width: 135}
+      type: date
+    - name: loan_id
+      admin_ui: {order: -2, width: 108}
+      type: string
+    - name: borrower_compLeted_monthly_emi
+      admin_ui: {order: 27, width: 259}
+      type: number
+    - name: lender_email_id
+      admin_ui: {order: 11, width: 209}
+      type: string
+    - name: days_left
+      admin_ui: {order: 28, width: 118}
+      type: number
+    - name: foreclosure_type
+      admin_ui: {order: 23, width: 200}
+      type: string
+    - name: loan_closed_date
+      admin_ui: {order: 23, width: 200}
+      type: date
+    - name: lender_customer_id
+      admin_ui: {order: 6.5, width: 156}
+      type: number
+    - name: beseem_score
+      admin_ui: {order: 15.4765625, width: 129}
+      type: number
+    - name: emi_due_date
+      admin_ui: {order: 23, width: 138}
+      type: date
+    - name: borrower_loan_created_timestamp
+      admin_ui: {order: 8.5, width: 261}
+      type: date
+    - name: product_id
+      admin_ui: {order: -0.125, width: 103}
+      type: string
+    - name: borrower_first_payment_done
+      admin_ui: {width: 200, order: 27}
+      type: date
+    - name: borrower_last_payment_done
+      admin_ui: {order: 15.5, width: 244}
+      type: date
+    - name: total_payments_made
+      admin_ui: {width: 200, order: 29}
+      type: number
+    - name: membership_type
+      admin_ui: {order: 6.25, width: 139}
+      type: string
+    - name: tenure
+      admin_ui: {order: 6.4375, width: 117}
+      type: number
+    - name: loan_amount
+      admin_ui: {order: 5.5, width: 118}
+      type: number
+    - name: lender_accepted_timestamp
+      admin_ui: {order: 17.5, width: 241}
       type: datetime
-    - name: status
-      admin_ui: {width: 200, order: 6}
-      type: bool
-    - name: user_photo
-      admin_ui: {width: 200, order: 7}
-      type: media
-    title: fin_reported_problems
-  fin_gender:
-    client: full
-    server: full
-    columns:
-    - name: gender
-      admin_ui: {order: 0, width: 200}
-      type: string
-    title: fin_gender
-  fin_lendor_business_type:
-    client: full
-    server: full
-    columns:
-    - name: lendor_business_type
-      admin_ui: {width: 200, order: 0}
-      type: string
-    title: fin_lendor_business_type
-  fin_occupation_type:
-    title: fin_occupation_type
-    client: full
-    server: full
-    columns:
-    - name: occupation_type
-      admin_ui: {order: 0, width: 200}
-      type: string
-  fin_admin_users:
-    client: full
-    server: full
-    columns:
-    - name: full_name
-      admin_ui: {width: 200, order: 1}
-      type: string
-    - name: mobile_no
-      admin_ui: {width: 200, order: 2}
+    - name: credit_limit
+      admin_ui: {order: 22.75, width: 122}
       type: number
-    - name: photo
-      admin_ui: {order: 3, width: 200}
-      type: media
-    - name: admin_role
-      admin_ui: {width: 200, order: 4}
-      type: string
-    - name: admin_email
-      admin_ui: {width: 200, order: -1}
-      type: string
-    - name: status
-      admin_ui: {width: 200, order: 5}
-      type: bool
-    - name: last_login
-      admin_ui: {width: 200, order: 7}
+    - name: loan_disbursed_timestamp
+      admin_ui: {order: 15.4375, width: 228}
+      type: datetime
+    - name: loan_extension_months
+      admin_ui: {width: 200, order: 31}
+      type: number
+    - name: first_emi_payment_due_date
+      admin_ui: {order: 15.46875, width: 228}
       type: date
-    - name: join_date
+    - name: emi_payment_type
+      admin_ui: {order: 15.453125, width: 200}
+      type: string
+    - name: product_name
+      admin_ui: {order: 5.75, width: 120}
+      type: string
+    - name: total_interest_amount
+      admin_ui: {order: 0.75, width: 200}
+      type: number
+    - name: total_processing_fee_amount
+      admin_ui: {width: 200}
+      type: number
+    - name: product_description
+      admin_ui: {order: 22.5, width: 200}
+      type: string
+    - name: monthly_emi
+      admin_ui: {width: 200, order: 0.5}
+      type: number
+    - name: loan_state_status
+      admin_ui: {width: 200, order: 39}
+      type: string
+    title: fin_loan_details
+  fin_user_beseem_score:
+    client: full
+    server: full
+    columns:
+    - name: borrower_email_id
+      admin_ui: {order: 0.5, width: 200}
+      type: string
+    - name: borrower_customer_id
+      admin_ui: {width: 200, order: -0.5}
+      type: number
+    - name: total_user_point
+      admin_ui: {order: 22, width: 200}
+      type: number
+    - name: gender_point
+      admin_ui: {order: 2.25, width: 200}
+      type: number
+    - name: present_address_point
       admin_ui: {width: 200, order: 4.5}
-      type: date
-    - name: gender
-      admin_ui: {width: 200, order: 3.5}
-      type: string
-    - name: ref_admin_email
-      admin_ui: {width: 200, order: 8}
-      type: string
-    - name: ref_admin_name
-      admin_ui: {width: 200, order: 11}
-      type: string
-    - name: admin_id
-      admin_ui: {width: 200, order: 12}
       type: number
-    title: fin_admin_users
+    - name: duration_at_address_point
+      admin_ui: {order: 4.75, width: 200}
+      type: number
+    - name: qualification_point
+      admin_ui: {order: 6, width: 200}
+      type: number
+    - name: profession_point
+      admin_ui: {width: 200, order: 8}
+      type: number
+    - name: organization_type_point
+      admin_ui: {width: 200, order: 10}
+      type: number
+    - name: salary_type_point
+      admin_ui: {width: 200, order: 11}
+      type: number
+    - name: age_of_business_point
+      admin_ui: {width: 200, order: 13}
+      type: number
+    - name: marital_status_point
+      admin_ui: {order: 14.5, width: 200}
+      type: number
+    - name: spouse_profession_point
+      admin_ui: {order: 16, width: 200}
+      type: number
+    - name: home_loan_point
+      admin_ui: {order: 18, width: 200}
+      type: number
+    - name: other_loan_point
+      admin_ui: {width: 200, order: 19}
+      type: number
+    - name: credit_card_loan_point
+      admin_ui: {width: 200, order: 19.5}
+      type: number
+    - name: vehicle_loan_point
+      admin_ui: {width: 200, order: 21}
+      type: number
+    title: fin_user_beseem_score
   fin_lendor_salary_type:
     client: full
     server: full
@@ -133,89 +219,6 @@ db_schema:
       admin_ui: {width: 200, order: 0}
       type: string
     title: fin_lendor_salary_type
-  fin_product_categories:
-    title: fin_product_categories
-    client: full
-    server: full
-    columns:
-    - name: name_categories
-      admin_ui: {width: 200}
-      type: string
-    - name: name_group
-      admin_ui: {width: 200}
-      type: string
-  fin_lendor_no_of_employees:
-    client: full
-    server: full
-    columns:
-    - name: lendor_no_of_employees
-      admin_ui: {width: 200, order: 0}
-      type: string
-    title: fin_lendor_no_of_employees
-  fin_self_employment:
-    title: fin_self_employment
-    client: full
-    server: full
-    columns:
-    - name: self_employment
-      admin_ui: {width: 200}
-      type: string
-  fin_borrower_no_of_employees:
-    client: full
-    server: full
-    columns:
-    - name: borrower_no_of_employees
-      admin_ui: {width: 200, order: 0}
-      type: string
-    title: fin_borrower_no_of_employees
-  fin_lendor_marrital_status:
-    title: fin_lendor_marrital_status
-    client: full
-    server: full
-    columns:
-    - name: lendor_marrital_status
-      admin_ui: {width: 200}
-      type: string
-  fin_wallet:
-    client: full
-    server: full
-    columns:
-    - name: wallet_id
-      admin_ui: {width: 200, order: 0}
-      type: string
-    - name: user_email
-      admin_ui: {width: 200, order: 1}
-      type: string
-    - name: user_name
-      admin_ui: {width: 200, order: 3}
-      type: string
-    - name: wallet_amount
-      admin_ui: {width: 200, order: 4}
-      type: number
-    - name: user_type
-      admin_ui: {width: 200, order: 5}
-      type: string
-    - name: account_id
-      admin_ui: {width: 200, order: 6}
-      type: string
-    - name: upi_id
-      admin_ui: {width: 200, order: 7}
-      type: string
-    - name: customer_id
-      admin_ui: {width: 200, order: 0.5}
-      type: number
-    - name: status
-      admin_ui: {width: 200, order: 9}
-      type: bool
-    title: fin_wallet
-  fin_lendor_lending_type:
-    client: full
-    server: full
-    columns:
-    - name: lendor_lending_type
-      admin_ui: {width: 200, order: 0}
-      type: string
-    title: fin_lendor_lending_type
   fin_product_details:
     client: full
     server: full
@@ -320,222 +323,6 @@ db_schema:
       admin_ui: {width: 200, order: 26.75}
       type: string
     title: fin_product_details
-  fin_borrower_organization_type:
-    client: full
-    server: full
-    columns:
-    - name: borrower_organization_type
-      admin_ui: {order: 0, width: 243}
-      type: string
-    title: fin_borrower_organization_type
-  fin_lender_spouse_profession:
-    title: fin_lender_spouse_profession
-    client: full
-    server: full
-    columns:
-    - name: spouse_profession
-      admin_ui: {width: 200}
-      type: string
-  fin_borrower_account_type:
-    client: full
-    server: full
-    columns:
-    - name: borrower_account_type
-      admin_ui: {width: 200, order: 0}
-      type: string
-    title: fin_borrower_account_type
-  fin_membership:
-    title: fin_membership
-    client: full
-    server: full
-    columns:
-    - name: membership_type
-      admin_ui: {width: 200}
-      type: string
-    - name: min_amount
-      admin_ui: {width: 200}
-      type: number
-    - name: max_amount
-      admin_ui: {width: 200}
-      type: number
-  fin_borrower_land_type:
-    client: full
-    server: full
-    columns:
-    - name: land_type
-      admin_ui: {width: 200, order: 0}
-      type: string
-    title: fin_borrower_land_type
-  fin_borrower_qualification:
-    title: fin_borrower_qualification
-    client: full
-    server: full
-    columns:
-    - name: borrower_qualification
-      admin_ui: {width: 200}
-      type: string
-  fin_duration_at_address:
-    title: fin_duration_at_address
-    client: full
-    server: full
-    columns:
-    - name: duration_at_address
-      admin_ui: {width: 200}
-      type: string
-  fin_foreclosure:
-    title: fin_foreclosure
-    client: full
-    server: full
-    columns:
-    - name: foreclose_fee
-      admin_ui: {width: 200}
-      type: number
-    - name: interest_rate
-      admin_ui: {width: 200}
-      type: number
-    - name: borrower_name
-      admin_ui: {width: 200}
-      type: string
-    - name: loan_id
-      admin_ui: {width: 200}
-      type: string
-    - name: penalty_amount
-      admin_ui: {width: 200}
-      type: number
-    - name: outstanding_amount
-      admin_ui: {width: 200}
-      type: number
-    - name: reason
-      admin_ui: {width: 200}
-      type: string
-    - name: foreclose_amount
-      admin_ui: {width: 200}
-      type: number
-    - name: loan_amount
-      admin_ui: {width: 200}
-      type: number
-    - name: emi_amount
-      admin_ui: {width: 200}
-      type: number
-    - name: paid_amount
-      admin_ui: {width: 200}
-      type: number
-    - name: requested_on
-      admin_ui: {width: 200}
-      type: datetime
-    - name: total_due_amount
-      admin_ui: {width: 200}
-      type: number
-    - name: status
-      admin_ui: {width: 200}
-      type: string
-    - name: foreclosure_emi_num
-      admin_ui: {width: 200, order: 14}
-      type: number
-  fin_admin_beseem_groups:
-    client: full
-    server: full
-    columns:
-    - name: group_name
-      admin_ui: {order: 1, width: 200}
-      type: string
-    - name: max_points
-      admin_ui: {width: 200, order: 2}
-      type: number
-    title: fin_admin_beseem_groups
-  fin_user_beseem_score:
-    client: full
-    server: full
-    columns:
-    - name: borrower_email_id
-      admin_ui: {order: 0.5, width: 200}
-      type: string
-    - name: borrower_customer_id
-      admin_ui: {width: 200, order: -0.5}
-      type: number
-    - name: total_user_point
-      admin_ui: {order: 22, width: 200}
-      type: number
-    - name: gender_point
-      admin_ui: {order: 2.25, width: 200}
-      type: number
-    - name: present_address_point
-      admin_ui: {width: 200, order: 4.5}
-      type: number
-    - name: duration_at_address_point
-      admin_ui: {order: 4.75, width: 200}
-      type: number
-    - name: qualification_point
-      admin_ui: {order: 6, width: 200}
-      type: number
-    - name: profession_point
-      admin_ui: {width: 200, order: 8}
-      type: number
-    - name: organization_type_point
-      admin_ui: {width: 200, order: 10}
-      type: number
-    - name: salary_type_point
-      admin_ui: {width: 200, order: 11}
-      type: number
-    - name: age_of_business_point
-      admin_ui: {width: 200, order: 13}
-      type: number
-    - name: marital_status_point
-      admin_ui: {order: 14.5, width: 200}
-      type: number
-    - name: spouse_profession_point
-      admin_ui: {order: 16, width: 200}
-      type: number
-    - name: home_loan_point
-      admin_ui: {order: 18, width: 200}
-      type: number
-    - name: other_loan_point
-      admin_ui: {width: 200, order: 19}
-      type: number
-    - name: credit_card_loan_point
-      admin_ui: {width: 200, order: 19.5}
-      type: number
-    - name: vehicle_loan_point
-      admin_ui: {width: 200, order: 21}
-      type: number
-    title: fin_user_beseem_score
-  fin_borrower_employee_type:
-    client: full
-    server: full
-    columns:
-    - name: borrower_employee_type
-      admin_ui: {width: 200, order: 0}
-      type: string
-    title: fin_borrower_employee_type
-  users:
-    client: full
-    server: full
-    columns:
-    - name: email
-      admin_ui: {order: 0.5, width: 200}
-      type: string
-    - name: enabled
-      admin_ui: {order: 1, width: 200}
-      type: bool
-    - name: last_login
-      admin_ui: {order: 2, width: 200}
-      type: datetime
-    - name: password_hash
-      admin_ui: {order: 3, width: 200}
-      type: string
-    - name: n_password_failures
-      admin_ui: {order: 4, width: 200}
-      type: number
-    - name: confirmed_email
-      admin_ui: {order: 5, width: 200}
-      type: bool
-    - name: signed_up
-      admin_ui: {order: 3.5, width: 200}
-      type: datetime
-    - name: email_confirmation_key
-      admin_ui: {order: 1.5, width: 200}
-      type: string
-    title: Users
   fin_lendor_employee_type:
     client: full
     server: full
@@ -544,14 +331,233 @@ db_schema:
       admin_ui: {width: 200, order: 0}
       type: string
     title: fin_lendor_employee_type
-  fin_lendor_organization_type:
+  fin_emi_table:
+    title: fin_emi_table
     client: full
     server: full
     columns:
-    - name: lendor_organization_type
+    - name: borrower_customer_id
+      admin_ui: {order: 1.75, width: 200}
+      type: number
+    - name: borrower_email
+      admin_ui: {order: 1.9375, width: 200}
+      type: string
+    - name: lender_customer_id
+      admin_ui: {width: 200, order: 6}
+      type: number
+    - name: lender_email
+      admin_ui: {order: 10, width: 200}
+      type: string
+    - name: loan_id
+      admin_ui: {order: 1.5, width: 200}
+      type: string
+    - name: scheduled_payment_made
+      admin_ui: {order: 1.625, width: 200}
+      type: datetime
+    - name: emi_number
+      admin_ui: {order: 1.6875, width: 200}
+      type: number
+    - name: account_number
+      admin_ui: {order: 1.875, width: 200}
+      type: string
+    - name: next_payment
+      admin_ui: {order: 3.5, width: 200}
+      type: date
+    - name: scheduled_payment
+      admin_ui: {order: -1, width: 200}
+      type: date
+    - name: amount_paid
+      admin_ui: {order: 13, width: 200}
+      type: number
+    - name: extra_fee
+      admin_ui: {width: 200, order: 14}
+      type: number
+  fin_guarantor_details:
+    client: full
+    server: full
+    columns:
+    - name: guarantor_name
+      admin_ui: {order: 0, width: 200}
+      type: string
+    - name: guarantor_date_of_birth
+      admin_ui: {order: 1, width: 200}
+      type: date
+    - name: guarantor_mobile_no
+      admin_ui: {width: 200, order: 2}
+      type: number
+    - name: guarantor_profession
+      admin_ui: {width: 200, order: 3}
+      type: string
+    - name: guarantor_address
+      admin_ui: {order: 2.5, width: 200}
+      type: string
+    - name: guarantor_company_name
+      admin_ui: {width: 200, order: 5}
+      type: string
+    - name: guarantor_annual_earning
+      admin_ui: {width: 200, order: 6}
+      type: string
+    - name: customer_id
+      admin_ui: {order: -1, width: 200}
+      type: number
+    - name: guarantor_person_relation
+      admin_ui: {order: 3.75, width: 200}
+      type: string
+    - name: another_person
+      admin_ui: {order: -2, width: 200}
+      type: string
+    - name: guarantor_marriage_date
+      admin_ui: {order: 3.5, width: 200}
+      type: date
+    - name: guarantor_date_of_births
+      admin_ui: {width: 200}
+      type: string
+    - name: guarantor_marriage_dates
+      admin_ui: {width: 200, order: 10}
+      type: string
+    title: fin_guarantor_details
+  fin_lendor_qualification:
+    client: full
+    server: full
+    columns:
+    - name: lendor_qualification
       admin_ui: {width: 200, order: 0}
       type: string
-    title: fin_lendor_organization_type
+    title: fin_lendor_qualification
+  fin_wallet_bank_account_table:
+    client: full
+    server: full
+    columns:
+    - name: account_id
+      admin_ui: {order: 9, width: 200}
+      type: string
+    - name: wallet_id
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: user_email
+      admin_ui: {width: 200, order: 2}
+      type: string
+    - name: bank_name
+      admin_ui: {width: 200, order: 3}
+      type: string
+    - name: account_name
+      admin_ui: {width: 200, order: 4}
+      type: string
+    - name: account_number
+      admin_ui: {width: 200, order: 5}
+      type: number
+    - name: branch_name
+      admin_ui: {order: 6, width: 200}
+      type: string
+    - name: bank_id
+      admin_ui: {order: 7, width: 200}
+      type: string
+    - name: account_type
+      admin_ui: {width: 200, order: 8}
+      type: string
+    title: fin_wallet_bank_account_table
+  fin_lendor_business_type:
+    client: full
+    server: full
+    columns:
+    - name: lendor_business_type
+      admin_ui: {width: 200, order: 0}
+      type: string
+    title: fin_lendor_business_type
+  fin_borrower_land_type:
+    client: full
+    server: full
+    columns:
+    - name: land_type
+      admin_ui: {width: 200, order: 0}
+      type: string
+    title: fin_borrower_land_type
+  fin_reported_problems:
+    client: full
+    server: full
+    columns:
+    - name: name
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: email
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: mobile_number
+      admin_ui: {width: 200, order: 2}
+      type: number
+    - name: issue_occured
+      admin_ui: {width: 200, order: 3}
+      type: string
+    - name: issue_description
+      admin_ui: {width: 200, order: 4}
+      type: string
+    - name: report_date
+      admin_ui: {width: 200, order: 5}
+      type: datetime
+    - name: status
+      admin_ui: {width: 200, order: 6}
+      type: bool
+    - name: user_photo
+      admin_ui: {width: 200, order: 7}
+      type: media
+    title: fin_reported_problems
+  fin_borrower_qualification:
+    title: fin_borrower_qualification
+    client: full
+    server: full
+    columns:
+    - name: borrower_qualification
+      admin_ui: {width: 200}
+      type: string
+  fin_present_address:
+    title: fin_present_address
+    client: full
+    server: full
+    columns:
+    - name: present_address
+      admin_ui: {width: 200}
+      type: string
+  fin_admin_users:
+    client: full
+    server: full
+    columns:
+    - name: full_name
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: mobile_no
+      admin_ui: {width: 200, order: 2}
+      type: number
+    - name: photo
+      admin_ui: {order: 3, width: 200}
+      type: media
+    - name: admin_role
+      admin_ui: {width: 200, order: 4}
+      type: string
+    - name: admin_email
+      admin_ui: {width: 200, order: -1}
+      type: string
+    - name: status
+      admin_ui: {width: 200, order: 5}
+      type: bool
+    - name: last_login
+      admin_ui: {width: 200, order: 7}
+      type: date
+    - name: join_date
+      admin_ui: {width: 200, order: 4.5}
+      type: date
+    - name: gender
+      admin_ui: {width: 200, order: 3.5}
+      type: string
+    - name: ref_admin_email
+      admin_ui: {width: 200, order: 8}
+      type: string
+    - name: ref_admin_name
+      admin_ui: {width: 200, order: 11}
+      type: string
+    - name: admin_id
+      admin_ui: {width: 200, order: 12}
+      type: number
+    title: fin_admin_users
   fin_borrower:
     title: fin_borrower
     client: full
@@ -593,22 +599,38 @@ db_schema:
     - name: borrower_since
       admin_ui: {order: 5.5, width: 200}
       type: date
-  fin_borrower_salary_type:
+  fin_lendor_marrital_status:
+    title: fin_lendor_marrital_status
     client: full
     server: full
     columns:
-    - name: borrower_salary_type
-      admin_ui: {width: 200, order: 0}
-      type: string
-    title: fin_borrower_salary_type
-  fin_present_address:
-    title: fin_present_address
-    client: full
-    server: full
-    columns:
-    - name: present_address
+    - name: lendor_marrital_status
       admin_ui: {width: 200}
       type: string
+  fin_self_employment:
+    title: fin_self_employment
+    client: full
+    server: full
+    columns:
+    - name: self_employment
+      admin_ui: {width: 200}
+      type: string
+  fin_lendor_lending_type:
+    client: full
+    server: full
+    columns:
+    - name: lendor_lending_type
+      admin_ui: {width: 200, order: 0}
+      type: string
+    title: fin_lendor_lending_type
+  fin_borrower_account_type:
+    client: full
+    server: full
+    columns:
+    - name: borrower_account_type
+      admin_ui: {width: 200, order: 0}
+      type: string
+    title: fin_borrower_account_type
   fin_admin_role:
     title: fin_admin_role
     client: full
@@ -617,14 +639,165 @@ db_schema:
     - name: role
       admin_ui: {width: 200}
       type: string
-  fin_borrower_profession:
+  fin_gender:
     client: full
     server: full
     columns:
-    - name: borrower_profession
+    - name: gender
+      admin_ui: {order: 0, width: 200}
+      type: string
+    title: fin_gender
+  fin_lender_spouse_profession:
+    title: fin_lender_spouse_profession
+    client: full
+    server: full
+    columns:
+    - name: spouse_profession
+      admin_ui: {width: 200}
+      type: string
+  fin_spouse_profession:
+    client: full
+    server: full
+    columns:
+    - name: spouse_profession
       admin_ui: {width: 200, order: 0}
       type: string
-    title: fin_borrower_profession
+    title: fin_spouse_profession
+  fin_borrower_no_of_employees:
+    client: full
+    server: full
+    columns:
+    - name: borrower_no_of_employees
+      admin_ui: {width: 200, order: 0}
+      type: string
+    title: fin_borrower_no_of_employees
+  fin_occupation_type:
+    title: fin_occupation_type
+    client: full
+    server: full
+    columns:
+    - name: occupation_type
+      admin_ui: {order: 0, width: 200}
+      type: string
+  fin_lendor_no_of_employees:
+    client: full
+    server: full
+    columns:
+    - name: lendor_no_of_employees
+      admin_ui: {width: 200, order: 0}
+      type: string
+    title: fin_lendor_no_of_employees
+  fin_lendor_lending_period:
+    client: full
+    server: full
+    columns:
+    - name: lendor_lending_period
+      admin_ui: {width: 200, order: 0}
+      type: string
+    title: fin_lendor_lending_period
+  fin_borrower_business_type:
+    client: full
+    server: full
+    columns:
+    - name: borrower_business_type
+      admin_ui: {width: 200, order: 0}
+      type: string
+    title: fin_borrower_business_type
+  fin_admin_beseem_groups:
+    client: full
+    server: full
+    columns:
+    - name: group_name
+      admin_ui: {order: 1, width: 200}
+      type: string
+    - name: max_points
+      admin_ui: {width: 200, order: 2}
+      type: number
+    title: fin_admin_beseem_groups
+  fin_extends_loan:
+    client: full
+    server: full
+    columns:
+    - name: loan_id
+      admin_ui: {order: -1, width: 200}
+      type: string
+    - name: repayment_starting_date
+      admin_ui: {width: 200, order: 9}
+      type: date
+    - name: extend_fee
+      admin_ui: {width: 200, order: 10}
+      type: number
+    - name: final_repayment_amount
+      admin_ui: {width: 200}
+      type: number
+    - name: final_repayment_date
+      admin_ui: {width: 200}
+      type: date
+    - name: status
+      admin_ui: {width: 200}
+      type: string
+    - name: total_extension_months
+      admin_ui: {width: 200}
+      type: number
+    - name: reason
+      admin_ui: {width: 200}
+      type: string
+    - name: new_emi
+      admin_ui: {width: 200}
+      type: number
+    - name: loan_amount
+      admin_ui: {width: 200}
+      type: number
+    - name: extension_amount
+      admin_ui: {width: 200}
+      type: number
+    - name: borrower_full_name
+      admin_ui: {order: -0.5, width: 200}
+      type: string
+    - name: borrower_email_id
+      admin_ui: {width: 200}
+      type: string
+    - name: final_emi
+      admin_ui: {width: 200}
+      type: number
+    - name: lender_email_id
+      admin_ui: {width: 200}
+      type: string
+    - name: extension_request_date
+      admin_ui: {width: 200}
+      type: datetime
+    - name: emi_number
+      admin_ui: {width: 200, order: 18}
+      type: number
+    - name: borrower_customer_id
+      admin_ui: {order: -0.25, width: 200}
+      type: number
+    - name: lender_full_name
+      admin_ui: {width: 200, order: 14.5}
+      type: string
+    - name: lender_customer_id
+      admin_ui: {width: 200}
+      type: string
+    title: fin_extends_loan
+  fin_borrower_marrital_status:
+    client: full
+    server: full
+    columns:
+    - name: borrower_marrital_status
+      admin_ui: {width: 200, order: 0}
+      type: string
+    title: fin_borrower_marrital_status
+  fin_product_categories:
+    title: fin_product_categories
+    client: full
+    server: full
+    columns:
+    - name: name_categories
+      admin_ui: {width: 200}
+      type: string
+    - name: name_group
+      admin_ui: {width: 200}
+      type: string
   fin_user_profile:
     client: full
     server: full
@@ -978,187 +1151,10 @@ db_schema:
     - name: farmer_earnings
       admin_ui: {order: 49.9921875, width: 200}
       type: string
+    - name: ascend_value
+      admin_ui: {width: 200}
+      type: number
     title: fin_user_profile
-  fin_admin_beseem_categories:
-    client: full
-    server: full
-    columns:
-    - name: group_name
-      admin_ui: {order: 1, width: 200}
-      type: string
-    - name: min_points
-      admin_ui: {order: 2, width: 200}
-      type: number
-    - name: sub_category
-      admin_ui: {order: 1, width: 220}
-      type: string
-    - name: age
-      admin_ui: {order: 2.5, width: 200}
-      type: string
-    title: fin_admin_beseem_categories
-  fin_wallet_transactions:
-    title: fin_wallet_transactions
-    client: full
-    server: full
-    columns:
-    - name: transaction_id
-      admin_ui: {width: 200}
-      type: string
-    - name: user_email
-      admin_ui: {width: 200}
-      type: string
-    - name: customer_id
-      admin_ui: {width: 200}
-      type: number
-    - name: wallet_id
-      admin_ui: {width: 200}
-      type: string
-    - name: transaction_type
-      admin_ui: {width: 200}
-      type: string
-    - name: amount
-      admin_ui: {width: 200}
-      type: number
-    - name: transaction_time_stamp
-      admin_ui: {width: 200}
-      type: datetime
-    - name: status
-      admin_ui: {width: 200}
-      type: string
-    - name: description
-      admin_ui: {width: 200}
-      type: string
-    - name: gate_way_type
-      admin_ui: {width: 200}
-      type: string
-    - name: receiver_customer_id
-      admin_ui: {order: 1.75, width: 200}
-      type: number
-    - name: receiver_email
-      admin_ui: {order: 1.5, width: 200}
-      type: string
-  fin_emi_table:
-    title: fin_emi_table
-    client: full
-    server: full
-    columns:
-    - name: borrower_customer_id
-      admin_ui: {order: 1.75, width: 200}
-      type: number
-    - name: borrower_email
-      admin_ui: {order: 1.9375, width: 200}
-      type: string
-    - name: lender_customer_id
-      admin_ui: {width: 200, order: 6}
-      type: number
-    - name: lender_email
-      admin_ui: {order: 10, width: 200}
-      type: string
-    - name: loan_id
-      admin_ui: {order: 1.5, width: 200}
-      type: string
-    - name: scheduled_payment_made
-      admin_ui: {order: 1.625, width: 200}
-      type: datetime
-    - name: emi_number
-      admin_ui: {order: 1.6875, width: 200}
-      type: number
-    - name: account_number
-      admin_ui: {order: 1.875, width: 200}
-      type: string
-    - name: next_payment
-      admin_ui: {order: 3.5, width: 200}
-      type: date
-    - name: scheduled_payment
-      admin_ui: {order: -1, width: 200}
-      type: date
-    - name: amount_paid
-      admin_ui: {order: 13, width: 200}
-      type: number
-    - name: extra_fee
-      admin_ui: {width: 200, order: 14}
-      type: number
-  fin_borrower_business_type:
-    client: full
-    server: full
-    columns:
-    - name: borrower_business_type
-      admin_ui: {width: 200, order: 0}
-      type: string
-    title: fin_borrower_business_type
-  fin_extends_loan:
-    client: full
-    server: full
-    columns:
-    - name: loan_id
-      admin_ui: {order: -1, width: 200}
-      type: string
-    - name: repayment_starting_date
-      admin_ui: {width: 200, order: 9}
-      type: date
-    - name: extend_fee
-      admin_ui: {width: 200, order: 10}
-      type: number
-    - name: final_repayment_amount
-      admin_ui: {width: 200}
-      type: number
-    - name: final_repayment_date
-      admin_ui: {width: 200}
-      type: date
-    - name: status
-      admin_ui: {width: 200}
-      type: string
-    - name: total_extension_months
-      admin_ui: {width: 200}
-      type: number
-    - name: reason
-      admin_ui: {width: 200}
-      type: string
-    - name: new_emi
-      admin_ui: {width: 200}
-      type: number
-    - name: loan_amount
-      admin_ui: {width: 200}
-      type: number
-    - name: extension_amount
-      admin_ui: {width: 200}
-      type: number
-    - name: borrower_full_name
-      admin_ui: {order: -0.5, width: 200}
-      type: string
-    - name: borrower_email_id
-      admin_ui: {width: 200}
-      type: string
-    - name: final_emi
-      admin_ui: {width: 200}
-      type: number
-    - name: lender_email_id
-      admin_ui: {width: 200}
-      type: string
-    - name: extension_request_date
-      admin_ui: {width: 200}
-      type: datetime
-    - name: emi_number
-      admin_ui: {width: 200, order: 18}
-      type: number
-    - name: borrower_customer_id
-      admin_ui: {order: -0.25, width: 200}
-      type: number
-    - name: lender_full_name
-      admin_ui: {width: 200, order: 14.5}
-      type: string
-    - name: lender_customer_id
-      admin_ui: {width: 200}
-      type: string
-    title: fin_extends_loan
-  fin_borrower_marrital_status:
-    client: full
-    server: full
-    columns:
-    - name: borrower_marrital_status
-      admin_ui: {width: 200, order: 0}
-      type: string
-    title: fin_borrower_marrital_status
   fin_lender:
     title: fin_lender
     client: full
@@ -1200,38 +1196,71 @@ db_schema:
     - name: wallet_id
       admin_ui: {order: 12, width: 200}
       type: string
-  fin_wallet_bank_account_table:
+  fin_borrower_salary_type:
     client: full
     server: full
     columns:
-    - name: account_id
-      admin_ui: {order: 9, width: 200}
+    - name: borrower_salary_type
+      admin_ui: {width: 200, order: 0}
       type: string
+    title: fin_borrower_salary_type
+  fin_admin_beseem_categories:
+    client: full
+    server: full
+    columns:
+    - name: group_name
+      admin_ui: {order: 1, width: 200}
+      type: string
+    - name: min_points
+      admin_ui: {order: 2, width: 200}
+      type: number
+    - name: sub_category
+      admin_ui: {order: 1, width: 220}
+      type: string
+    - name: age
+      admin_ui: {order: 2.5, width: 200}
+      type: string
+    title: fin_admin_beseem_categories
+  fin_borrower_organization_type:
+    client: full
+    server: full
+    columns:
+    - name: borrower_organization_type
+      admin_ui: {order: 0, width: 243}
+      type: string
+    title: fin_borrower_organization_type
+  fin_wallet:
+    client: full
+    server: full
+    columns:
     - name: wallet_id
-      admin_ui: {width: 200, order: 1}
+      admin_ui: {width: 200, order: 0}
       type: string
     - name: user_email
-      admin_ui: {width: 200, order: 2}
+      admin_ui: {width: 200, order: 1}
       type: string
-    - name: bank_name
+    - name: user_name
       admin_ui: {width: 200, order: 3}
       type: string
-    - name: account_name
+    - name: wallet_amount
       admin_ui: {width: 200, order: 4}
-      type: string
-    - name: account_number
-      admin_ui: {width: 200, order: 5}
       type: number
-    - name: branch_name
-      admin_ui: {order: 6, width: 200}
+    - name: user_type
+      admin_ui: {width: 200, order: 5}
       type: string
-    - name: bank_id
-      admin_ui: {order: 7, width: 200}
+    - name: account_id
+      admin_ui: {width: 200, order: 6}
       type: string
-    - name: account_type
-      admin_ui: {width: 200, order: 8}
+    - name: upi_id
+      admin_ui: {width: 200, order: 7}
       type: string
-    title: fin_wallet_bank_account_table
+    - name: customer_id
+      admin_ui: {width: 200, order: 0.5}
+      type: number
+    - name: status
+      admin_ui: {width: 200, order: 9}
+      type: bool
+    title: fin_wallet
   fin_product_group:
     client: full
     server: full
@@ -1240,175 +1269,127 @@ db_schema:
       admin_ui: {width: 200, order: 0}
       type: string
     title: fin_product_group
-  fin_guarantor_details:
+  fin_duration_at_address:
+    title: fin_duration_at_address
     client: full
     server: full
     columns:
-    - name: guarantor_name
-      admin_ui: {order: 0, width: 200}
+    - name: duration_at_address
+      admin_ui: {width: 200}
       type: string
-    - name: guarantor_date_of_birth
-      admin_ui: {order: 1, width: 200}
-      type: date
-    - name: guarantor_mobile_no
-      admin_ui: {width: 200, order: 2}
-      type: number
-    - name: guarantor_profession
-      admin_ui: {width: 200, order: 3}
+  fin_wallet_transactions:
+    title: fin_wallet_transactions
+    client: full
+    server: full
+    columns:
+    - name: transaction_id
+      admin_ui: {width: 200}
       type: string
-    - name: guarantor_address
-      admin_ui: {order: 2.5, width: 200}
-      type: string
-    - name: guarantor_company_name
-      admin_ui: {width: 200, order: 5}
-      type: string
-    - name: guarantor_annual_earning
-      admin_ui: {width: 200, order: 6}
+    - name: user_email
+      admin_ui: {width: 200}
       type: string
     - name: customer_id
-      admin_ui: {order: -1, width: 200}
+      admin_ui: {width: 200}
       type: number
-    - name: guarantor_person_relation
-      admin_ui: {order: 3.75, width: 200}
-      type: string
-    - name: another_person
-      admin_ui: {order: -2, width: 200}
-      type: string
-    - name: guarantor_marriage_date
-      admin_ui: {order: 3.5, width: 200}
-      type: date
-    - name: guarantor_date_of_births
+    - name: wallet_id
       admin_ui: {width: 200}
       type: string
-    - name: guarantor_marriage_dates
-      admin_ui: {width: 200, order: 10}
+    - name: transaction_type
+      admin_ui: {width: 200}
       type: string
-    title: fin_guarantor_details
-  fin_loan_details:
+    - name: amount
+      admin_ui: {width: 200}
+      type: number
+    - name: transaction_time_stamp
+      admin_ui: {width: 200}
+      type: datetime
+    - name: status
+      admin_ui: {width: 200}
+      type: string
+    - name: description
+      admin_ui: {width: 200}
+      type: string
+    - name: gate_way_type
+      admin_ui: {width: 200}
+      type: string
+    - name: receiver_customer_id
+      admin_ui: {order: 1.75, width: 200}
+      type: number
+    - name: receiver_email
+      admin_ui: {order: 1.5, width: 200}
+      type: string
+  fin_membership:
+    title: fin_membership
     client: full
     server: full
     columns:
-    - name: borrower_email_id
-      admin_ui: {order: -0.5, width: 200}
-      type: string
-    - name: borrower_full_name
-      admin_ui: {order: -0.25, width: 155}
-      type: string
-    - name: interest_rate
-      admin_ui: {order: 6.375, width: 124}
-      type: number
-    - name: loan_status
-      admin_ui: {order: 26, width: 115}
-      type: bool
-    - name: application_status
-      admin_ui: {order: 16, width: 158}
-      type: bool
-    - name: total_repayment_amount
-      admin_ui: {order: 1.5, width: 200}
-      type: number
-    - name: borrower_customer_id
-      admin_ui: {order: -1, width: 200}
-      type: number
-    - name: member_rom
-      admin_ui: {order: 15.4921875, width: 125}
-      type: string
-    - name: loan_updated_status
-      admin_ui: {order: 0.625, width: 200}
-      type: string
-    - name: lender_full_name
-      admin_ui: {order: 6.75, width: 144}
-      type: string
-    - name: member_since
-      admin_ui: {order: 15.49609375, width: 135}
-      type: date
-    - name: loan_id
-      admin_ui: {order: -2, width: 108}
-      type: string
-    - name: borrower_compLeted_monthly_emi
-      admin_ui: {order: 27, width: 259}
-      type: number
-    - name: lender_email_id
-      admin_ui: {order: 11, width: 209}
-      type: string
-    - name: days_left
-      admin_ui: {order: 28, width: 118}
-      type: number
-    - name: foreclosure_type
-      admin_ui: {order: 23, width: 200}
-      type: string
-    - name: loan_closed_date
-      admin_ui: {order: 23, width: 200}
-      type: date
-    - name: lender_customer_id
-      admin_ui: {order: 6.5, width: 156}
-      type: number
-    - name: beseem_score
-      admin_ui: {order: 15.4765625, width: 129}
-      type: number
-    - name: emi_due_date
-      admin_ui: {order: 23, width: 138}
-      type: date
-    - name: borrower_loan_created_timestamp
-      admin_ui: {order: 8.5, width: 261}
-      type: date
-    - name: product_id
-      admin_ui: {order: -0.125, width: 103}
-      type: string
-    - name: borrower_first_payment_done
-      admin_ui: {width: 200, order: 27}
-      type: date
-    - name: borrower_last_payment_done
-      admin_ui: {order: 15.5, width: 244}
-      type: date
-    - name: total_payments_made
-      admin_ui: {width: 200, order: 29}
-      type: number
     - name: membership_type
-      admin_ui: {order: 6.25, width: 139}
+      admin_ui: {width: 200}
       type: string
-    - name: tenure
-      admin_ui: {order: 6.4375, width: 117}
-      type: number
-    - name: loan_amount
-      admin_ui: {order: 5.5, width: 118}
-      type: number
-    - name: lender_accepted_timestamp
-      admin_ui: {order: 17.5, width: 241}
-      type: datetime
-    - name: credit_limit
-      admin_ui: {order: 22.75, width: 122}
-      type: number
-    - name: loan_disbursed_timestamp
-      admin_ui: {order: 15.4375, width: 228}
-      type: datetime
-    - name: loan_extension_months
-      admin_ui: {width: 200, order: 31}
-      type: number
-    - name: first_emi_payment_due_date
-      admin_ui: {order: 15.46875, width: 228}
-      type: date
-    - name: emi_payment_type
-      admin_ui: {order: 15.453125, width: 200}
-      type: string
-    - name: product_name
-      admin_ui: {order: 5.75, width: 120}
-      type: string
-    - name: total_interest_amount
-      admin_ui: {order: 0.75, width: 200}
-      type: number
-    - name: total_processing_fee_amount
+    - name: min_amount
       admin_ui: {width: 200}
       type: number
-    - name: product_description
-      admin_ui: {order: 22.5, width: 200}
-      type: string
-    - name: monthly_emi
-      admin_ui: {width: 200, order: 0.5}
+    - name: max_amount
+      admin_ui: {width: 200}
       type: number
-    - name: loan_state_status
-      admin_ui: {width: 200, order: 39}
+  fin_borrower_employee_type:
+    client: full
+    server: full
+    columns:
+    - name: borrower_employee_type
+      admin_ui: {width: 200, order: 0}
       type: string
-    title: fin_loan_details
+    title: fin_borrower_employee_type
+  fin_foreclosure:
+    title: fin_foreclosure
+    client: full
+    server: full
+    columns:
+    - name: foreclose_fee
+      admin_ui: {width: 200}
+      type: number
+    - name: interest_rate
+      admin_ui: {width: 200}
+      type: number
+    - name: borrower_name
+      admin_ui: {width: 200}
+      type: string
+    - name: loan_id
+      admin_ui: {width: 200}
+      type: string
+    - name: penalty_amount
+      admin_ui: {width: 200}
+      type: number
+    - name: outstanding_amount
+      admin_ui: {width: 200}
+      type: number
+    - name: reason
+      admin_ui: {width: 200}
+      type: string
+    - name: foreclose_amount
+      admin_ui: {width: 200}
+      type: number
+    - name: loan_amount
+      admin_ui: {width: 200}
+      type: number
+    - name: emi_amount
+      admin_ui: {width: 200}
+      type: number
+    - name: paid_amount
+      admin_ui: {width: 200}
+      type: number
+    - name: requested_on
+      admin_ui: {width: 200}
+      type: datetime
+    - name: total_due_amount
+      admin_ui: {width: 200}
+      type: number
+    - name: status
+      admin_ui: {width: 200}
+      type: string
+    - name: foreclosure_emi_num
+      admin_ui: {width: 200, order: 14}
+      type: number
   fin_user_issues_bugreports:
     title: fin_user_issues_bugreports
     client: full
@@ -1435,30 +1416,22 @@ db_schema:
     - name: customer_id
       admin_ui: {order: 5, width: 200}
       type: string
-  fin_lendor_qualification:
+  fin_borrower_profession:
     client: full
     server: full
     columns:
-    - name: lendor_qualification
+    - name: borrower_profession
       admin_ui: {width: 200, order: 0}
       type: string
-    title: fin_lendor_qualification
-  fin_spouse_profession:
+    title: fin_borrower_profession
+  fin_lendor_organization_type:
     client: full
     server: full
     columns:
-    - name: spouse_profession
+    - name: lendor_organization_type
       admin_ui: {width: 200, order: 0}
       type: string
-    title: fin_spouse_profession
-  fin_lendor_lending_period:
-    client: full
-    server: full
-    columns:
-    - name: lendor_lending_period
-      admin_ui: {width: 200, order: 0}
-      type: string
-    title: fin_lendor_lending_period
+    title: fin_lendor_organization_type
   fin_lendor_account_type:
     client: full
     server: full
@@ -1467,6 +1440,35 @@ db_schema:
       admin_ui: {width: 200, order: 0}
       type: string
     title: fin_lendor_account_type
+  users:
+    client: full
+    server: full
+    columns:
+    - name: email
+      admin_ui: {order: 0.5, width: 200}
+      type: string
+    - name: enabled
+      admin_ui: {order: 1, width: 200}
+      type: bool
+    - name: last_login
+      admin_ui: {order: 2, width: 200}
+      type: datetime
+    - name: password_hash
+      admin_ui: {order: 3, width: 200}
+      type: string
+    - name: n_password_failures
+      admin_ui: {order: 4, width: 200}
+      type: number
+    - name: confirmed_email
+      admin_ui: {order: 5, width: 200}
+      type: bool
+    - name: signed_up
+      admin_ui: {order: 3.5, width: 200}
+      type: datetime
+    - name: email_confirmation_key
+      admin_ui: {order: 1.5, width: 200}
+      type: string
+    title: Users
 secrets:
   new_key:
     type: key

@@ -20,24 +20,17 @@ components:
   type: ColumnPanel
   layout_properties: {grid_position: 'CDJUQY,UJKDJO', full_width_row: true}
   name: content_panel
-- properties: {role: elevated-button, align: center, tooltip: '', border: '', enabled: true,
-    foreground: 'theme:On Primary', visible: false, text: Add Admin, font_size: null,
-    font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-    background: '#05264d', bold: true, underline: false, icon: ''}
+- properties: {role: elevated-button, align: center, tooltip: '', border: '', enabled: true, foreground: 'theme:On Primary', visible: false, text: Add Admin, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '#05264d', bold: true, underline: false, icon: ''}
   type: Button
   layout_properties: {grid_position: 'KQZUCT,FLOATQ'}
   event_bindings: {click: add_peopless}
   name: add_people
-- properties: {role: elevated-button, align: center, tooltip: '', border: '', enabled: true,
-    foreground: 'theme:On Primary', visible: false, text: View Admins, font_size: null,
-    font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-    background: '#05264d', bold: true, underline: false, icon: ''}
+- properties: {role: elevated-button, align: center, tooltip: '', border: '', enabled: true, foreground: 'theme:On Primary', visible: false, text: View Admins, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '#05264d', bold: true, underline: false, icon: ''}
   type: Button
   layout_properties: {grid_position: 'KQZUCT,RGTAYF'}
   event_bindings: {click: button_1_copy_click}
   name: button_1
-- properties: {text: View Admins, background: '#05264d', foreground: 'theme:On Primary',
-    bold: true, visible: false}
+- properties: {text: View Admins, background: '#05264d', foreground: 'theme:On Primary', bold: true, visible: false}
   type: Button
   layout_properties: {grid_position: 'KQZUCT,IJEXLU'}
   event_bindings: {click: button_1_click}
