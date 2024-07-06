@@ -8,8 +8,7 @@ components:
     grid_position: MFGHFO,JWFPWB
   components:
   - name: outlined_button_1
-    properties: {text: View Loan Details, role: outlined-button, align: center, font_size: null,
-      background: '#05264d', foreground: white, bold: true}
+    properties: {text: View Loan Details, role: outlined-button, align: center, font_size: null, background: '#05264d', foreground: white, bold: true}
     type: Button
     layout_properties: {x: 0, y: 317.5340995788574, width: 938.3977661132812}
     event_bindings: {click: outlined_button_1_click}
@@ -24,8 +23,7 @@ components:
     data_bindings:
     - {property: text, code: 'self.item[''loan_amount'']', writeback: false}
   - name: label_3
-    properties: {text: '---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------',
-      foreground: grey, align: center}
+    properties: {text: '---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------', foreground: grey, align: center}
     type: Label
     layout_properties: {x: 0.147705078125, y: 108.6477323025465, width: 938.4028450195312}
   - name: image_1
@@ -85,8 +83,7 @@ components:
     data_bindings:
     - {property: text, code: 'self.item[''interest_rate'']', writeback: false}
   - name: return
-    properties: {text: '     ------Not Invested Yet-----', italic: true, bold: false,
-      align: center}
+    properties: {text: '     ------Not Invested Yet-----', italic: true, bold: false, align: center}
     type: Label
     layout_properties: {x: 3.474987793713808, y: 270.20001220703125, width: 200}
     data_bindings:

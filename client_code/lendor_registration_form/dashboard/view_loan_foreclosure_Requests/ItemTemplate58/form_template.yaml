@@ -23,8 +23,7 @@ components:
     data_bindings:
     - {property: text, code: 'self.item[''mobile'']', writeback: false}
   - name: outlined_button_1
-    properties: {text: View Loan Details, role: outlined-button, align: center, font_size: null,
-      background: '#05264d', foreground: 'theme:On Primary', bold: true}
+    properties: {text: View Loan Details, role: outlined-button, align: center, font_size: null, background: '#05264d', foreground: 'theme:On Primary', bold: true}
     type: Button
     layout_properties: {x: 3.0357208251953125, y: 321.39272721679686, width: 938.393}
     event_bindings: {click: outlined_button_1_click}
@@ -37,10 +36,7 @@ components:
     type: Label
     layout_properties: {x: 10, y: 150.3392791748047, width: 200}
   - name: label_8
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Loan Amount, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: Loan Amount, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
     type: Label
     layout_properties: {x: 10, y: 190.25001525878906, width: 200}
   - name: label_9
@@ -76,10 +72,7 @@ components:
     type: Label
     layout_properties: {x: 10, y: 89.14990234375, width: 938.4}
   - type: TextArea
-    properties: {role: null, align: left, height: 56, tooltip: '', placeholder: '',
-      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-      auto_expand: false, font: '', spacing_above: small, spacing_below: small, italic: false,
-      background: white, bold: false, underline: false}
+    properties: {role: null, align: left, height: 56, tooltip: '', placeholder: '', border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null, auto_expand: false, font: '', spacing_above: small, spacing_below: small, italic: false, background: white, bold: false, underline: false}
     name: product_details
     layout_properties: {x: 358.22503662109375, y: 37.53753662109375, width: 563.8}
     data_bindings:

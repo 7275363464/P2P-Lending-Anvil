@@ -12,10 +12,7 @@ components:
   layout_properties: {grid_position: 'YQRAMD,UHIYNW'}
   components:
   - name: label_35
-    properties: {role: outlined-card, align: center, tooltip: '', border: '', foreground: 'theme:On
-        Primary', visible: true, text: Loan Details, font_size: 20, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '#05264d',
-      bold: true, underline: false, icon: ''}
+    properties: {role: outlined-card, align: center, tooltip: '', border: '', foreground: 'theme:On Primary', visible: true, text: Loan Details, font_size: 20, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '#05264d', bold: true, underline: false, icon: ''}
     type: Label
     layout_properties: {grid_position: 'IKZOJE,ROJNUO'}
   - name: spacer_1
@@ -23,101 +20,59 @@ components:
     type: Spacer
     layout_properties: {grid_position: 'NESHTV,MBWJOT'}
   - name: label_1
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337',
-      visible: true, text: Loan ID, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337', visible: true, text: Loan ID, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: true, underline: false, icon: ''}
     type: Label
     layout_properties: {grid_position: 'NESHTV,LQZNUS LFGBLW,BKUKJP'}
   - name: label_3
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337',
-      visible: true, text: Customer ID, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337', visible: true, text: Customer ID, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: true, underline: false, icon: ''}
     type: Label
     layout_properties: {grid_position: 'NESHTV,LQZNUS ZDGWQM,GEPPYO'}
   - name: label_5
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337',
-      visible: true, text: Full Name, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337', visible: true, text: Full Name, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: true, underline: false, icon: ''}
     type: Label
     layout_properties: {grid_position: 'NESHTV,LQZNUS IDZCPE,UOIQGE'}
   - name: label_7
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337',
-      visible: false, text: Loan Status, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337', visible: false, text: Loan Status, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: true, underline: false, icon: ''}
     type: Label
     layout_properties: {grid_position: 'NESHTV,LQZNUS ZRUHSQ,VYIRHG'}
   - name: label_9
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337',
-      visible: false, text: Application Status, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337', visible: false, text: Application Status, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: true, underline: false, icon: ''}
     type: Label
     layout_properties: {grid_position: 'NESHTV,LQZNUS JWYTHS,WUNIOX'}
   - name: label_15
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337',
-      visible: true, text: 'Interest Rate ', font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337', visible: true, text: 'Interest Rate ', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: true, underline: false, icon: ''}
     type: Label
     layout_properties: {grid_position: 'NESHTV,LQZNUS PWWVRV,ARZHPB'}
   - name: label_17
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337',
-      visible: true, text: Time Stamp, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337', visible: true, text: Time Stamp, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: true, underline: false, icon: ''}
     type: Label
     layout_properties: {grid_position: 'NESHTV,LQZNUS NNRGMP,LPMEGV'}
   - name: label_19
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337',
-      visible: true, text: Total Repayment Date, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337', visible: true, text: Total Repayment Date, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: true, underline: false, icon: ''}
     type: Label
     layout_properties: {grid_position: 'NESHTV,LQZNUS HMLXYG,LLMCOU'}
   - name: label_21
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337',
-      visible: false, text: Payment Done, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337', visible: false, text: Payment Done, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: true, underline: false, icon: ''}
     type: Label
     layout_properties: {grid_position: 'NESHTV,LQZNUS UKIOEV,QXUVTX'}
   - name: label_25
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337',
-      visible: true, text: Beseem Score, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337', visible: true, text: Beseem Score, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: true, underline: false, icon: ''}
     type: Label
     layout_properties: {grid_position: 'NESHTV,LQZNUS JLAGHB,ZXYSZW'}
   - name: label_27
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337',
-      visible: true, text: Email ID, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337', visible: true, text: Email ID, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: true, underline: false, icon: ''}
     type: Label
     layout_properties: {grid_position: 'NESHTV,LQZNUS LOFRAE,EYZKBA'}
   - name: label_29
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337',
-      visible: true, text: Tenure, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337', visible: true, text: Tenure, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: true, underline: false, icon: ''}
     type: Label
     layout_properties: {grid_position: 'NESHTV,LQZNUS DKBCYU,LPVYYV'}
   - name: label_31
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337',
-      visible: true, text: Updated Loan Status, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337', visible: true, text: Updated Loan Status, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: true, underline: false, icon: ''}
     type: Label
     layout_properties: {grid_position: 'NESHTV,LQZNUS FCMABV,YIKHUQ'}
   - name: label_33
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337',
-      visible: true, text: User Type, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000337', visible: true, text: User Type, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: true, underline: false, icon: ''}
     type: Label
     layout_properties: {grid_position: 'NESHTV,LQZNUS UNAKDH,YRYVKE'}
   - name: label_2
@@ -169,10 +124,7 @@ components:
     type: Label
     layout_properties: {grid_position: 'NESHTV,RGKGXI PXMRRK,FGHBXY'}
   - name: label_32
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-      spacing_below: small, italic: false, background: '', bold: false, underline: true,
-      icon: ''}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: true, icon: ''}
     type: Label
     layout_properties: {grid_position: 'NESHTV,RGKGXI EGFDBV,KMXTFR'}
   - name: label_34
@@ -184,10 +136,7 @@ components:
     type: Spacer
     layout_properties: {grid_position: 'NESHTV,DCDWDF'}
 - type: Button
-  properties: {role: elevated-button, align: center, tooltip: '', border: '', enabled: true,
-    foreground: 'theme:On Primary', visible: true, text: Back, font_size: null, font: '16',
-    spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '#05264d',
-    bold: true, underline: false, icon: 'fa:backward'}
+  properties: {role: elevated-button, align: center, tooltip: '', border: '', enabled: true, foreground: 'theme:On Primary', visible: true, text: Back, font_size: null, font: '16', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '#05264d', bold: true, underline: false, icon: 'fa:backward'}
   name: button_1_copy
   layout_properties:
     col_widths: {}
