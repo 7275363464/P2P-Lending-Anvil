@@ -22,9 +22,6 @@ components:
   layout_properties: {slot: nav-right}
   components:
   - type: Button
-    properties: {role: elevated-button, align: center, tooltip: '', border: '', enabled: true,
-      foreground: 'theme:On Primary', visible: true, text: Back, font_size: null,
-      font: '16', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '#05264d', bold: true, underline: false, icon: 'fa:backward'}
+    properties: {role: elevated-button, align: center, tooltip: '', border: '', enabled: true, foreground: 'theme:On Primary', visible: true, text: Back, font_size: null, font: '16', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '#05264d', bold: true, underline: false, icon: 'fa:backward'}
     name: button_1_copy
     event_bindings: {click: button_1_copy_click}

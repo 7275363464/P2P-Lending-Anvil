@@ -26,17 +26,11 @@ components:
     data_bindings:
     - {property: text, code: 'self.item[''mobile_number'']', writeback: false}
   - type: Label
-    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Title :', font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '', visible: true, text: 'Title :', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: true, underline: false, icon: ''}
     name: label_1
     layout_properties: {x: 336.1875, y: 3.40625, width: 160}
   - type: Label
-    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Date :', font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-      underline: false, icon: ''}
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '', visible: true, text: 'Date :', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: true, underline: false, icon: ''}
     name: label_2
     layout_properties: {x: 336.1875, y: 30.78125, width: 160}
   - name: title
@@ -52,15 +46,11 @@ components:
     data_bindings:
     - {property: text, code: 'self.item[''report_date'']', writeback: false}
   - name: label_3
-    properties: {text: '---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------',
-      foreground: grey, align: center}
+    properties: {text: '---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------', foreground: grey, align: center}
     type: Label
     layout_properties: {x: -7, y: 76.78125, width: 942}
   - type: Button
-    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-      foreground: 'theme:On Primary', visible: true, text: Problem Solved, font_size: null,
-      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '#05264d', bold: false, underline: false, icon: ''}
+    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true, foreground: 'theme:On Primary', visible: true, text: Problem Solved, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '#05264d', bold: false, underline: false, icon: ''}
     name: button_1
     layout_properties: {x: -14, y: 232, width: 963}
     event_bindings: {click: button_1_click}
@@ -69,10 +59,7 @@ components:
     type: Label
     layout_properties: {x: 21.046875, y: 100.046875, width: 200}
   - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-      spacing_below: small, italic: false, background: '', bold: false, underline: false,
-      icon: ''}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
     name: issue_description
     layout_properties: {x: 21.09375, y: 136.875, width: 916}
     data_bindings:
