@@ -88,9 +88,6 @@ db_schema:
     - name: lender_customer_id
       admin_ui: {order: 6.5, width: 156}
       type: number
-    - name: beseem_score
-      admin_ui: {order: 15.4765625, width: 129}
-      type: number
     - name: emi_due_date
       admin_ui: {order: 23, width: 138}
       type: date
@@ -154,6 +151,9 @@ db_schema:
     - name: loan_state_status
       admin_ui: {width: 200, order: 39}
       type: string
+    - name: ascend_score
+      admin_ui: {width: 129}
+      type: number
     title: fin_loan_details
   fin_user_beseem_score:
     client: full
@@ -323,6 +323,32 @@ db_schema:
       admin_ui: {width: 200, order: 26.75}
       type: string
     title: fin_product_details
+  fin_platform_details:
+    title: fin_platform_details
+    client: full
+    server: full
+    columns:
+    - name: platform_returns
+      admin_ui: {width: 200}
+      type: number
+    - name: total_lenders
+      admin_ui: {width: 200}
+      type: number
+    - name: total_borrowers
+      admin_ui: {width: 200}
+      type: number
+    - name: total_lenders_invested
+      admin_ui: {width: 200}
+      type: number
+    - name: total_borrowers_loan_taken
+      admin_ui: {width: 250}
+      type: number
+    - name: total_products_count
+      admin_ui: {width: 200}
+      type: number
+    - name: most_used_product
+      admin_ui: {width: 200}
+      type: string
   fin_lendor_employee_type:
     client: full
     server: full
@@ -1220,7 +1246,7 @@ db_schema:
     - name: age
       admin_ui: {order: 2.5, width: 200}
       type: string
-    title: fin_admin_beseem_categories
+    title: fin_admin_ascend_categories
   fin_borrower_organization_type:
     client: full
     server: full
@@ -1261,6 +1287,14 @@ db_schema:
       admin_ui: {width: 200, order: 9}
       type: bool
     title: fin_wallet
+  fin_subcategory_technical_issue:
+    title: fin_subcategory_technical_issue
+    client: full
+    server: full
+    columns:
+    - name: subcategory_technical_issue
+      admin_ui: {width: 232}
+      type: string
   fin_product_group:
     client: full
     server: full
@@ -1389,6 +1423,9 @@ db_schema:
       type: string
     - name: foreclosure_emi_num
       admin_ui: {width: 200, order: 14}
+      type: number
+    - name: borrower_customer_id
+      admin_ui: {width: 200}
       type: number
   fin_user_issues_bugreports:
     title: fin_user_issues_bugreports
