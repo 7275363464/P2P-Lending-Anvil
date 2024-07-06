@@ -210,7 +210,7 @@ db_schema:
     - name: vehicle_loan_point
       admin_ui: {width: 200, order: 21}
       type: number
-    title: fin_user_beseem_score
+    title: fin_user_ascend_score
   fin_lendor_salary_type:
     client: full
     server: full
@@ -323,6 +323,50 @@ db_schema:
       admin_ui: {width: 200, order: 26.75}
       type: string
     title: fin_product_details
+  fin_field_engineers:
+    title: fin_field_engineers
+    client: full
+    server: full
+    columns:
+    - name: field_engineer_email
+      admin_ui: {width: 200}
+      type: string
+    - name: mobile_no
+      admin_ui: {width: 200}
+      type: number
+    - name: full_name
+      admin_ui: {width: 200}
+      type: string
+    - name: photo
+      admin_ui: {width: 200}
+      type: media
+    - name: gender
+      admin_ui: {width: 200}
+      type: string
+    - name: engineer_role
+      admin_ui: {width: 200}
+      type: string
+    - name: join_date
+      admin_ui: {width: 200}
+      type: date
+    - name: status
+      admin_ui: {width: 200}
+      type: bool
+    - name: last_login
+      admin_ui: {width: 200}
+      type: date
+    - name: ref_admin_email
+      admin_ui: {width: 200}
+      type: string
+    - name: ref_admin_name
+      admin_ui: {width: 200}
+      type: string
+    - name: field_engineer_id
+      admin_ui: {width: 200}
+      type: number
+    - name: address
+      admin_ui: {width: 200}
+      type: string
   fin_platform_details:
     title: fin_platform_details
     client: full
@@ -482,6 +526,20 @@ db_schema:
       admin_ui: {width: 200, order: 8}
       type: string
     title: fin_wallet_bank_account_table
+  fin_loan_settings:
+    title: fin_loan_settings
+    client: full
+    server: full
+    columns:
+    - name: loans
+      admin_ui: {width: 200}
+      type: string
+    - name: minimum_days
+      admin_ui: {width: 200}
+      type: number
+    - name: maximum_days
+      admin_ui: {width: 200}
+      type: number
   fin_lendor_business_type:
     client: full
     server: full
@@ -511,9 +569,6 @@ db_schema:
     - name: mobile_number
       admin_ui: {width: 200, order: 2}
       type: number
-    - name: issue_occured
-      admin_ui: {width: 200, order: 3}
-      type: string
     - name: issue_description
       admin_ui: {width: 200, order: 4}
       type: string
@@ -526,6 +581,24 @@ db_schema:
     - name: user_photo
       admin_ui: {width: 200, order: 7}
       type: media
+    - name: it_is_urgent
+      admin_ui: {width: 200}
+      type: bool
+    - name: issue_photo
+      admin_ui: {width: 200}
+      type: media
+    - name: field_engineer
+      admin_ui: {width: 200}
+      type: string
+    - name: customer_id
+      admin_ui: {width: 200}
+      type: number
+    - name: category
+      admin_ui: {width: 200}
+      type: string
+    - name: subcategory
+      admin_ui: {width: 200}
+      type: string
     title: fin_reported_problems
   fin_borrower_qualification:
     title: fin_borrower_qualification
@@ -681,6 +754,31 @@ db_schema:
     - name: spouse_profession
       admin_ui: {width: 200}
       type: string
+  fin_ascend_score_range:
+    title: fin_ascend_score_range
+    client: full
+    server: full
+    columns:
+    - name: max_ascend_score_range
+      admin_ui: {width: 200}
+      type: number
+    - name: min_ascend_score_range
+      admin_ui: {width: 200}
+      type: number
+    - name: ascend_category
+      admin_ui: {width: 200}
+      type: string
+    - name: color
+      admin_ui: {width: 200}
+      type: string
+  fin_lender_subcategory_loan_issue:
+    title: fin_lender_subcategory_loan_issue
+    client: full
+    server: full
+    columns:
+    - name: lender_subcategory_loan_issue
+      admin_ui: {width: 200}
+      type: string
   fin_spouse_profession:
     client: full
     server: full
@@ -805,6 +903,22 @@ db_schema:
       admin_ui: {width: 200}
       type: string
     title: fin_extends_loan
+  fin_borrower_subcategory_loan_issue:
+    title: fin_borrower_subcategory_loan_issue
+    client: full
+    server: full
+    columns:
+    - name: borrower_subcategory_loan_issue
+      admin_ui: {width: 280}
+      type: string
+  fin_issue_category:
+    title: fin_issue_category
+    client: full
+    server: full
+    columns:
+    - name: issue_category
+      admin_ui: {width: 200}
+      type: string
   fin_manage_credit_limit:
     title: fin_manage_credit_limit
     client: none
@@ -821,6 +935,34 @@ db_schema:
       admin_ui: {width: 200, order: 0}
       type: string
     title: fin_borrower_marrital_status
+  fin_eod_reports:
+    title: fin_eod_reports
+    client: full
+    server: full
+    columns:
+    - name: date
+      admin_ui: {width: 200}
+      type: date
+    - name: total_amount_received
+      admin_ui: {width: 200}
+      type: number
+    - name: total_platform_share
+      admin_ui: {width: 200}
+      type: number
+    - name: total_lender_share
+      admin_ui: {width: 200}
+      type: number
+  fin_approval_days:
+    title: fin_approval_days
+    client: full
+    server: full
+    columns:
+    - name: days_for_approval
+      admin_ui: {width: 200}
+      type: number
+    - name: loans
+      admin_ui: {width: 200}
+      type: string
   fin_product_categories:
     title: fin_product_categories
     client: full
@@ -1185,6 +1327,9 @@ db_schema:
     - name: farmer_earnings
       admin_ui: {order: 49.9921875, width: 200}
       type: string
+    - name: ascend_value
+      admin_ui: {width: 200}
+      type: number
     title: fin_user_profile
   fin_lender:
     title: fin_lender
@@ -1227,6 +1372,18 @@ db_schema:
     - name: wallet_id
       admin_ui: {order: 12, width: 200}
       type: string
+    - name: lender_total_commitments
+      admin_ui: {width: 200}
+      type: number
+    - name: member_since
+      admin_ui: {width: 200}
+      type: date
+    - name: present_commitments
+      admin_ui: {width: 200}
+      type: number
+    - name: return_on_investment
+      admin_ui: {width: 200}
+      type: number
   fin_borrower_salary_type:
     client: full
     server: full
@@ -1281,9 +1438,6 @@ db_schema:
       type: string
     - name: account_id
       admin_ui: {width: 200, order: 6}
-      type: string
-    - name: upi_id
-      admin_ui: {width: 200, order: 7}
       type: string
     - name: customer_id
       admin_ui: {width: 200, order: 0.5}
@@ -1371,6 +1525,71 @@ db_schema:
     - name: max_amount
       admin_ui: {width: 200}
       type: number
+  fin_handling_collection_process:
+    title: fin_handling_collection_process
+    client: full
+    server: full
+    columns:
+    - name: engineer_id
+      admin_ui: {width: 200}
+      type: number
+    - name: engineer_name
+      admin_ui: {width: 200}
+      type: string
+    - name: engineer_location
+      admin_ui: {width: 200}
+      type: string
+    - name: borrower_customer_id
+      admin_ui: {width: 200}
+      type: number
+    - name: borrower_email
+      admin_ui: {width: 200}
+      type: string
+    - name: borrower_name
+      admin_ui: {width: 200}
+      type: string
+    - name: loan_id
+      admin_ui: {width: 200}
+      type: string
+    - name: product_name
+      admin_ui: {width: 200}
+      type: string
+    - name: loan_status
+      admin_ui: {width: 200}
+      type: string
+    - name: remaining_amount
+      admin_ui: {width: 200}
+      type: number
+    - name: customer_address_1
+      admin_ui: {width: 200}
+      type: string
+    - name: customer_addres_2
+      admin_ui: {width: 200}
+      type: string
+    - name: relatives_name
+      admin_ui: {width: 200}
+      type: string
+    - name: relatives_mobile_no
+      admin_ui: {width: 200}
+      type: number
+    - name: relatives_email
+      admin_ui: {width: 200}
+      type: string
+    - name: relatives_address
+      admin_ui: {width: 200}
+      type: string
+    - name: engineer_email_id
+      admin_ui: {width: 200}
+      type: string
+    - name: engineer_mbl_no
+      admin_ui: {width: 200}
+      type: number
+    - name: borrower_alternate_email
+      admin_ui: {width: 200}
+      type: string
+    - name: relatives_relation
+      admin_ui: {width: 200}
+      type: string
   fin_borrower_employee_type:
     client: full
     server: full
