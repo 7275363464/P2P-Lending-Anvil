@@ -15,8 +15,7 @@ components:
   - name: data_grid_1
     properties:
       columns:
-      - {id: VJQQOR, title: Group Names, data_key: column_2, width: 263.33331298828125,
-        expand: false}
+      - {id: VJQQOR, title: Group Names, data_key: column_2, width: 263.33331298828125, expand: false}
       - {id: OJLQEN, title: Sub Category, data_key: column_3}
       - {id: UWQTPT, data_key: column_4, title: Min Points}
       - {id: TRHWNK, data_key: column_1, title: Age}
@@ -25,13 +24,11 @@ components:
     components: []
     layout_properties: {grid_position: 'PCZEDG,SNPCKJ'}
   - name: label_1_copy
-    properties: {font_size: 25, align: center, background: '#98c1d9', text: Ascend Score Subcategories,
-      role: outlined-card}
+    properties: {font_size: 25, align: center, background: '#98c1d9', text: Ascend Score Subcategories, role: outlined-card}
     type: Label
     layout_properties: {grid_position: 'ENIIBY,FSCMBS'}
   - name: column_panel_1
-    properties: {col_widths: '{"TKCQPH":20,"DOKEZW":15,"KAHZQW":10,"JUYOLL":15}',
-      role: outlined-card, background: '#98c1d9'}
+    properties: {col_widths: '{"TKCQPH":20,"DOKEZW":15,"KAHZQW":10,"JUYOLL":15}', role: outlined-card, background: '#98c1d9'}
     type: ColumnPanel
     layout_properties: {grid_position: 'ATGXMY,DBZQDK'}
     components:
@@ -56,10 +53,7 @@ components:
     type: RepeatingPanel
     layout_properties: {grid_position: 'KTKNSA,RXIIUL'}
   - type: Button
-    properties: {role: elevated-button, align: center, tooltip: '', border: '', enabled: true,
-      foreground: 'theme:On Primary', visible: true, text: Back, font_size: null,
-      font: '16', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '#05264d', bold: true, underline: false, icon: 'fa:backward'}
+    properties: {role: elevated-button, align: center, tooltip: '', border: '', enabled: true, foreground: 'theme:On Primary', visible: true, text: Back, font_size: null, font: '16', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '#05264d', bold: true, underline: false, icon: 'fa:backward'}
     name: back_btn
     layout_properties:
       col_widths: {}

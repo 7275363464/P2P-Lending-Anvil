@@ -13,10 +13,7 @@ components:
     name: home_button_admin_1
     layout_properties: {grid_position: 'YEHCZB,QOMSAJ', full_width_row: true}
   - type: Button
-    properties: {role: elevated-button, align: right, tooltip: '', border: '', enabled: true,
-      foreground: 'theme:On Primary', visible: true, text: Back, font_size: null,
-      font: '16', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '#05264d', bold: true, underline: false, icon: 'fa:backward'}
+    properties: {role: elevated-button, align: right, tooltip: '', border: '', enabled: true, foreground: 'theme:On Primary', visible: true, text: Back, font_size: null, font: '16', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '#05264d', bold: true, underline: false, icon: 'fa:backward'}
     name: button_1_copy_3
     layout_properties:
       col_widths: {}
@@ -40,59 +37,35 @@ components:
       layout_properties: {grid_position: 'SUEJWV,HDFXXS'}
       components:
       - name: label_1_copy
-        properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-          visible: true, text: ' Products Details', font_size: 16, font: '', spacing_above: small,
-          icon_align: left, spacing_below: small, italic: false, background: 'theme:On
-            Primary', bold: true, underline: false, icon: ''}
+        properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: ' Products Details', font_size: 16, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: 'theme:On Primary', bold: true, underline: false, icon: ''}
         type: Label
         layout_properties: {x: 0, y: 10, width: 145}
       - name: label_17
-        properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-          visible: true, text: ' EMI Payment', font_size: null, font: '', spacing_above: small,
-          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-          underline: false, icon: ''}
+        properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: ' EMI Payment', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
         type: Label
         layout_properties: {x: 10, y: 718.7916870117188, width: 110}
       - name: label_19
-        properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-          visible: true, text: ' Foreclosure Type', font_size: null, font: '', spacing_above: small,
-          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-          underline: false, icon: ''}
+        properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: ' Foreclosure Type', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
         type: Label
         layout_properties: {x: 10, y: 764.7916870117188, width: 160}
       - name: label_25
-        properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-          visible: true, text: ' Foreclosure fee(%)', font_size: null, font: '', spacing_above: small,
-          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-          underline: false, icon: ''}
+        properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: ' Foreclosure fee(%)', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
         type: Label
         layout_properties: {x: 10, y: 810.7916870117188, width: 160}
       - name: label_29
-        properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-          visible: true, text: ' Min Foreclosure Months', font_size: null, font: '',
-          spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-          background: '', bold: false, underline: false, icon: ''}
+        properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: ' Min Foreclosure Months', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
         type: Label
         layout_properties: {x: 11.973213195800781, y: 856.7811889648438, width: 159.991}
       - name: label_6_copy
-        properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-          visible: true, text: ' Processing Fee(%)', font_size: null, font: '', spacing_above: small,
-          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-          underline: false, icon: ''}
+        properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: ' Processing Fee(%)', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
         type: Label
         layout_properties: {x: 11.986114501953125, y: 902.7916870117188, width: 152}
       - name: label_21
-        properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-          visible: true, text: ' Extension Allowed', font_size: null, font: '', spacing_above: small,
-          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-          underline: false, icon: ''}
+        properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: ' Extension Allowed', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
         type: Label
         layout_properties: {x: 10, y: 948.7916870117188, width: 160}
       - name: label_7_copy
-        properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-          visible: true, text: ' Extension Fee(%)', font_size: null, font: '', spacing_above: small,
-          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-          underline: false, icon: ''}
+        properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: ' Extension Fee(%)', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
         type: Label
         layout_properties: {x: 10, y: 994.7916870117188, width: 160}
       - name: label_18
@@ -120,24 +93,16 @@ components:
         type: Label
         layout_properties: {x: 212.9642791748047, y: 948.7857818603516, width: 160}
       - name: label_8_copy
-        properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-          visible: true, text: ' Interest  Rate (per year)', font_size: null, font: '',
-          spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-          background: '', bold: false, underline: false, icon: ''}
+        properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: ' Interest  Rate (per year)', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
         type: Label
         layout_properties: {x: 3.9821319580078125, y: 343.7857208251953, width: 160}
       - name: column_panel_2
-        properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
-          wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
-          spacing_below: small, background: '#98c1d9'}
+        properties: {role: null, tooltip: '', border: '', foreground: '', visible: true, wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}', spacing_below: small, background: '#98c1d9'}
         type: ColumnPanel
         layout_properties: {x: 206.00001525878906, y: 343.7857208251953, width: 522}
         components:
         - name: label_9_copy
-          properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-            visible: true, text: '    Membership Type ', font_size: null, font: '',
-            spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-            background: '', bold: false, underline: false, icon: ''}
+          properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: '    Membership Type ', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
           type: Label
           layout_properties: {grid_position: 'MMTRKO,KEBGAJ'}
         - name: label_7
@@ -145,10 +110,7 @@ components:
           type: Label
           layout_properties: {grid_position: 'MMTRKO,WKPDPN'}
         - name: label_10_copy
-          properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-            visible: true, text: '    Interest Type ', font_size: null, font: '',
-            spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-            background: '', bold: false, underline: false, icon: ''}
+          properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: '    Interest Type ', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
           type: Label
           layout_properties: {grid_position: 'NLYEYP,NGJJWF'}
         - name: label_11
@@ -156,10 +118,7 @@ components:
           type: Label
           layout_properties: {grid_position: 'NLYEYP,EMKDSK'}
         - name: label_13_copy
-          properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-            visible: true, text: '    Rate Of Interest(%)', font_size: null, font: '',
-            spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-            background: '', bold: false, underline: false, icon: ''}
+          properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: '    Rate Of Interest(%)', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
           type: Label
           layout_properties: {grid_position: 'ODQTDO,SJDTXR'}
         - name: label_10
@@ -167,10 +126,7 @@ components:
           type: Label
           layout_properties: {grid_position: 'ODQTDO,TFSSFI'}
         - name: label_11_copy
-          properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-            visible: true, text: '    Min Amount', font_size: null, font: '', spacing_above: small,
-            icon_align: left, spacing_below: small, italic: false, background: '',
-            bold: false, underline: false, icon: ''}
+          properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: '    Min Amount', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
           type: Label
           layout_properties: {grid_position: 'XWXDJJ,OWPNSY'}
         - name: label_8
@@ -178,10 +134,7 @@ components:
           type: Label
           layout_properties: {grid_position: 'XWXDJJ,AFSMPM'}
         - name: label_12_copy
-          properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-            visible: true, text: '    Max Amount', font_size: null, font: '', spacing_above: small,
-            icon_align: left, spacing_below: small, italic: false, background: '',
-            bold: false, underline: false, icon: ''}
+          properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: '    Max Amount', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
           type: Label
           layout_properties: {grid_position: 'WNTQXR,ULAAXH'}
         - name: label_9
@@ -189,10 +142,24 @@ components:
           type: Label
           layout_properties: {grid_position: 'WNTQXR,ULIJYJ'}
         - name: label_13
-          properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-            visible: true, text: "    Min Tenure \n    (in months)", font_size: null,
-            font: '', spacing_above: small, icon_align: left, spacing_below: small,
-            italic: false, background: '', bold: false, underline: false, icon: ''}
+          properties:
+            role: null
+            align: left
+            tooltip: ''
+            border: ''
+            foreground: ''
+            visible: true
+            text: "    Min Tenure \n    (in months)"
+            font_size: null
+            font: ''
+            spacing_above: small
+            icon_align: left
+            spacing_below: small
+            italic: false
+            background: ''
+            bold: false
+            underline: false
+            icon: ''
           type: Label
           layout_properties: {grid_position: 'FIKNJI,XJVVSP'}
         - name: label_15
@@ -200,43 +167,46 @@ components:
           type: Label
           layout_properties: {grid_position: 'FIKNJI,ZRNORB'}
         - name: label_14
-          properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-            visible: true, text: "    Max Tenure\n     (in months)\n", font_size: null,
-            font: '', spacing_above: small, icon_align: left, spacing_below: small,
-            italic: false, background: '', bold: false, underline: false, icon: ''}
+          properties:
+            role: null
+            align: left
+            tooltip: ''
+            border: ''
+            foreground: ''
+            visible: true
+            text: |2
+                  Max Tenure
+                   (in months)
+            font_size: null
+            font: ''
+            spacing_above: small
+            icon_align: left
+            spacing_below: small
+            italic: false
+            background: ''
+            bold: false
+            underline: false
+            icon: ''
           type: Label
-          layout_properties: {grid_position: 'NFHBIS,MEANKR', x: 170, y: 652.7857818603516,
-            width: 253}
+          layout_properties: {grid_position: 'NFHBIS,MEANKR', x: 170, y: 652.7857818603516, width: 253}
         - name: label_16
           properties: {}
           type: Label
           layout_properties: {x: 637, y: 752, width: 160, grid_position: 'NFHBIS,JNRMSC'}
       - name: label_2_copy
-        properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-          visible: true, text: ' Product ID', font_size: null, font: '', spacing_above: small,
-          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-          underline: false, icon: ''}
+        properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: ' Product ID', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
         type: Label
         layout_properties: {x: 3.991213195800782, y: 63.98658752441406, width: 159.978}
       - name: label_5_copy
-        properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-          visible: true, text: ' Product Categories', font_size: null, font: '', spacing_above: small,
-          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-          underline: false, icon: ''}
+        properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: ' Product Categories', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
         type: Label
         layout_properties: {x: 3.9910659790039062, y: 146.92853752441408, width: 144.978}
       - name: label_23
-        properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-          visible: true, text: ' Product Name', font_size: null, font: '', spacing_above: small,
-          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-          underline: false, icon: ''}
+        properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: ' Product Name', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
         type: Label
         layout_properties: {x: 3.991213195800782, y: 187.8080291748047, width: 159.978}
       - name: label_4_copy
-        properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-          visible: true, text: ' Product Description', font_size: null, font: '',
-          spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-          background: '', bold: false, underline: false, icon: ''}
+        properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: ' Product Description', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
         type: Label
         layout_properties: {x: 3.991213195800782, y: 233.7812291748047, width: 159.978}
       - name: label_1
@@ -244,10 +214,7 @@ components:
         type: Label
         layout_properties: {x: 205.9955291748047, y: 71.99998474121094, width: 225}
       - name: label_3_copy
-        properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-          visible: true, text: ' Product Group', font_size: null, font: '', spacing_above: small,
-          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-          underline: false, icon: ''}
+        properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: ' Product Group', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
         type: Label
         layout_properties: {x: 3.9910659790039062, y: 109.95087639160158, width: 159.978}
       - name: label_2
@@ -263,10 +230,7 @@ components:
         type: Label
         layout_properties: {x: 205.9955291748047, y: 192.89283195800783, width: 159.978}
       - name: text_area_1
-        properties: {role: outlined, align: left, height: 103.6786, tooltip: '', placeholder: '',
-          border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-          auto_expand: false, font: '', spacing_above: small, spacing_below: small,
-          italic: false, background: '', bold: false, underline: false}
+        properties: {role: outlined, align: left, height: 103.6786, tooltip: '', placeholder: '', border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null, auto_expand: false, font: '', spacing_above: small, spacing_below: small, italic: false, background: '', bold: false, underline: false}
         type: TextArea
         layout_properties: {x: 205.9955291748047, y: 233.7812291748047, width: 527.103}
       - name: label_6
@@ -274,41 +238,42 @@ components:
         type: Label
         layout_properties: {x: 212.95980834960938, y: 994.7811889648438, width: 231.991}
       - name: button_1
-        properties: {role: outlined-button, align: center, tooltip: '', border: '',
-          enabled: true, foreground: 'theme:On Primary', visible: true, text: Edit,
-          font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
-          italic: false, background: '#05264d', bold: false, underline: false, icon: 'fa:edit'}
+        properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true, foreground: 'theme:On Primary', visible: true, text: Edit, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '#05264d', bold: false, underline: false, icon: 'fa:edit'}
         type: Button
         layout_properties: {x: 304.94195556640625, y: 1270.0847778320312, width: 319.996}
         event_bindings: {click: button_1_click}
       - name: label_12
-        properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-          visible: true, text: 'Occupation
-
-            ', font_size: null, font: '', spacing_above: small, icon_align: left,
-          spacing_below: small, italic: false, background: '', bold: false, underline: false,
-          icon: ''}
+        properties:
+          role: null
+          align: left
+          tooltip: ''
+          border: ''
+          foreground: ''
+          visible: true
+          text: |
+            Occupation
+          font_size: null
+          font: ''
+          spacing_above: small
+          icon_align: left
+          spacing_below: small
+          italic: false
+          background: ''
+          bold: false
+          underline: false
+          icon: ''
         type: Label
         layout_properties: {x: 11.959823608398438, y: 1202.1071166992188, width: 159.978}
       - name: label_33
-        properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-          visible: true, text: ' Non Performing Asset(₹)', font_size: null, font: '',
-          spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-          background: '', bold: false, underline: false, icon: ''}
+        properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: ' Non Performing Asset(₹)', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
         type: Label
         layout_properties: {x: 9.991073608398438, y: 1162.1294000976563, width: 159.978}
       - name: label_32
-        properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-          visible: true, text: ' Default Fee(₹)', font_size: null, font: '', spacing_above: small,
-          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-          underline: false, icon: ''}
+        properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: ' Default Fee(₹)', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
         type: Label
         layout_properties: {x: 9.991073608398438, y: 1116.1517389648438, width: 159.978}
       - name: label_31
-        properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-          visible: true, text: ' Lapsed Fee(₹)', font_size: null, font: '', spacing_above: small,
-          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-          underline: false, icon: ''}
+        properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: ' Lapsed Fee(₹)', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
         type: Label
         layout_properties: {x: 11.973213195800781, y: 1077.5490112304688, width: 159.978}
       - name: label_27
@@ -332,10 +297,7 @@ components:
         type: Label
         layout_properties: {x: 205.99551391601562, y: 1202.1026000976562, width: 265.964}
       - name: label_3
-        properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-          visible: true, text: Min Extension Months, font_size: null, font: '', spacing_above: small,
-          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-          underline: false, icon: ''}
+        properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: Min Extension Months, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
         type: Label
         layout_properties: {x: 11.973213195800781, y: 1040.7454223632812, width: 159.978}
 - type: FlowPanel

@@ -7,14 +7,12 @@ components:
   layout_properties: {grid_position: 'TITODK,DGXDBW'}
   components:
   - name: outlined_button_1
-    properties: {text: View Loan Details, role: outlined-button, align: center, font_size: null,
-      background: '#05264d', foreground: 'theme:On Primary', bold: true}
+    properties: {text: View Loan Details, role: outlined-button, align: center, font_size: null, background: '#05264d', foreground: 'theme:On Primary', bold: true}
     type: Button
     layout_properties: {x: -9.840999999999894, y: 389.27265907812534, width: 938.386}
     event_bindings: {click: outlined_button_1_click}
   - name: return
-    properties: {text: '     ------Not Invested Yet-----', italic: true, bold: false,
-      align: center}
+    properties: {text: '     ------Not Invested Yet-----', italic: true, bold: false, align: center}
     type: Label
     layout_properties: {x: 10, y: 343.261474609375, width: 200}
     data_bindings:
@@ -66,10 +64,7 @@ components:
     type: Label
     layout_properties: {x: 832.7273101806641, y: 204.1591796875, width: 30.3864}
   - name: Product
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-      spacing_below: small, italic: false, background: '', bold: true, underline: false,
-      icon: ''}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: true, underline: false, icon: ''}
     type: Label
     layout_properties: {x: 736.1591339111328, y: 133.806884765625, width: 124.148}
     data_bindings:
@@ -87,10 +82,7 @@ components:
     type: Label
     layout_properties: {x: 20.795455932617188, y: 204.1591796875, width: 200}
   - name: product_details
-    properties: {role: null, align: left, height: 39, tooltip: '', placeholder: '',
-      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-      auto_expand: false, font: '', spacing_above: small, spacing_below: small, italic: false,
-      background: white, bold: false, underline: false}
+    properties: {role: null, align: left, height: 39, tooltip: '', placeholder: '', border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null, auto_expand: false, font: '', spacing_above: small, spacing_below: small, italic: false, background: white, bold: false, underline: false}
     type: TextArea
     layout_properties: {x: 717.8295669555664, y: 161.80682373046875, width: 200}
     data_bindings:
@@ -115,8 +107,7 @@ components:
     data_bindings:
     - {property: text, code: 'self.item[''borrower_mobile'']', writeback: false}
   - name: label_3
-    properties: {text: '---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------',
-      foreground: grey, align: center}
+    properties: {text: '---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------', foreground: grey, align: center}
     type: Label
     layout_properties: {x: 0, y: 97.24997820332646, width: 937.71435546875}
   - name: lendor_name

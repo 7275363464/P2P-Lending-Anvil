@@ -19,10 +19,7 @@ components:
   data_bindings:
   - {property: text, code: 'self.item[''loan_id'']', writeback: false}
 - type: Button
-  properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
-    foreground: '#0876e8', visible: true, text: view details, font_size: null, font: '',
-    spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '',
-    bold: true, underline: false, icon: ''}
+  properties: {role: null, align: center, tooltip: '', border: '', enabled: true, foreground: '#0876e8', visible: true, text: view details, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: true, underline: false, icon: ''}
   name: button_1
   layout_properties: {column: IZHOQY}
   event_bindings: {click: button_1_click}

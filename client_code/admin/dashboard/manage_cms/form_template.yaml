@@ -12,9 +12,7 @@ components:
   layout_properties: {slot: default}
   name: column_panel_1
   components:
-  - properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
-      wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
-      spacing_below: small, background: ''}
+  - properties: {role: null, tooltip: '', border: '', foreground: '', visible: true, wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}', spacing_below: small, background: ''}
     type: ColumnPanel
     layout_properties: {grid_position: 'SXILWN,KFDSUL', full_width_row: true}
     name: content_panel
@@ -32,11 +30,7 @@ components:
       layout_properties: {grid_position: 'SWGGAQ,WVPGMJ'}
       name: xy_panel_1
       components:
-      - properties: {role: outlined-button, align: full, tooltip: '', border: '',
-          enabled: true, foreground: 'theme:On Primary', visible: true, text: '   MANAGE
-            DROPDOWNS', font_size: null, font: '', spacing_above: small, icon_align: left,
-          spacing_below: small, italic: false, background: '#05264d', bold: true,
-          underline: false, icon: 'fa:cube'}
+      - properties: {role: outlined-button, align: full, tooltip: '', border: '', enabled: true, foreground: 'theme:On Primary', visible: true, text: '   MANAGE DROPDOWNS', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '#05264d', bold: true, underline: false, icon: 'fa:cube'}
         type: Button
         layout_properties: {x: 252.125, y: 20.625, width: 482.656}
         event_bindings: {click: button_2_click}
