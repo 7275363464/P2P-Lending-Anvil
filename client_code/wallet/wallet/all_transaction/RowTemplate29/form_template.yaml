@@ -1,7 +1,6 @@
 container:
   type: ColumnPanel
-  properties: {col_widths: '{"BGFFDO":10,"OCVNZN":10,"WDGFCF":10,"CTPDWB":10,"DYDBHQ":10,"KLAZAW":10}',
-    wrap_on: mobile, col_spacing: large}
+  properties: {col_widths: '{"BGFFDO":10,"OCVNZN":10,"WDGFCF":10,"CTPDWB":10,"DYDBHQ":10,"KLAZAW":10}', wrap_on: mobile, col_spacing: large}
 components:
 - name: label_1
   properties: {align: center, icon_align: left, spacing_above: small}
