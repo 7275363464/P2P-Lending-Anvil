@@ -32,8 +32,7 @@ components:
     properties: {role: null, bold: false, align: left, placeholder: '', spacing_above: small, background: white, underline: false, font: '', foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, auto_expand: false, font_size: null, tooltip: '', height: 56, text: ''}
     name: product_details
     layout_properties: {x: 355.9250076301396, y: 33.624996948987246, width: 563.7999877929688}
-    data_bindings:
-    - {property: text, code: 'self.item[''product_description'']', writeback: true}
+    data_bindings: []
   - name: product
     properties: {}
     type: Label
@@ -83,7 +82,7 @@ components:
     name: label_2
     layout_properties: {x: 12.142868041992188, y: 247.98214721679688, width: 160}
   - type: Label
-    properties: {visible: false}
+    properties: {visible: false, foreground: reed}
     name: label_4
     layout_properties: {x: 719.6964874267578, y: 247.98214721679688, width: 160}
     data_bindings:

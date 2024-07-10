@@ -20,11 +20,11 @@ components:
     properties: {}
     name: navigation_bar_lender_dashbord_1
     layout_properties: {grid_position: 'VHTEXR,LDHUCH', full_width_row: true}
-- type: FlowPanel
-  properties: {}
-  name: navbar_links
-  layout_properties: {slot: nav-right}
-  components: []
+  - name: button_1
+    properties: {text: Back, align: right, background: '#05264d', foreground: white, icon: 'fa:backward'}
+    type: Button
+    layout_properties: {grid_position: 'GQTEFM,WPXKXS', full_width_row: true}
+    event_bindings: {click: button_1_click}
 - type: ColumnPanel
   properties: {role: null, col_widths: '{"GFJMMM":10,"ZJRRGD":40,"NFWEZN":10}', wrap_on: mobile}
   name: outlined_card_2_copy

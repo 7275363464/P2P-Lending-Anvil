@@ -229,7 +229,7 @@ class today_dues(today_duesTemplate):
                       'remaining_tenure':remaining_tenure
                       
                   })
-            self.repeating_panel_2.items = loan_details
+            self.repeating_panel_1.items = loan_details
             # for loan_detail_1 in loan_details:
             #   print("Processing loan:", loan_detail_1)
             #   if loan_detail_1['days_left'] > 6 and loan_detail_1['days_left'] <= 16:

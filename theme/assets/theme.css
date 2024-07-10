@@ -1,6 +1,6 @@
 /**
  This CSS implements the Material Design 3 look and feel for Anvil apps.
- **/
+ **
 /* .anvil-role-wide .data-grid-child-panel {
   overflow-x: auto;
 }
@@ -37,6 +37,7 @@ body {
 .anvil-panel-col {
   padding-bottom: 10px;
   margin-bottom: -10px;
+  flex-grow:inherit;
 }
 
 .content > .placeholder {
@@ -131,7 +132,7 @@ a>.anvil-component-icon.right_edge-icon,
 /* Typography */
 body {
   font-family: Roboto, Noto, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.4286;
   color: %color:On Surface%;
   background-color: %color:Background%;
@@ -261,8 +262,8 @@ color: %color:On Primary Container%;
 /*   top: 0; */
   left: 0;
   flex-shrink: 0;
-  min-width: 240px;
-  max-width: 400px;
+  min-width: 300px;
+  max-width: 500px;
 }
 
 .nav-shield {
@@ -313,7 +314,7 @@ color: %color:On Primary Container%;
   font-size: 14px;
   font-weight: 500;
   color: %color:On Surface Variant%;
-  overflow-x: hidden;
+  overflow-x: auto;
   overflow-y: auto;
   position: fixed;
 /*   top: 54px; */
@@ -341,7 +342,7 @@ color: %color:On Primary Container%;
 }
 
 .left-nav > .column-panel {
-  padding: 24px 0;
+  padding: 2px 0;
 }
 .left-nav > .column-panel > .anvil-panel-section > .anvil-panel-section-container:not(.full-width-row) {
   margin: 0 16px;
@@ -363,8 +364,8 @@ color: %color:On Primary Container%;
 }
 
 .left-nav .anvil-component-icon.left-icon {
-  width: 0;
-  margin-right: 56px;
+  width: 24px;
+  margin-right: 10px;
   position: relative;
   top: 0.15em;
 }
@@ -372,7 +373,7 @@ color: %color:On Primary Container%;
 .left-nav .anvil-component-icon.left_edge-icon, .left-nav .anvil-component-icon.right_edge-icon {
   left: 16px;
   padding-top: 2px;
-  width: 0;
+  width: 24px;
 }
 
 .left-nav .anvil-component-icon.right_edge-icon {
@@ -392,7 +393,10 @@ color: %color:On Primary Container%;
   padding: 4px 16px;
   
 }
-
+.left-nav .anvil-label{
+    padding: 4px 10px;
+    
+}
 .left-nav .anvil-component.left_edge-icon {
   padding-left: 72px;
 }
@@ -435,8 +439,8 @@ color: %color:On Primary Container%;
 
 /* Components: App Bar */
 .app-bar {
-  min-height: 65px;
-  padding: 0 16px 0 72px;
+  min-height: 50px;
+  /* padding: 0 16px 0 72px; */
   position: fixed;
   width: 100%;
   
@@ -522,8 +526,8 @@ color: %color:On Primary Container%;
 .app-bar .sidebar-toggle .fa-bars {
   width: 30px;
   text-align: center;
-  color:#013065;
-  visibility: visible;
+  /* color:#013065; */
+  /* visibility: visible; */
 }
 
 
@@ -1165,3 +1169,17 @@ span.btn-text{
   text-align: center;
 }
 
+.anvil-role-circular-image img {
+  width: 200px; /* Adjust the size as needed */
+  height: 200px; /* Adjust the size as needed */
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+.anvil-role-circular-image{
+    width: 100px; /* Adjust the size as needed */
+    height: 100px; /* Adjust the size as needed */
+    border-radius: 50%;
+    object-fit: cover;
+}

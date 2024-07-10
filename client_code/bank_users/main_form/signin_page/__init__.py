@@ -1,4 +1,4 @@
-from ._anvil_designer import login_pageTemplate
+from ._anvil_designer import signin_pageTemplate
 from anvil import *
 import anvil.server
 import anvil.google.auth, anvil.google.drive
@@ -12,14 +12,24 @@ from .. import main_form_module
 from datetime import datetime
 
 
-class login_page(login_pageTemplate):
+class signin_page(signin_pageTemplate):
   def __init__(self,  **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.role = "no-scroll"
+    self.eye_icon_1.source = '_/theme/eye_closed.png'
     # login_date = datetime.now()
 
     # Any code you write here will run before the form opens.
+  def eye_icon_1_click(self, **event_args):
+    """This method is called when the eye icon next to text_box_2 is clicked"""
+    if self.text_box_2.hide_text:
+      self.text_box_2.hide_text = False  # Show the password
+      self.eye_icon_1.source = '_/theme/eye_open.png'  # Change to open eye icon
+    else:
+      self.text_box_2.hide_text = True  # Hide the password
+      self.eye_icon_1.source = '_/theme/eye_closed.png'  # Change to closed eye icon
+
 
   def button_1_click(self, **event_args):
     email = self.text_box_1.text.strip()
@@ -89,17 +99,17 @@ class login_page(login_pageTemplate):
                           open_form('bank_users.user_form')
                         # For Borrower Registration Form  
                         elif user_type == 'borrower' and actual_count==1:
-                          open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_1_education',user_id=userid)
+                          open_form('borrower.borrower_registration_forms.borrower_registration_form_1_education',user_id=userid)
                         elif user_type == 'borrower' and actual_count==1.1:
-                          open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_1_education.star_1_borrower_registration_form_education_10th_class',user_id=userid) 
+                          open_form('borrower.borrower_registration_forms.borrower_registration_form_1_education',user_id=userid) 
                         elif user_type == 'borrower' and actual_count==1.2:
-                          open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_1_education.star_1_borrower_registration_form_education_intermediate',user_id=userid) 
+                          open_form('borrower.borrower_registration_forms.borrower_registration_form_1_education',user_id=userid) 
                         elif user_type == 'borrower' and actual_count==1.3:
-                          open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_1_education.star_1_borrower_registration_form_education_btech',user_id=userid)   
+                          open_form('borrower.borrower_registration_forms.borrower_registration_form_1_education',user_id=userid)   
                         elif user_type == 'borrower' and actual_count==1.4:
-                          open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_1_education.star_1_borrower_registration_form_education_mtech',user_id=userid)
+                          open_form('borrower.borrower_registration_forms.borrower_registration_form_1_education',user_id=userid)
                         elif user_type == 'borrower' and actual_count==1.5:
-                          open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_1_education.star_1_borrower_registration_form_education_phd',user_id=userid)
+                          open_form('borrower.borrower_registration_forms.borrower_registration_form_1_education',user_id=userid)
                         elif user_type == 'borrower' and actual_count==2:
                           open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_2_employment',user_id=userid)
                         elif user_type == 'borrower' and actual_count==2.1:
@@ -171,10 +181,10 @@ class login_page(login_pageTemplate):
 
                     else:
                         # Handle the case when user_profile_e is None
-                        open_form('bank_users.user_form')
+                        open_form('bank_users.main_form.investNow_applyForLoan')
             else:
                 # Handle the case when current_user is None
-                open_form('bank_users.user_form')
+                open_form('bank_users.main_form.investNow_applyForLoan')
 
 
     else:
@@ -182,13 +192,13 @@ class login_page(login_pageTemplate):
       self.error_label.visible = True
 
 
-  def check_box_1_change(self, **event_args):
-   #  """This method is called when this checkbox is checked or unchecked"""
-        self.password_visible = self.check_box_1.checked
-        if self.password_visible:
-            self.text_box_2.hide_text = False  # Show decrypted password
-        else:
-            self.text_box_2.hide_text = True
+  # def check_box_1_change(self, **event_args):
+  #  #  """This method is called when this checkbox is checked or unchecked"""
+  #       self.password_visible = self.check_box_1.checked
+  #       if self.password_visible:
+  #           self.text_box_2.hide_text = False  # Show decrypted password
+  #       else:
+  #           self.text_box_2.hide_text = True
 
   def link_2_click(self, **event_args):
     """This method is called when the link is clicked"""
@@ -219,26 +229,28 @@ class login_page(login_pageTemplate):
     open_form('bank_users.main_form.investNow_applyForLoan')
 
   def send_otp_click(self, **event_args):
-    self.label_5.visible = False
-    self.text_box_2.visible = False
-    self.check_box_1.visible = False
-    self.label_2.visible = False
-    self.check_box_1.visible = False
-    self.button_1.visible = False
-    self.label_8.visible = False
-    self.send_otp.text = "Send otp"
     email = self.text_box_1.text.strip()
-    if not email:
-        alert("Please fill the email")
-        return
-    if email is not None:  # This check seems redundant
-      self.otp = anvil.server.call('send_email_otp', email)
-      if self.otp:
-        alert(f"OTP has been sent to {email}")
-        self.show_otp_input()
-      else:
-        self.retype_password_error_label.text = 'Failed to send OTP. Please try again later.'
-        self.retype_password_error_label.visible = True
+    open_form('bank_users.main_form.signin_page.forgot_password',email)
+    # self.label_5.visible = False
+    # self.text_box_2.visible = False
+    # self.check_box_1.visible = False
+    # self.label_2.visible = False
+    # self.check_box_1.visible = False
+    # self.button_1.visible = False
+    # self.label_8.visible = False
+    # self.send_otp.text = "Send otp"
+    # email = self.text_box_1.text.strip()
+    # if not email:
+    #     alert("Please fill the email")
+    #     return
+    # if email is not None:  # This check seems redundant
+    #   self.otp = anvil.server.call('send_email_otp', email)
+    #   if self.otp:
+    #     alert(f"OTP has been sent to {email}")
+    #     self.show_otp_input()
+    #   else:
+    #     self.retype_password_error_label.text = 'Failed to send OTP. Please try again later.'
+    #     self.retype_password_error_label.visible = True
 
   def show_otp_input(self):
     self.text_box_otp.visible = True
@@ -248,7 +260,8 @@ class login_page(login_pageTemplate):
     self.text_box_2.visible = False
     self.send_otp.text = "Resend"  # Change text of send_otp link
     self.label_2.visible = False
-    self.check_box_1.visible = False
+    self.eye_icon_1.visible = False
+    # self.check_box_1.visible = False
     self.button_1.visible = False
     self.label_8.visible = False
 
@@ -260,6 +273,7 @@ class login_page(login_pageTemplate):
         return
     if str(self.otp) == entered_otp:
         self.error_label.text = 'OTP verified successfully'
+        # open_form('bank_users.main_form.forgot_password',email)
         self.error_label.visible = True
         user_row = app_tables.users.get(email=email)
         # Update the login date for the user
@@ -278,7 +292,7 @@ class login_page(login_pageTemplate):
                 user_module.add_email_and_user_id(user_email)
                 main_form_module.email = user_email
                 main_form_module.flag = True
-                open_form('bank_users.main_form.basic_registration_form')
+                open_form('bank_users.main_form.forgot_password',email)
             else:
                 check_user_registration = user_module.check_user_registration_form_done_or_not_engine(user_email)
                 print("main else statement was executed")
@@ -308,17 +322,17 @@ class login_page(login_pageTemplate):
                       open_form('bank_users.user_form')
                     # For Borrower Registration Form  
                     elif user_type == 'borrower' and actual_count==1:
-                      open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_1_education',user_id=userid)
+                      open_form('borrower.borrower_registration_forms.borrower_registration_form_1_education',user_id=userid)
                     elif user_type == 'borrower' and actual_count==1.1:
-                      open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_1_education.star_1_borrower_registration_form_education_10th_class',user_id=userid) 
+                      open_form('borrower.borrower_registration_forms.borrower_registration_form_1_education',user_id=userid) 
                     elif user_type == 'borrower' and actual_count==1.2:
-                      open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_1_education.star_1_borrower_registration_form_education_intermediate',user_id=userid) 
+                      open_form('borrower.borrower_registration_forms.borrower_registration_form_1_education',user_id=userid) 
                     elif user_type == 'borrower' and actual_count==1.3:
-                      open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_1_education.star_1_borrower_registration_form_education_btech',user_id=userid)   
+                      open_form('borrower.borrower_registration_forms.borrower_registration_form_1_education',user_id=userid)   
                     elif user_type == 'borrower' and actual_count==1.4:
-                      open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_1_education.star_1_borrower_registration_form_education_mtech',user_id=userid)
+                      open_form('borrower.borrower_registration_forms.borrower_registration_form_1_education',user_id=userid)
                     elif user_type == 'borrower' and actual_count==1.5:
-                      open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_1_education.star_1_borrower_registration_form_education_phd',user_id=userid)
+                      open_form('borrower.borrower_registration_forms.borrower_registration_form_1_education',user_id=userid)
                     elif user_type == 'borrower' and actual_count==2:
                       open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_2_employment',user_id=userid)
                     elif user_type == 'borrower' and actual_count==2.1:
@@ -390,10 +404,10 @@ class login_page(login_pageTemplate):
 
                 else:
                     # Handle the case when user_profile_e is None
-                    open_form('bank_users.user_form')
+                    open_form('bank_users.main_form.investNow_applyForLoan')
         else:
             # Handle the case when current_user is None
-            open_form('bank_users.user_form')
+            open_form('bank_users.main_form.investNow_applyForLoan')
 
         
     else:

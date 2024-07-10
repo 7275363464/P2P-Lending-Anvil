@@ -18,7 +18,7 @@ class borrwer_registration_navigation_bar(borrwer_registration_navigation_barTem
 
   def borrower_dashboard_home_linkhome_borrower_registration_button_copy_1_click(self, **event_args):
     """This method is called when the link is clicked"""
-    open_form('bank_users.user_form')
+    open_form('bank_users.main_form.investNow_applyForLoan')
 
   def contact_main_form_link_click(self, **event_args):
     """This method is called when the link is clicked"""

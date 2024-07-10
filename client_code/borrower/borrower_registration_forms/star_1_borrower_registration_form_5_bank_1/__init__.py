@@ -30,6 +30,61 @@ class star_1_borrower_registration_form_5_bank_1(star_1_borrower_registration_fo
     self.accepted_terms = False
     self.button_2.enabled = False
 
+    self.setup_event_handlers()
+
+  def setup_event_handlers(self):
+    # Attach event handlers for real-time validation
+    self.text_box_1.set_event_handler('change', self.validate_account_name)
+    self.text_box_1.set_event_handler('lost_focus', self.validate_account_name)
+    self.text_box_3.set_event_handler('change', self.validate_account_number)
+    self.text_box_3.set_event_handler('lost_focus', self.validate_account_number)
+    self.text_box_4.set_event_handler('change', self.validate_bank_name)
+    self.text_box_4.set_event_handler('lost_focus', self.validate_bank_name)
+    self.bank_id.set_event_handler('change', self.validate_bank_id)
+    self.bank_id.set_event_handler('lost_focus', self.validate_bank_id)
+    self.branch_name.set_event_handler('change', self.validate_bank_branch)
+    self.branch_name.set_event_handler('lost_focus', self.validate_bank_branch)
+    self.check_box_1_copy_2.set_event_handler('change', self.check_terms)
+
+  def validate_account_name(self, **event_args):
+    account_name = self.text_box_1.text
+    if not account_name or not re.match(r'^[A-Za-z\s]+$', account_name):
+      self.text_box_1.background = 'red'
+    else:
+      self.text_box_1.background = 'white'
+
+  def validate_account_number(self, **event_args):
+    account_number = self.text_box_3.text
+    if ' ' in account_number or not account_number.isdigit():
+      self.text_box_3.background = 'red'
+    else:
+      self.text_box_3.background = 'white'
+
+  def validate_bank_name(self, **event_args):
+    bank_name = self.text_box_4.text
+    if not bank_name:
+      self.text_box_4.background = 'red'
+    else:
+      self.text_box_4.background = 'white'
+
+  def validate_bank_id(self, **event_args):
+    bank_id = self.bank_id.text
+    if not bank_id:
+      self.bank_id.background = 'red'
+    else:
+      self.bank_id.background = 'white'
+
+  def validate_bank_branch(self, **event_args):
+    bank_branch = self.branch_name.text
+    if not bank_branch:
+      self.branch_name.background = 'red'
+    else:
+      self.branch_name.background = 'white'
+
+  def check_terms(self, **event_args):
+    self.accepted_terms = self.check_box_1_copy_2.checked
+    self.button_2.enabled = self.accepted_terms
+
     # Any code you write here will run before the form opens.
 
   def button_2_click(self, **event_args):
@@ -41,22 +96,47 @@ class star_1_borrower_registration_form_5_bank_1(star_1_borrower_registration_fo
     bank_name = self.text_box_4.text
     t_and_c = self.check_box_1_copy_2 
     user_id = self.userId
-    if not account_name or not account_type or not account_number or not bank_name or not bank_id or not bank_branch or not t_and_c:
-        Notification("Please fill all the required fields").show()
+    
+    if not account_name:
+      Notification("Please fill in the Account Name").show()
+      self.text_box_1.focus()
+    elif not account_type:
+      Notification("Please select the Account Type").show()
+      self.drop_down_1.focus()
+    elif not account_number:
+      Notification("Please fill in the Account Number").show()
+      self.text_box_3.focus()
+    elif not bank_name:
+      Notification("Please fill in the Bank Name").show()
+      self.text_box_4.focus()
+    elif not bank_id:
+      Notification("Please fill in the Bank ID").show()
+      self.bank_id.focus()
+    elif not bank_branch:
+      Notification("Please fill in the Branch Name").show()
+      self.branch_name.focus()
+    elif not t_and_c:
+      Notification("Please accept the terms and conditions").show()
+      self.check_box_1_copy_3.focus()
     elif not re.match(r'^[A-Za-z\s]+$', account_name):
-        Notification("Account name should be valid").show()
+      Notification("Account name should be valid").show()
+      self.text_box_1.focus()
+    elif ' ' in account_number:
+      Notification("Account number should not contain spaces").show()
+      self.text_box_3.focus()
     elif not account_number.isdigit():
-        Notification("Account number should be valid").show()
+      Notification("Account number should be valid").show()
+      self.text_box_3.focus()
     else:
-        anvil.server.call('add_borrower_step6', bank_id, bank_branch, user_id)
-        anvil.server.call('add_borrower_step5', account_name, account_type, account_number, bank_name, user_id)
-        open_form('borrower.dashboard')
+      anvil.server.call('add_borrower_step5', account_name, account_type, account_number, bank_name, user_id)
+      anvil.server.call('add_borrower_step6', bank_id, bank_branch, user_id)
+      open_form('borrower.dashboard')
 
   def button_1_click(self, **event_args):
     open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_4_loan',user_id=self.userId)
 
   def button_3_click(self, **event_args):
-    open_form("bank_users.user_form")
+    open_form("bank_users.main_form.investNow_applyForLoan")
 
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""

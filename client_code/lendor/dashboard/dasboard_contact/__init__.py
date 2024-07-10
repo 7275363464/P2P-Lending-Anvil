@@ -42,4 +42,8 @@ class dasboard_contact(dasboard_contactTemplate):
     """This method is called when the link is clicked"""
     open_form('wallet.wallet')
 
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('lendor.dashboard.dashboard_report_a_problem')
+
   

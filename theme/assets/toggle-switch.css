@@ -39,12 +39,12 @@
 }
 
 .anvil-role-toggleswitch-round input:checked + span {
-  background-color: #2196F3;
+  background-color: #008000;
 }
 
 .anvil-role-toggleswitch-round input:focus + span {
   background-color: red;
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #008000;
 }
 
 .anvil-role-toggleswitch-round input:checked + span:before {
@@ -95,12 +95,12 @@
 }
 
 .anvil-role-toggleswitch-square input:checked + span {
-  background-color: #2196F3;
+  background-color: #008000;
 }
 
 .anvil-role-toggleswitch-square input:focus + span {
   background-color: red;
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #008000;
 }
 
 .anvil-role-toggleswitch-square input:checked + span:before {

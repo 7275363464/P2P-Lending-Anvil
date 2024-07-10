@@ -107,3 +107,7 @@ class dashboard_report_a_problem(dashboard_report_a_problemTemplate):
   def file_loader_1_change(self, file, **event_args):
     """This method is called when a new file is loaded into this FileLoader"""
     self.image_issue.source = file
+
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('lendor.dashboard.dasboard_contact')

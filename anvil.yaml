@@ -17,7 +17,7 @@ services:
   client_config: {}
   server_config: {}
 startup: {type: form, module: bank_users.main_form}
-package_name: pip_install_reportlab
+package_name: requirements_txt
 allow_embedding: false
 name: P2P Lending App clone 25/06/2024
 runtime_options:
@@ -27,6 +27,11 @@ runtime_options:
   server_spec: null
   legacy_features: {class_names: true, bootstrap3: true, __dict__: true, root_container: true}
   server_persist: true
+  server_spec_disabled:
+    requirements: |-
+      pdf2image==1.16.3
+      bcrypt==4.1.3
+    base: python310-standard
 metadata: {title: 'P2P Bank ', description: this app provide services to person who are ready to invest and ready to give loan}
 startup_form: null
 native_deps: null
@@ -1103,6 +1108,14 @@ db_schema:
     - name: name_group
       admin_ui: {width: 200}
       type: string
+  fin_category:
+    title: fin_category
+    client: full
+    server: full
+    columns:
+    - name: category
+      admin_ui: {width: 200}
+      type: string
   fin_user_profile:
     client: full
     server: full
@@ -1730,9 +1743,6 @@ db_schema:
     - name: loan_id
       admin_ui: {width: 200}
       type: string
-    - name: penalty_amount
-      admin_ui: {width: 200}
-      type: number
     - name: outstanding_amount
       admin_ui: {width: 200}
       type: number
@@ -1818,6 +1828,20 @@ db_schema:
       admin_ui: {width: 200, order: 0}
       type: string
     title: fin_borrower_profession
+  fin_report_issue_category:
+    title: fin_report_issue_category
+    client: full
+    server: full
+    columns:
+    - name: subcategory_technical_issue
+      admin_ui: {width: 243}
+      type: string
+    - name: borrower_subcategory_loan_issue
+      admin_ui: {width: 200}
+      type: string
+    - name: lendor_subcategory_loan_issue
+      admin_ui: {width: 200}
+      type: string
   fin_lendor_organization_type:
     client: full
     server: full

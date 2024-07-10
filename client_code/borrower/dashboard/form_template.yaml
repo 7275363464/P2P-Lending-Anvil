@@ -3,17 +3,42 @@ container:
   type: HtmlTemplate
   properties: {html: '@theme:standard-page.html', visible: true, background: white, role: null}
 components:
-- properties: {background: white}
+- properties: {background: white, col_widths: '{"KALHMU":19,"EICWEE":41,"CMEGRW":20,"XRFKCC":40}'}
   type: ColumnPanel
   layout_properties: {slot: left-nav}
   name: column_panel_1
   components:
+  - properties: {height: '140', source: '', horizontal_align: center, role: null, display_mode: original_size}
+    type: Image
+    layout_properties: {grid_position: 'YNBKYN,YGPYRN'}
+    event_bindings: {mouse_up: image_1_copy_copy_mouse_up}
+    name: image_1_copy_copy
+  - properties: {text: '', bold: true, font_size: 12, icon: _/theme/borrower/dashboard/credit-limit.png}
+    type: Label
+    layout_properties: {grid_position: 'YNBKYN,PGAWDS UDDGWS,KALHMU'}
+    name: label_4
+  - properties: {text: '500000', align: left, font_size: 12}
+    type: Label
+    layout_properties: {grid_position: 'YNBKYN,PGAWDS UDDGWS,EICWEE'}
+    name: label_5
+  - properties: {text: '', bold: true, font_size: 12, icon: 'fa:user', foreground: '#013065'}
+    type: Label
+    layout_properties: {grid_position: 'YNBKYN,PGAWDS RDZVAY,CMEGRW'}
+    name: label_6
+  - properties: {text: 1 aug 2022, align: left, font_size: 12}
+    type: Label
+    layout_properties: {grid_position: 'YNBKYN,PGAWDS RDZVAY,XRFKCC'}
+    name: label_7
+  - properties: {text: '', align: left, bold: true, font_size: null}
+    type: Label
+    layout_properties: {grid_position: 'YAOIHJ,GKOUMC'}
+    name: label_2_copy
   - properties: {text: New Loan Request, icon: _/theme/borrower/dashboard/%20new%20loan%20request.png, foreground: '#013065'}
     type: Link
     layout_properties: {grid_position: 'BZNSXQ,TUEPQZ'}
     event_bindings: {click: link_1_click}
     name: link_1
-  - properties: {align: left, text: Today's  Due, foreground: '#013065', icon: 'fa:calendar'}
+  - properties: {align: left, text: Upcoming Payments, foreground: '#013065', icon: 'fa:calendar'}
     type: Link
     layout_properties: {grid_position: 'NTKYDV,NZWJWC'}
     event_bindings: {click: link_2_click}
@@ -48,38 +73,15 @@ components:
     layout_properties: {grid_position: 'KGQFZZ,ZWOTRZ'}
     event_bindings: {click: link_8_click}
     name: link_8
-  - properties: {text: Portfolio, foreground: '#013065', icon: _/theme/borrower/dashboard/portfolio.png}
-    type: Link
-    layout_properties: {grid_position: 'AEPNUT,OMVPMJ'}
-    event_bindings: {click: link_10_click}
-    name: link_10
-  - properties: {height: 207.800048828125}
-    type: Spacer
-    layout_properties: {grid_position: 'YAJAFA,RLWNPJ'}
-    name: spacer_12
-- properties: {col_widths: '{"ICHEBR":15,"ZBHZPI":50,"GFOSTO":3,"KRZPIS":12,"QIOHZF":15,"TMHEQE":3,"RWRETV":12,"DCSWXM":15,"XTGGQT":25,"OKJARZ":5}'}
+- properties: {col_widths: '{"ZBHZPI":50,"GFOSTO":3,"KRZPIS":12,"QIOHZF":15,"TMHEQE":3,"RWRETV":12,"DCSWXM":15,"XTGGQT":25,"OKJARZ":5}'}
   type: ColumnPanel
   layout_properties: {slot: default}
   name: column_panel_2
   components:
-  - properties: {text: '     Account Overview :', bold: true, font_size: 20, align: left}
+  - properties: {text: '     Account Overview :', bold: true, font_size: 20, align: left, visible: false}
     type: Label
     layout_properties: {grid_position: 'HQTFXG,HHCUBH', full_width_row: true}
     name: label_1
-  - properties: {height: '140', source: '', horizontal_align: center, role: null}
-    type: Image
-    layout_properties: {grid_position: 'BRLAXK,ICHEBR DZAJRQ,WNKNBN', full_width_row: true}
-    event_bindings: {mouse_up: image_1_copy_copy_mouse_up}
-    name: image_1_copy_copy
-  - properties: {text: View profile, bold: true, foreground: Black, font_size: 16}
-    type: Button
-    layout_properties: {grid_position: 'BRLAXK,ICHEBR CVMIDD,QDBSCB'}
-    event_bindings: {click: button_12_click}
-    name: button_12
-  - properties: {text: '', align: left, bold: true, font_size: 26}
-    type: Label
-    layout_properties: {grid_position: 'BRLAXK,ZBHZPI OWJNKD,RUADLG', full_width_row: true}
-    name: label_2_copy
   - properties: {height: -0.77777099609375}
     type: Spacer
     layout_properties: {grid_position: 'BRLAXK,ZBHZPI CFFCZA,GFOSTO FNBIKW,JKAJZA'}
@@ -88,7 +90,7 @@ components:
     type: Spacer
     layout_properties: {grid_position: 'BRLAXK,ZBHZPI CFFCZA,GFOSTO HEQOJZ,QTPDEO'}
     name: spacer_2
-  - properties: {height: '25', source: _/theme/borrower/dashboard/borrower_mobile.png, display_mode: zoom_to_fill}
+  - properties: {height: '25', source: _/theme/borrower/dashboard/borrower_mobile.png, display_mode: zoom_to_fill, visible: false}
     type: Image
     layout_properties: {grid_position: 'BRLAXK,ZBHZPI CFFCZA,GFOSTO DEPNHD,BLURTD'}
     name: image_1
@@ -96,11 +98,11 @@ components:
     type: Spacer
     layout_properties: {grid_position: 'BRLAXK,ZBHZPI CFFCZA,GFOSTO QRIROO,UZBYBJ'}
     name: spacer_8
-  - properties: {height: '25', source: _/theme/borrower/dashboard/borrower_member_since.png, display_mode: zoom_to_fill}
+  - properties: {height: '25', source: _/theme/borrower/dashboard/borrower_member_since.png, display_mode: zoom_to_fill, visible: false}
     type: Image
     layout_properties: {grid_position: 'BRLAXK,ZBHZPI CFFCZA,GFOSTO LKRUOZ,OPRCLQ'}
     name: image_3
-  - properties: {text: 'Mobile No:', bold: true, font_size: 16}
+  - properties: {text: 'Mobile No:', bold: true, font_size: 16, visible: false}
     type: Label
     layout_properties: {grid_position: 'BRLAXK,ZBHZPI CFFCZA,KRZPIS AWTOFC,IMAGKM'}
     name: label_2
@@ -108,11 +110,7 @@ components:
     type: Spacer
     layout_properties: {grid_position: 'BRLAXK,ZBHZPI CFFCZA,KRZPIS EOMMKQ,VMBXGC'}
     name: spacer_3
-  - properties: {text: 'Member Since:', bold: true, font_size: 16}
-    type: Label
-    layout_properties: {grid_position: 'BRLAXK,ZBHZPI CFFCZA,KRZPIS GEPGCZ,GXENVG'}
-    name: label_6
-  - properties: {text: '7026542951', align: left}
+  - properties: {text: '7026542951', align: left, visible: false}
     type: Label
     layout_properties: {grid_position: 'BRLAXK,ZBHZPI CFFCZA,QIOHZF JVPHLH,BZAZHQ'}
     name: label_3
@@ -120,15 +118,11 @@ components:
     type: Spacer
     layout_properties: {grid_position: 'BRLAXK,ZBHZPI CFFCZA,QIOHZF REMARR,DBLYMQ'}
     name: spacer_4
-  - properties: {text: 1 aug 2022, align: left}
-    type: Label
-    layout_properties: {grid_position: 'BRLAXK,ZBHZPI CFFCZA,QIOHZF IFJRZE,FPUVFR'}
-    name: label_7
   - properties: {height: 0.22222900390625}
     type: Spacer
     layout_properties: {grid_position: 'BRLAXK,ZBHZPI CFFCZA,TMHEQE MHNBNA,AGWURC'}
     name: spacer_9
-  - properties: {height: '25', source: _/theme/borrower/dashboard/borrower_credit_limit.png, display_mode: zoom_to_fill}
+  - properties: {height: '25', source: _/theme/borrower/dashboard/borrower_credit_limit.png, display_mode: zoom_to_fill, visible: false}
     type: Image
     layout_properties: {grid_position: 'BRLAXK,ZBHZPI CFFCZA,TMHEQE KQQHIE,WXRJKU'}
     name: image_2
@@ -136,31 +130,23 @@ components:
     type: Spacer
     layout_properties: {grid_position: 'BRLAXK,ZBHZPI CFFCZA,TMHEQE KRNUBY,YTDWCD'}
     name: spacer_10
-  - properties: {height: '25', source: _/theme/borrower/dashboard/borrower_balance.png, display_mode: zoom_to_fill}
+  - properties: {height: '25', source: _/theme/loan-icon-6.jpg, display_mode: zoom_to_fill, visible: false}
     type: Image
     layout_properties: {grid_position: 'BRLAXK,ZBHZPI CFFCZA,TMHEQE WHMPOF,PQMFHZ'}
     name: image_4
-  - properties: {text: 'Credit Limit :', bold: true, font_size: 16}
-    type: Label
-    layout_properties: {grid_position: 'BRLAXK,ZBHZPI CFFCZA,RWRETV URBVWU,OOQVBO'}
-    name: label_4
   - properties: {height: '10'}
     type: Spacer
     layout_properties: {grid_position: 'BRLAXK,ZBHZPI CFFCZA,RWRETV RYUAOR,RDNBOC'}
     name: spacer_6
-  - properties: {text: 'Available Balance:', bold: true, font_size: 16}
+  - properties: {text: 'No Of Loan Taken:', bold: true, font_size: 16, visible: false}
     type: Label
     layout_properties: {grid_position: 'BRLAXK,ZBHZPI CFFCZA,RWRETV ZOQKOU,VBJGJM'}
     name: label_8
-  - properties: {text: '500000'}
-    type: Label
-    layout_properties: {grid_position: 'BRLAXK,ZBHZPI CFFCZA,DCSWXM RBAIUE,TBHGTF'}
-    name: label_5
   - properties: {height: 15.25}
     type: Spacer
     layout_properties: {grid_position: 'BRLAXK,ZBHZPI CFFCZA,DCSWXM WBGNLE,DVSVUB'}
     name: spacer_7
-  - properties: {text: '5000'}
+  - properties: {text: '', foreground: black}
     type: Label
     layout_properties: {grid_position: 'BRLAXK,ZBHZPI CFFCZA,DCSWXM OBZVXW,IOPGFQ'}
     name: label_9
@@ -230,6 +216,7 @@ components:
       - {id: RNOHUR, data_key: column_7, title: Actions, expand: false}
       role: tonal-data-grid
       border: ''
+      visible: true
     type: DataGrid
     layout_properties: {grid_position: 'ZSVLWJ,FTSZNU', full_width_row: true}
     name: data_grid_1_copy
@@ -269,16 +256,6 @@ components:
       layout_properties: {grid_position: 'JTNMWA,LCMVRS'}
       event_bindings: {click: contact_main_form_link_click}
       name: contact_main_form_link_copy_1
-    - properties: {text: Report A Problem, bold: true, foreground: black, icon: 'fa:comment'}
-      type: Link
-      layout_properties: {}
-      event_bindings: {click: link_11_click}
-      name: link_11
-    - properties: {text: Help, foreground: black, bold: true, icon: 'fa:question-circle'}
-      type: Link
-      layout_properties: {}
-      event_bindings: {click: link_12_click}
-      name: link_12
     - properties: {text: Wallet, bold: true, foreground: black, icon: 'data:image/png;base64,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'}
       type: Link
       layout_properties: {}
@@ -289,7 +266,6 @@ components:
       layout_properties: {}
       event_bindings: {click: notifications_click}
       name: notifications
-      data_bindings: []
     - properties: {}
       type: form:borrower.logout
       name: logout_1

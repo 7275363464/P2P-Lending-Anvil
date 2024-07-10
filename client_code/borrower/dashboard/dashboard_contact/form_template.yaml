@@ -50,30 +50,47 @@ components:
     properties: {height: 11}
     type: Spacer
     layout_properties: {grid_position: 'HPOLAI,OKUOFV'}
-  - name: label_3
-    properties: {text: For investmet related queries, bold: true, underline: true, font_size: 15}
-    type: Label
-    layout_properties: {grid_position: 'FNKXCP,SOGVCM'}
-  - name: label_3_copy
-    properties: {text: For Loan related queries, bold: true, underline: true, font_size: 15}
-    type: Label
-    layout_properties: {grid_position: 'FNKXCP,KZGAWG'}
-  - name: label_5
-    properties: {italic: false, icon: 'fa:phone', text: +91-7894561235}
-    type: Label
-    layout_properties: {grid_position: 'WNGQOY,ICMGWM'}
-  - name: label_5_copy
-    properties: {italic: false, icon: 'fa:phone', text: +91-7894132141}
-    type: Label
-    layout_properties: {grid_position: 'WNGQOY,YOBWAO'}
-  - name: label_6
-    properties: {icon: 'fa:envelope', text: '  Ascendsinvestment@p2p.coom'}
-    type: Label
-    layout_properties: {grid_position: 'GULBBQ,VSSLMU'}
-  - name: label_6_copy
-    properties: {icon: 'fa:envelope', text: '  Ascendsloan@p2p.coom'}
-    type: Label
-    layout_properties: {grid_position: 'GULBBQ,LYIMGS'}
+  - name: column_panel_1
+    properties: {}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'NLQRBB,ENOWZA'}
+    components:
+    - name: label_3
+      properties: {text: For investmet related queries, bold: true, underline: true, font_size: 15}
+      type: Label
+      layout_properties: {grid_position: 'MKXRPZ,AUSYRM'}
+    - name: spacer_2
+      properties: {height: 32}
+      type: Spacer
+      layout_properties: {grid_position: 'MKXRPZ,HMYCWW'}
+    - name: label_3_copy
+      properties: {text: For Loan related queries, bold: true, underline: true, font_size: 15}
+      type: Label
+      layout_properties: {grid_position: 'MKXRPZ,WQHGFJ'}
+    - name: label_5
+      properties: {italic: false, icon: 'fa:phone', text: +91-7894561235}
+      type: Label
+      layout_properties: {grid_position: 'DAWCOK,EIHQOO'}
+    - name: spacer_4
+      properties: {height: 32}
+      type: Spacer
+      layout_properties: {grid_position: 'DAWCOK,DRRUSR'}
+    - name: label_5_copy
+      properties: {italic: false, icon: 'fa:phone', text: +91-7894132141}
+      type: Label
+      layout_properties: {grid_position: 'DAWCOK,TBFDHM'}
+    - name: label_6
+      properties: {icon: 'fa:envelope', text: '  Ascendsinvestment@p2p.coom'}
+      type: Label
+      layout_properties: {grid_position: 'SUJZDZ,BCJVPR'}
+    - name: spacer_5
+      properties: {height: 32}
+      type: Spacer
+      layout_properties: {grid_position: 'SUJZDZ,ZXAQAH'}
+    - name: label_6_copy
+      properties: {icon: 'fa:envelope', text: '  Ascendsloan@p2p.coom'}
+      type: Label
+      layout_properties: {grid_position: 'SUJZDZ,RDQDTE'}
   - name: label_3_copy_2
     properties: {text: For corporate/genral queries, bold: true, underline: true, font_size: 15, align: center}
     type: Label
@@ -86,4 +103,9 @@ components:
     properties: {icon: 'fa:envelope', text: '  Ascendsfunding@p2p.coom', align: center}
     type: Label
     layout_properties: {grid_position: 'DVAXOA,BMHVNJ'}
+- name: button_1
+  properties: {text: Report a Problem, role: null, background: '#05264d', foreground: white, bold: true}
+  type: Button
+  layout_properties: {grid_position: 'RQDMKB,ETOMNF'}
+  event_bindings: {click: button_1_click}
 is_package: true

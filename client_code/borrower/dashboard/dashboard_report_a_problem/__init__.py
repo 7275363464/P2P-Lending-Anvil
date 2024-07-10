@@ -1,40 +1,45 @@
 from ._anvil_designer import dashboard_report_a_problemTemplate
 from anvil import *
 import anvil.server
-import datetime
-from anvil.tables import app_tables
 import anvil.google.auth, anvil.google.drive
 from anvil.google.drive import app_files
+import anvil.users
+import datetime
+import anvil.tables as tables
+import anvil.tables.query as q
+from anvil.tables import app_tables
 from .. import main_form_module as main_form_module
 
+
 class dashboard_report_a_problem(dashboard_report_a_problemTemplate):
-    def __init__(self, **properties):
-        # Set Form properties and Data Bindings.
-        self.init_components(**properties)
-        # Any code you write here will run before the form opens.
-        self.user_id = main_form_module.userId
-        print(self.user_id)
-        user_profile = app_tables.fin_user_profile.get(customer_id=self.user_id)
+  def __init__(self, **properties):
+    # Set Form properties and Data Bindings.
+    self.init_components(**properties)
+
+    # Any code you write here will run before the form opens.
+    self.user_id = main_form_module.userId
+    print(self.user_id)
+    user_profile = app_tables.fin_user_profile.get(customer_id=self.user_id)
       
-        if user_profile:
-            self.name_box.text = user_profile['full_name']
-            self.mobile_box.text = user_profile['mobile']
-            self.email_box.text = user_profile['email_user']
+    if user_profile:
+        self.name_box.text = user_profile['full_name']
+        self.mobile_box.text = user_profile['mobile']
+        self.email_box.text = user_profile['email_user']
           
 
-        self.usertype = properties.get('usertype', 'borrower')  # Default value is 'borrower'
-        # Populate dropdowns or other components here
-        self.subcategory = app_tables.fin_report_issue_category.search()
-        self.category = app_tables.fin_issue_category.search()
-        self.drop_down_1.items = [(c['issue_category'], c['issue_category']) for c in self.category]
-        self.drop_down_1.selected_value = self.category[0]['issue_category']  # Set default value
-        # Set up event handler for category dropdown change
-        self.drop_down_1.set_event_handler('change', self.update_subcategory)
+    self.usertype = properties.get('usertype', 'borrower')  # Default value is 'borrower'
+    # Populate dropdowns or other components here
+    self.subcategory = app_tables.fin_report_issue_category.search()
+    self.category = app_tables.fin_issue_category.search()
+    self.drop_down_1.items = [(c['issue_category'], c['issue_category']) for c in self.category]
+    self.drop_down_1.selected_value = self.category[0]['issue_category']  # Set default value
+    # Set up event handler for category dropdown change
+    self.drop_down_1.set_event_handler('change', self.update_subcategory)
 
-        # Call the update_subcategory method to initialize the subcategory dropdown
-        self.update_subcategory()
+    # Call the update_subcategory method to initialize the subcategory dropdown
+    self.update_subcategory()
 
-    def update_subcategory(self, **event_args):
+  def update_subcategory(self, **event_args):
         selected_category = self.drop_down_1.selected_value
         if selected_category == 'Loan Issue':
             self.drop_down_2.items = [(sli['borrower_subcategory_loan_issue'], sli['borrower_subcategory_loan_issue']) for sli in self.subcategory]
@@ -45,7 +50,7 @@ class dashboard_report_a_problem(dashboard_report_a_problemTemplate):
 
 
 
-    def button_2_click(self, **event_args):
+  def button_2_click(self, **event_args):
         # Get input values from text boxes
         full_name = self.name_box.text
         mobile = self.mobile_box.text
@@ -97,15 +102,17 @@ class dashboard_report_a_problem(dashboard_report_a_problemTemplate):
         # customer_id = self.user_id
         open_form('borrower.dashboard' if self.usertype == 'borrower' else 'lender.dashboard')
 
-    def image_1_copy_2_mouse_up(self, x, y, button, **event_args):
+  def image_1_copy_2_mouse_up(self, x, y, button, **event_args):
         """This method is called when a mouse button is released on this component"""
         open_form('borrower.dashboard.dashboard_report_a_problem')
 
 
-    def file_loader_1_change(self, file, **event_args):
-      """This method is called when a new file is loaded into this FileLoader"""
-      self.image_issue.source = file
 
+  def file_loader_1_change(self, file, **event_args):
+    """This method is called when a new file is loaded into this FileLoader"""
+    self.image_issue.source = file
 
-
-
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('borrower.dashboard.dashboard_contact')
+    

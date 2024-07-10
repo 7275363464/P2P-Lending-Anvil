@@ -7,6 +7,8 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+import datetime
+from .. import main_form_module as main_form_module
 
 class dashboard_contact(dashboard_contactTemplate):
   def __init__(self, **properties):
@@ -41,5 +43,10 @@ class dashboard_contact(dashboard_contactTemplate):
   def wallet_dashboard_link_click(self, **event_args):
     """This method is called when the link is clicked"""
     open_form('wallet.wallet')
+
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('borrower.dashboard.dashboard_report_a_problem')
+
 
 

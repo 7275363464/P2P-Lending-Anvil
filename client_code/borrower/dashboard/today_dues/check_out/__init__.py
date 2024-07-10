@@ -332,10 +332,10 @@ class check_out(check_outTemplate):
             self.label_3.visible = True
   
         # Update other labels
-        self.loan_id_label.text = str(selected_row['lender_full_name'])
-        self.loan_amount_label.text = str(loan_amount)
+        # self.loan_id_label.text = str(selected_row['lender_full_name'])
+        self.loan_amount_label.text = str(total_repayment_amount)
         self.interest_label.text = "{:.2f}".format(total_interest_amount)
-        self.tenure_label.text = str(tenure)
+        # self.tenure_label.text = str(tenure)
         self.account_no_label.text = str(selected_row['account_number'])
       
         # Display total EMI amount including extension amount
@@ -467,7 +467,7 @@ class check_out(check_outTemplate):
         )
         if adding_remaining_part_payment:
           part_pay = adding_remaining_part_payment['payment_type']
-          part_lender_returns = adding_remaining_part_payment['part_lender_returns']
+          part_lender_returns = adding_remaining_part_payment['lender_returns']
           part_remaining_amount = adding_remaining_part_payment['part_remaining_amount']
           if part_pay == 'part payment':
             

@@ -15,37 +15,14 @@ components:
   properties: {}
   layout_properties: {grid_position: 'ELUMUA,DTESII', full_width_row: true}
   name: navigation_form_dashboard_1
-- properties: {role: null, bold: true, align: center, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: 18, tooltip: '', text: Today Dues}
+- properties: {role: null, bold: true, align: center, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: 18, tooltip: '', text: Upcoming Payments}
   type: Label
   layout_properties: {grid_position: 'KIKEMK,JZDVFZ'}
   name: label_1_copy_1_copy_1_copy_1
-- properties:
-    role: null
-    spacing_above: small
-    columns:
-    - {id: QMIVSR, title: loan_id, data_key: loan_id, $$hashKey: 'object:2221'}
-    - {id: TXOKUE, title: loan_amount, data_key: loan_amount, $$hashKey: 'object:2222'}
-    - {id: EBPKTL, title: Schedule payment, data_key: column_3, $$hashKey: 'object:2223'}
-    - {id: NLFHNO, title: Days passed due date, data_key: column_1, $$hashKey: 'object:1146'}
-    - {id: ECOVFV, title: '', data_key: column_2, $$hashKey: 'object:393'}
-    - {id: EOQVZT, title: '', data_key: column_4, $$hashKey: 'object:9434'}
-    background: ''
-    rows_per_page: 20
-    wrap_on: never
-    foreground: ''
-    show_page_controls: true
-    auto_header: true
-    spacing_below: small
-    visible: false
-    border: ''
-    tooltip: ''
-  type: DataGrid
-  layout_properties: {grid_position: 'LZEPCA,PRBVPW'}
-  name: data_grid_1
-  components:
-  - properties: {item_template: borrower.dashboard.today_dues.ItemTemplate22}
-    type: RepeatingPanel
-    name: repeating_panel_1
+- properties: {item_template: borrower.dashboard.today_dues.ItemTemplate22}
+  type: RepeatingPanel
+  name: repeating_panel_1
+  layout_properties: {grid_position: 'XYYMAZ,WIRLRL', full_width_row: false}
 - properties: {item_template: borrower.dashboard.today_dues.ItemTemplate73}
   type: RepeatingPanel
   layout_properties: {grid_position: 'BMKJXB,NHSVGR'}

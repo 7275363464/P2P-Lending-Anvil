@@ -43,7 +43,7 @@ class user_form(user_formTemplate):
       print(actual_count)
       print("")
       if actual_count==1:
-        open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_1_education',user_id=userid)
+        open_form('borrower.borrower_registration_forms.borrower_registration_form_1_education',user_id=userid)
       elif actual_count==1.1:
         open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_1_education.star_1_borrower_registration_form_education_10th_class',user_id=userid) 
       elif actual_count==1.2:
@@ -85,9 +85,9 @@ class user_form(user_formTemplate):
       elif actual_count==6:
         open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_5_bank_2',user_id=userid)
       else:
-        open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_1_education',user_id=userid)
+        open_form('borrower.borrower_registration_forms.borrower_registration_form_1_education',user_id=userid)
     else:
-     open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_1_education',user_id=userid)
+     open_form('borrower.borrower_registration_forms.borrower_registration_form_1_education',user_id=userid)
      print(actual_count)
 
   # def borrower_button_click(self, **event_args):

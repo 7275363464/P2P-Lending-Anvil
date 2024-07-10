@@ -24,6 +24,7 @@ class lender_view_profile(lender_view_profileTemplate):
     self.load_user_profile()
     self.disable_company_employment_fields()
     self.disable_lender_details_fields()
+    self.image_1.role = 'circular-image'
 
 
     # Any code you write here will run before the form opens.
@@ -897,3 +898,7 @@ class lender_view_profile(lender_view_profileTemplate):
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('lendor.dashboard')
+
+  def edit_land_farming_details_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pass

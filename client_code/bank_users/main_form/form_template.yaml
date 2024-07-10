@@ -71,10 +71,10 @@ components:
     layout_properties: {x: 723.4375122077763, y: 333.9750099182129, width: 159}
     event_bindings: {click: button_3_click}
     name: button_3
-  - name: spacer_42
-    properties: {height: 32}
+  - properties: {height: 32}
     type: Spacer
     layout_properties: {x: 1289.888916015625, y: 403.1111145019531, width: 200}
+    name: spacer_42
   - properties: {height: 410.24993896484375, source: _/theme/bank_users/main_form/main.png, display_mode: zoom_to_fill}
     type: Image
     layout_properties: {x: 108.96871948242188, y: 38, width: 265}

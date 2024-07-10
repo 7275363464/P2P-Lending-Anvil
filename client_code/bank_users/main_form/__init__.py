@@ -34,7 +34,7 @@ class main_form(main_formTemplate):
     #     self.button_2_click_event = self.button_2_click
   
   def login_signup_button_click(self, **event_args):
-    open_form('bank_users.main_form.login_page')
+    open_form('bank_users.main_form.signin_page')
         # anvil.users.login_with_form()
         # current_user = anvil.users.get_user()
         # if current_user:

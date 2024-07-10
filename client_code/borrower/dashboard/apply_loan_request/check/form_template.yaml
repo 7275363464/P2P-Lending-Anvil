@@ -113,7 +113,7 @@ components:
       type: Label
       layout_properties: {grid_position: 'CORNNT,IDBVRU'}
   - name: repeating_panel_1
-    properties: {spacing_above: none, spacing_below: none, item_template: borrower.dashboard.new_loan_request.check.RowTemplate27}
+    properties: {spacing_above: none, spacing_below: none, item_template: borrower.dashboard.apply_loan_request.check.RowTemplate27}
     type: RepeatingPanel
     layout_properties: {grid_position: 'OXLBQQ,CGNAXH', full_width_row: true}
   - type: Button

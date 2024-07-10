@@ -33,40 +33,40 @@ def add_education_tenth(tenth_class,user_id):
     row[0]['form_count']=1.1
 
 @anvil.server.callable
-def add_education_int(tenth_class,intermediate,user_id):
+def add_education_int(tenth_class_1,intermediate,user_id):
   row = app_tables.fin_user_profile.search(customer_id=user_id)
   if row:
-    row[0]['tenth_class']=tenth_class
+    row[0]['tenth_class']=tenth_class_1
     row[0]['intermediate']=intermediate
     row[0]['form_count']=1.2
 
 @anvil.server.callable
-def add_education_btech(tenth_class,intermediate,btech,user_id):
+def add_education_btech(tenth_class_2,intermediate_1,btech,user_id):
   row = app_tables.fin_user_profile.search(customer_id=user_id)
   if row:
-    row[0]['tenth_class']=tenth_class
-    row[0]['intermediate']=intermediate
+    row[0]['tenth_class']=tenth_class_2
+    row[0]['intermediate']=intermediate_1
     row[0]['btech']=btech
     row[0]['form_count']=1.3
 
 @anvil.server.callable
-def add_education_mtech(tenth_class,intermediate,btech,mtech,user_id):
+def add_education_mtech(tenth_class_3,intermediate_2,btech_1,mtech,user_id):
   row = app_tables.fin_user_profile.search(customer_id=user_id)
   if row:
-    row[0]['tenth_class']=tenth_class
-    row[0]['intermediate']=intermediate
-    row[0]['btech']=btech
+    row[0]['tenth_class']=tenth_class_3
+    row[0]['intermediate']=intermediate_2
+    row[0]['btech']=btech_1
     row[0]['mtech']=mtech
     row[0]['form_count']=1.4
 
 @anvil.server.callable
-def add_education_phd(tenth_class,intermediate,btech,mtech,phd,user_id):
+def add_education_phd(tenth_class_4,intermediate_3,btech_2,mtech_1,phd,user_id):
   row = app_tables.fin_user_profile.search(customer_id=user_id)
   if row:
-    row[0]['tenth_class']=tenth_class
-    row[0]['intermediate']=intermediate
-    row[0]['btech']=btech
-    row[0]['mtech']=mtech
+    row[0]['tenth_class']=tenth_class_4
+    row[0]['intermediate']=intermediate_3
+    row[0]['btech']=btech_2
+    row[0]['mtech']=mtech_1
     row[0]['phd']=phd
     row[0]['form_count']=1.5
 
@@ -88,9 +88,9 @@ def add_lendor_institutional_form_1(business_name,business_add,business_type,emp
   if row:
     row[0]['business_name'] = business_name
     row[0]['business_add'] = business_add
-    row[0]['business_type'] = business_type
+    row[0]['business_type'] = business_type    
     row[0]['employees_working'] = empolyees_working
-    row[0]['form_count'] = 2.21
+    row[0]['form_count'] = 2
 
 @anvil.server.callable
 def add_lendor_institutional_form_2(year,months,industry_type,six_monthturnover,last_six_statments,user_id):
@@ -101,7 +101,7 @@ def add_lendor_institutional_form_2(year,months,industry_type,six_monthturnover,
     row[0]['industry_type'] = industry_type
     row[0]['six_month_turnover'] = six_monthturnover
     row[0]['last_six_month_bank_proof'] = last_six_statments
-    row[0]['form_count'] = 2.22
+    row[0]['form_count'] = 2
 
 @anvil.server.callable
 def add_lendor_institutional_form_3(din,cin,reg_office_add,proof_verification,user_id):
@@ -111,7 +111,7 @@ def add_lendor_institutional_form_3(din,cin,reg_office_add,proof_verification,us
     row[0]['cin'] = cin
     row[0]['registered_off_add'] = reg_office_add
     row[0]['proof_verification'] = proof_verification
-    row[0]['form_count']=2.23
+    row[0]['form_count']=2
 
 @anvil.server.callable
 def add_lendor_individual_form_1(company_name,org_type,emp_type,occupation_type,user_id):
@@ -121,7 +121,7 @@ def add_lendor_individual_form_1(company_name,org_type,emp_type,occupation_type,
     row[0]['organization_type']=org_type
     row[0]['employment_type']=emp_type
     row[0]['occupation_type']=occupation_type
-    row[0]['form_count']=2.31
+    row[0]['form_count']=2
 
 @anvil.server.callable
 def add_lendor_individual_form_2(comp_address, landmark, business_phone_number, user_id):
@@ -130,7 +130,7 @@ def add_lendor_individual_form_2(comp_address, landmark, business_phone_number, 
     row[0]['company_address'] = comp_address
     row[0]['company_landmark'] = landmark
     row[0]['business_no'] = business_phone_number
-    row[0]['form_count']=2.32
+    row[0]['form_count']=2
 
 @anvil.server.callable
 def add_lendor_individual_form_3(annual_salary, designation,emp_id_proof,last_six_month,user_id,salary_type):
@@ -141,7 +141,7 @@ def add_lendor_individual_form_3(annual_salary, designation,emp_id_proof,last_si
     row[0]['emp_id_proof']=emp_id_proof
     row[0]['last_six_month_bank_proof']=last_six_month
     row[0]['salary_type']=salary_type
-    row[0]['form_count'] = 2.33
+    row[0]['form_count'] = 2
 
 @anvil.server.callable
 def add_lendor_education_form(qualification,certificate,user_id):

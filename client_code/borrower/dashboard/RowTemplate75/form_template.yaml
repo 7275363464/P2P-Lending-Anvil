@@ -1,0 +1,38 @@
+is_package: true
+container: {type: DataRowPanel}
+components:
+- name: label_1
+  properties: {align: center}
+  type: Label
+  layout_properties: {column: JKSDUP}
+  data_bindings:
+  - {property: text, code: 'self.item[''borrower_customer_id'']', writeback: false}
+- name: label_2
+  properties: {align: center}
+  type: Label
+  layout_properties: {column: VJQQOR}
+  data_bindings:
+  - {property: text, code: 'self.item[''product_name'']', writeback: false}
+- name: label_3
+  properties: {align: center}
+  type: Label
+  layout_properties: {column: OJLQEN}
+  data_bindings:
+  - {property: text, code: 'self.item[''loan_amount'']', writeback: false}
+- name: label_4
+  properties: {align: center}
+  type: Label
+  layout_properties: {column: ZEUAPD}
+  data_bindings:
+  - {property: text, code: 'self.item[''days_left'']', writeback: false}
+- name: label_5
+  properties: {align: center}
+  type: Label
+  layout_properties: {column: DAZULJ}
+  data_bindings:
+  - {property: text, code: 'self.item[''Scheduled_date'']', writeback: false}
+- name: link_1
+  properties: {bold: true, align: center, text: Pay}
+  type: Link
+  layout_properties: {column: QIHFXC}
+  event_bindings: {click: link_1_click}
