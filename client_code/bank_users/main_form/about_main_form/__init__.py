@@ -109,4 +109,4 @@ class about_main_form(about_main_formTemplate):
 
   def login_signup_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form('bank_users.main_form.login_page')
+    open_form('bank_users.main_form.signin_page')

@@ -279,13 +279,11 @@ class mis_reports(mis_reportsTemplate):
         no_of_loans_closed = len([loan for loan in loan_details if loan['loan_updated_status'] == 'closed loan'])
         no_of_loans_rejected = len([loan for loan in loan_details if loan['loan_updated_status'] == 'rejected'])
         
-        # Filter out None values for lender_share
         lender_share = sum(loan['lender_returns'] for loan in loan_details if loan['lender_returns'] is not None)
         
         no_of_borrowers = len([user for user in users if user['usertype'] == 'borrower'])
         no_of_lenders = len([user for user in users if user['usertype'] == 'lender'])
         
-        # Filter out None values for lenders_commitment
         lenders_commitment = sum(lender['return_on_investment'] for lender in lenders if lender['return_on_investment'] is not None)
     
         # Data for the pie chart
@@ -299,33 +297,49 @@ class mis_reports(mis_reportsTemplate):
             lenders_commitment
         ]
         labels = [
-            'No of Loans Disbursed: {}'.format(no_of_loans_disbursed),
-            'No of Loans Closed: {}'.format(no_of_loans_closed),
-            'No of Loans Rejected: {}'.format(no_of_loans_rejected),
-            'Lender Share: {}'.format(lender_share),
-            'No of Borrowers: {}'.format(no_of_borrowers),
-            'No of Lenders: {}'.format(no_of_lenders),
-            'Lenders Commitment: {}'.format(lenders_commitment)
+            'No of Loans Disbursed',
+            'No of Loans Closed',
+            'No of Loans Rejected',
+            'Lender Share',
+            'No of Borrowers',
+            'No of Lenders',
+            'Lenders Commitment'
         ]
     
         # Create the pie chart
         fig = go.Figure(data=[go.Pie(labels=labels, values=values, textinfo='label+percent')])
     
-        # Update the layout to set the size
+        # Update the layout to set the size and add a description
         fig.update_layout(
             title={
-                'text': 'Financial Loan Details',
+                'text': 'Financial Loan Details Overview',
                 'font': {
                     'size': 20,
                     'color': 'black',
                     'family': 'Arial',
                     'bold': True
                 }
-            }
+            },
+            annotations=[dict(
+                text='This chart shows a summary of financial loan details, including the number of loans disbursed, closed, and rejected, as well as the total lender share and commitments.',
+                x=0.5,
+                y=-0.1,
+                showarrow=False,
+                xref="paper",
+                yref="paper",
+                font=dict(
+                    size=12,
+                    color="black",
+                    family="Arial"
+                ),
+                align="center"
+            )]
         )
     
         # Embed the plot in the Anvil app
         self.plot_1.figure = fig
+
+
 
     def plot_loan_data(self):
         # Fetch data from tables

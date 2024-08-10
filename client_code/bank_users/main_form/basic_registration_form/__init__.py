@@ -479,15 +479,3 @@ class basic_registration_form(basic_registration_formTemplate):
         alert("Logged out successfully")
         anvil.users.logout()
         open_form('bank_users.main_form') 
-
-   
-
-
-
-
-
-
-
-
-
-

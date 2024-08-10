@@ -314,12 +314,21 @@ class foreclose(forecloseTemplate):
     
     product_id_to_search = selected_row['product_id']
     data = tables.app_tables.fin_product_details.search(product_id=product_id_to_search)
+    foreclose_amount = 0  # Default to 0 in case foreclose_fee is not found
     for data_1 in data:
-      forclosure_fee = data_1['foreclosure_fee']
-      if forclosure_fee:
-        foreclose_amount =  self.selected_row['remaining_amount'] * forclosure_fee  / 100
-        print(foreclose_amount)
-        self.foreclose_fee_component.text = forclosure_fee
+            forclosure_fee = data_1['foreclosure_fee']
+            if forclosure_fee:
+                self.foreclose_fee_component.text = str(forclosure_fee)
+                foreclose_amount = outstanding_amount * forclosure_fee / 100
+                break
+
+        # Ensure foreclose_fee_component contains a valid number before converting to float
+    if not self.foreclose_fee_component.text or not self.foreclose_fee_component.text.strip().isdigit():
+            self.foreclose_fee_component.text = '0'
+
+    self.foreclose_fee = float(self.foreclose_fee_component.text)
+    foreclose_amount = float(foreclose_amount)
+    print(foreclose_amount)
     # self.foreclosure_fee_lst = []    
     # for i in data:
     #     self.foreclosure_fee_lst.append(i['foreclosure_fee'])
@@ -331,9 +340,9 @@ class foreclose(forecloseTemplate):
     # foreclose_amount = outstanding_amount * (self.foreclose_fee/100)
 
     # self.foreclose_fee_component.text = foreclose_amount
-    self.foreclose_fee = float(self.foreclose_fee_component.text)
-    foreclose_amount = float(foreclose_amount)
-    print(foreclose_amount)
+    # self.foreclose_fee = float(self.foreclose_fee_component.text)
+    # foreclose_amount = float(foreclose_amount)
+    # print(foreclose_amount)
     
     total_due_amount = outstanding_amount + foreclose_amount
     total_due_amount = float(total_due_amount)

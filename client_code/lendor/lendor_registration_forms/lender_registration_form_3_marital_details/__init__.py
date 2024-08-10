@@ -29,6 +29,23 @@ class lender_registration_form_3_marital_details(lender_registration_form_3_mari
     
 
     
+    user_data=app_tables.fin_guarantor_details.get(customer_id=user_id)
+    if user_data:
+      self.drop_down_1.selected_value = user_data['another_person']
+      if user_data['another_person'] == 'Spouse':
+        self.column_panel_2.visible = True
+        self.column_panel_2.visible = False
+      else:
+        self.column_panel_2.visible = False
+        self.column_panel_2.visible = True
+
+    self.userId = user_id
+
+    self.init_components(**properties)
+
+    
+
+    
 
     user_data=app_tables.fin_guarantor_details.get(customer_id=user_id)
     if user_data:
@@ -44,6 +61,17 @@ class lender_registration_form_3_marital_details(lender_registration_form_3_mari
            self.date_picker_3.date =user_data['guarantor_marriage_date']
            self.spouse_mbl_no_text.text=user_data['guarantor_mobile_no']
            self.drop_down_1_copy.selected_value = user_data['guarantor_profession']
+           if user_data['guarantor_profession'] is not None:
+             if user_data['guarantor_profession'] =='Home Maker':
+               self.spouse_companyname_text.visible = False
+               self.annual_earning_text.visible = False
+               self.company_name.visible = False
+               self.anual_ctc.visible = False
+             else:
+               self.spouse_companyname_text.visible = True
+               self.annual_earning_text.visible = True
+               self.company_name.visible = True
+               self.anual_ctc.visible = True
            self.spouse_companyname_text.text = user_data['guarantor_company_name']
            self.annual_earning_text.text = user_data['guarantor_annual_earning']
 
@@ -103,10 +131,10 @@ class lender_registration_form_3_marital_details(lender_registration_form_3_mari
             self.anual_ctc.visible = True
 
   def button_next_click(self, **event_args):
-      # marital_status = self.marital_status_lender_registration_dropdown.selected_value
+      guarato_details = self.drop_down_1_copy.selected_value
       user_id = self.userId
 
-      # if not marital_status or marital_status not in ['Not Married', 'Married', 'Other']:
+      # if not guarato_details :
       #   Notification("Please select a valid marital status").show()
       #   return
 
@@ -187,8 +215,9 @@ class lender_registration_form_3_marital_details(lender_registration_form_3_mari
                               another_person, father_name, father_dob,
                               father_mbl_no, father_profession,
                               father_address, self.userId)
-            open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_4_loan',
-                      user_id=self.userId)
+            open_form('lendor.lendor_registration_forms.lender_registration_form_4_bank_form_1',user_id=self.userId)
+
+
         else:
           Notification("Please fill all the required fields").show()
 
@@ -220,9 +249,15 @@ class lender_registration_form_3_marital_details(lender_registration_form_3_mari
           elif not re.match(r'^\d{10}$', str(spouse_mbl_no)):
             errors.append("Enter a valid mobile no!")
             self.spouse_mbl_no_text.focus()
-          elif not spouse_profession:
+          elif not self.drop_down_1_copy:
             errors.append("Select a valid profession!")
             self.drop_down_1_copy.focus()
+
+          elif self.drop_down_1_copy.selected_value == 'Salaried':
+                annual_earning = self.annual_earning_text.text
+                if not annual_earning:
+                  errors.append("Enter a valid annual earning!")
+                  self.annual_earning_text.focus()
           # elif not spouse_company:
           #   errors.append("Enter a valid company name!")
           #   self.spouse_companyname_text.focus()
@@ -267,7 +302,7 @@ class lender_registration_form_3_marital_details(lender_registration_form_3_mari
                             another_person, spouse_name, spouse_mob,
                             spouse_mbl_no, spouse_profession,
                             spouse_company, annual_earning, self.userId)
-          open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_4_loan', user_id=self.userId)
+          open_form('lendor.lendor_registration_forms.lender_registration_form_4_bank_form_1',user_id=self.userId)
         else:
           Notification("Please fill all the required fields").show()
       else:
@@ -275,7 +310,7 @@ class lender_registration_form_3_marital_details(lender_registration_form_3_mari
   
 
   def button_1_click(self, **event_args):
-    open_form('lendor.lendor_registration_forms.lender_registration_form_2',user_id=self.userId)
+    open_form('lendor.lendor_registration_forms.lender_registration_form_2.',user_id=self.userId)
     # Any code you write here will run before the form opens.
 
   def marital_status_borrower_registration_dropdown_change(self, **event_args):
@@ -334,66 +369,66 @@ class lender_registration_form_3_marital_details(lender_registration_form_3_mari
   def validate_father_name(self, **event_args):
     father_name = self.father_name_text.text
     if not father_name or not re.match(r'^[A-Za-z\s]+$', father_name):
-        self.father_name_text.background = 'red'
+        self.father_name_text.role = 'outlined-error'
     else:
-        self.father_name_text.background = 'white'
+        self.father_name_text.role = 'outlined'
 
   def validate_father_dob(self, **event_args):
     father_dob = self.date_picker_1.date
     if not father_dob or father_dob > datetime.now().date() or (datetime.now().date() - father_dob).days < 365 * 18:
-        self.date_picker_1.background = 'red'
+        self.date_picker_1.role = 'outlined-error'
     else:
-        self.date_picker_1.background = 'white'
+        self.date_picker_1.role = 'outlined'
 
   def validate_father_mbl_no(self, **event_args):
     father_mbl_no = self.father_mbl_no_text.text
     if not father_mbl_no or not re.match(r'^\d{10}$', str(father_mbl_no)):
-        self.father_mbl_no_text.background = 'red'
+        self.father_mbl_no_text.role = 'outlined-error'
     else:
-        self.father_mbl_no_text.background = 'white'
+        self.father_mbl_no_text.role = 'outlined'
 
   def validate_father_profession(self, **event_args):
     father_profession = self.father_profession_text.text
     if not father_profession:
-        self.father_profession_text.background = 'red'
+        self.father_profession_text.role = 'outlined-error'
     else:
-        self.father_profession_text.background = 'white'
+        self.father_profession_text.role = 'outlined'
 
   def validate_father_address(self, **event_args):
     father_address = self.father_address_text.text
     if not father_address:
-        self.father_address_text.background = 'red'
+        self.father_address_text.role = 'outlined-error'
     else:
-        self.father_address_text.background = 'white'
+        self.father_address_text.role = 'outlined'
 
   # Validation functions for Spouse fields
   def validate_spouse_name(self, **event_args):
     spouse_name = self.spouse_name_text.text
     if not spouse_name or not re.match(r'^[A-Za-z\s]+$', spouse_name):
-        self.spouse_name_text.background = 'red'
+        self.spouse_name_text.role = 'outlined-error'
     else:
-        self.spouse_name_text.background = 'white'
+        self.spouse_name_text.role = 'outlined'
 
   def validate_spouse_dob(self, **event_args):
     spouse_mob = self.date_picker_3.date
     if not spouse_mob or spouse_mob > datetime.now().date():
-        self.date_picker_3.background = 'red'
+        self.date_picker_3.role = 'outlined-error'
     else:
-        self.date_picker_3.background = 'white'
+        self.date_picker_3.role = 'outlined'
 
   def validate_spouse_mbl_no(self, **event_args):
     spouse_mbl_no = self.spouse_mbl_no_text.text
     if not spouse_mbl_no or not re.match(r'^\d{10}$', str(spouse_mbl_no)):
-        self.spouse_mbl_no_text.background = 'red'
+        self.spouse_mbl_no_text.role = 'outlined-error'
     else:
-        self.spouse_mbl_no_text.background = 'white'
+        self.spouse_mbl_no_text.role = 'outlined'
 
   def validate_spouse_profession(self, **event_args):
     spouse_profession = self.drop_down_1_copy.selected_value
     if not spouse_profession:
-        self.drop_down_1_copy.background = 'red'
+        self.drop_down_1_copy.role = 'outlined-error'
     else:
-        self.drop_down_1_copy.background = 'white'
+        self.drop_down_1_copy.role = 'outlined'
 
   # def validate_spouse_company(self, **event_args):
   #   spouse_company = self.spouse_companyname_text.text

@@ -26,14 +26,14 @@ def add_borrower_step1(qualification,user_id):
   row = app_tables.fin_user_profile.search(customer_id=user_id)
   if row:
     row[0]['qualification'] = qualification
-    row[0]['form_count']=1
+    row[0]['form_count']=2
     
 @anvil.server.callable
 def add_borrower_step2(status_of_user,user_id):
   row = app_tables.fin_user_profile.search(customer_id=user_id)
   if row:
     row[0]['profession'] = status_of_user
-    row[0]['form_count']=2
+    row[0]['form_count']=3
 
 @anvil.server.callable
 def add_borrower_student(college_name,college_id,college_proof,college_address,user_id):
@@ -43,14 +43,14 @@ def add_borrower_student(college_name,college_id,college_proof,college_address,u
     row[0]['college_id']=college_id
     row[0]['college_address']=college_address
     row[0]['college_proof']=college_proof
-    row[0]['form_count']=2
+    row[0]['form_count']=3
 
 @anvil.server.callable
 def add_borrwer_self_employment(status_of_user,user_id):
   row=app_tables.fin_user_profile.search(customer_id=user_id)
   if row:
     row[0]['self_employment']=status_of_user
-    row[0]['form_count']=2.2
+    row[0]['form_count']=3
 
 @anvil.server.callable
 def add_borrower_farmer(land_type,total_acres,crop_name,farmer_earnings,user_id):
@@ -61,14 +61,14 @@ def add_borrower_farmer(land_type,total_acres,crop_name,farmer_earnings,user_id)
     row[0]['total_acres'] = total_acres_numeric
     row[0]['crop_name'] = crop_name
     row[0]['farmer_earnings'] = farmer_earnings 
-    row[0]['form_count'] = 2
+    row[0]['form_count'] = 3
 
 @anvil.server.callable
 def add_borrower_step3(marital_status,user_id):
   row = app_tables.fin_user_profile.search(customer_id=user_id)
   if row:
     row[0]['marital_status']=marital_status
-    row[0]['form_count']=3
+    row[0]['form_count']=1
 
 
 
@@ -80,7 +80,7 @@ def add_borrower_step4(home_loan,other_loan,user_id,credit_card,vehicle):
     row[0]['other_loan']=other_loan
     row[0]['credit_card_loans']=credit_card
     row[0]['vehicle_loan']=vehicle
-    row[0]['form_count']=4
+    row[0]['form_count']=5
     
 @anvil.server.callable
 def add_borrower_step5(account_name, account_type,account_number,bank_name, user_id):
@@ -90,7 +90,7 @@ def add_borrower_step5(account_name, account_type,account_number,bank_name, user
     row[0]['account_type'] = account_type
     row[0]['account_number'] = account_number
     row[0]['bank_name'] = bank_name  
-    row[0]['form_count']=5
+    row[0]['form_count']=6
 
 @anvil.server.callable
 def add_borrower_step6(bank_id, bank_branch, user_id):
@@ -372,7 +372,7 @@ def get_user_points(id):
                     user_points += category_points
                     break
 
-        if profession.lower() == 'self employment' or profession.lower() == 'employee':
+        if profession and (profession.lower() == 'self employment' or profession.lower() == 'employee'):
            self_employment_search = app_tables.fin_admin_ascend_categories.search(group_name='profession')
            print(f"Size of self_employment_search: {len(self_employment_search)}")
            for row in self_employment_search:

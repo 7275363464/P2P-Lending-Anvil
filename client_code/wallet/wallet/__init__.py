@@ -10,6 +10,7 @@ from anvil.tables import app_tables
 from anvil import open_form, server
 from ...borrower.dashboard import main_form_module
 from datetime import datetime
+from operator import itemgetter
 
 
 class wallet(walletTemplate):
@@ -18,12 +19,24 @@ class wallet(walletTemplate):
     
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.deposit_placeholder = "5000"
-    self.withdraw_placeholder = "0.00"
+    # self.deposit_placeholder = "5000"
+    # self.withdraw_placeholder = "0.00"
     
     self.email=main_form_module.email
     email = self.email  
+    self.refresh()
+    # self.repeating_panel_1.items = app_tables.fin_wallet_transactions.search(
+    # customer_id=self.user_id)
+ 
+    transactions = app_tables.fin_wallet_transactions.search(customer_id=self.user_id)
 
+    # Sort transactions by a specific field, e.g., 'transaction_date', in descending order
+    sorted_transactions = sorted(transactions, key=itemgetter('transaction_time_stamp'), reverse=True)
+
+    # Limit to top 5 transactions
+    top_5_transactions = sorted_transactions[:5]
+    self.repeating_panel_1.items = top_5_transactions
+    
     wallet_row =app_tables.fin_wallet.get(user_email=email)
     if wallet_row:
       # wallet_amount = wallet_row['wallet_amount']
@@ -36,6 +49,12 @@ class wallet(walletTemplate):
 
     # self.user_id = main_form_module.userId
     # user_id = self.user_id
+
+  def refresh(self):
+    """R efresh repeating panels with the latest data"""
+    
+    self.repeating_panel_1.items = top_5_transactions
+    
   def home_main_form_link_click(self, **event_args):
     """This method is called when the link is clicked"""
     user_request = app_tables.fin_user_profile.get(customer_id=self.user_id)
@@ -81,20 +100,20 @@ class wallet(walletTemplate):
     """This method is called when the button is clicked"""
     pass
 
-  def deposit_btn_click(self, **event_args):
-    """This method is called when the button is clicked"""
+  # def deposit_btn_click(self, **event_args):
+  #   """This method is called when the button is clicked"""
     
-    self.amount_text_box.placeholder = self.deposit_placeholder
-    self.deposit_money_btn.visible = True
-    self.withdraw_money_btn.visible = False
+  #   self.amount_text_box.placeholder = self.deposit_placeholder
+  #   self.deposit_money_btn.visible = True
+  #   self.withdraw_money_btn.visible = True
 
 
-  def withdraw_btn_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    self.amount_text_box.placeholder = self.withdraw_placeholder
-    self.deposit_money_btn.visible = False
-    self.withdraw_money_btn.visible = True
-    self.deposit_btn.visible = True
+  # def withdraw_btn_click(self, **event_args):
+  #   """This method is called when the button is clicked"""
+  #   self.amount_text_box.placeholder = self.withdraw_placeholder
+  #   self.deposit_money_btn.visible = False
+  #   self.withdraw_money_btn.visible = True
+  #   self.deposit_btn.visible = True
 
   def wallet_dashboard_link_click(self, **event_args):
     """This method is called when the link is clicked"""
@@ -119,11 +138,14 @@ class wallet(walletTemplate):
 
     if anvil.server.call('deposit_money', email=email, deposit_amount=deposit_amount, customer_id=customer_id):
         alert("Deposit successful!")
+        self.refresh()
 
         # Update the balance label with the new balance value
         wallet_row = app_tables.fin_wallet.get(user_email=email)
         if wallet_row:
             self.balance_lable.text = f"{wallet_row['wallet_amount']}"  
+
+        
     else:  
       alert("Deposit failed!")  
  
@@ -146,12 +168,14 @@ class wallet(walletTemplate):
     
     if anvil.server.call('withdraw_money', email=email, withdraw_amount=withdraw_amount, customer_id=customer_id):
         alert("Withdrawal successful!")
+        self.refresh()
         # Update the balance label with the new balance value
         wallet_row = app_tables.fin_wallet.get(user_email=email)
         if wallet_row:
             self.balance_lable.text = f"{wallet_row['wallet_amount']}"
     elif wallet_row is not None and withdraw_amount > wallet_row['wallet_amount']:
         alert("Insufficient funds for withdrawal.")
+
     else:
         alert("Withdrawal failed!")
 

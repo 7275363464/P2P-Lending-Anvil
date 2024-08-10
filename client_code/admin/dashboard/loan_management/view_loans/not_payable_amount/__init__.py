@@ -43,7 +43,10 @@ class not_payable_amount(not_payable_amountTemplate):
     if not self.result:
         alert("No NPA Loans Available!")
     else:
-        self.repeating_panel_1.items = self.result
+        panel1_data = self.result[::2]  
+        panel2_data = self.result[1::2]
+        self.repeating_panel_2.items = panel1_data
+        self.repeating_panel_3.items = panel2_data
 
   def button_1_copy_click(self, **event_args):
     open_form('admin.dashboard.loan_management.view_loans')

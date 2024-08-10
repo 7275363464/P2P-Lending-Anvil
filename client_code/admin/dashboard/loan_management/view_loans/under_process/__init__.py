@@ -45,7 +45,10 @@ class under_process(under_processTemplate):
     if not self.result:
         alert("No under process Loans Available!")
     else:
-        self.repeating_panel_1.items = self.result
+        panel1_data = self.result[::2]  
+        panel2_data = self.result[1::2]
+        self.repeating_panel_2.items = panel1_data
+        self.repeating_panel_3.items = panel2_data
 
   # def link_1_click(self, **event_args):
   #   """This method is called when the link is clicked"""

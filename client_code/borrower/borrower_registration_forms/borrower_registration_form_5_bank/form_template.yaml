@@ -1,0 +1,184 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: form:borrower.navigation_bar_main
+  properties: {prop: ''}
+  name: navigation_bar_1
+  layout_properties: {grid_position: 'GJLMKG,ZNSMLH', full_width_row: true}
+- name: column_panel_1_copy
+  properties: {}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'WRGUAX,UBNYVU'}
+  components:
+  - name: label_7
+    properties: {align: center, icon: _/theme/bank_users/circle-1.png, font_size: 16, text: '', bold: false}
+    type: Label
+    layout_properties: {grid_position: 'WKAFME,JXKWUP VKXAFE,GYTDAH'}
+  - name: label_1_copy_2
+    properties: {text: Basic Details, bold: false, align: center}
+    type: Label
+    layout_properties: {grid_position: 'WKAFME,JXKWUP LBAMZG,YFDFNU'}
+  - name: label_13
+    properties: {text: '----------------'}
+    type: Label
+    layout_properties: {grid_position: 'WKAFME,ONKVNB'}
+  - name: label_8
+    properties: {align: center, icon: _/theme/bank_users/circle-2.png, font_size: 16}
+    type: Label
+    layout_properties: {grid_position: 'WKAFME,DUYZJV XXTEIA,QXIFMD'}
+  - name: label_2_copy
+    properties: {text: Qualification Details, bold: false, align: center}
+    type: Label
+    layout_properties: {grid_position: 'WKAFME,DUYZJV PULIHK,EDASTJ'}
+  - name: label_14
+    properties: {text: '----------------'}
+    type: Label
+    layout_properties: {grid_position: 'WKAFME,GLGCEC'}
+  - name: label_9
+    properties: {align: center, icon: _/theme/bank_users/circle-3.png, font_size: 16}
+    type: Label
+    layout_properties: {grid_position: 'WKAFME,WHYLFQ TWKSNJ,VDKLXW'}
+  - name: label_3
+    properties: {text: Profession Details, bold: false, align: center}
+    type: Label
+    layout_properties: {grid_position: 'WKAFME,WHYLFQ QYKYIM,DXHIHJ'}
+  - name: label_15
+    properties: {text: '----------------'}
+    type: Label
+    layout_properties: {grid_position: 'WKAFME,OIFTOM'}
+  - name: label_10
+    properties: {align: center, icon: _/theme/bank_users/circle-4.png, font_size: 16}
+    type: Label
+    layout_properties: {grid_position: 'WKAFME,SBGITH ZMAMTD,WOHVTR'}
+  - name: label_4
+    properties: {text: Gurantor Details, bold: false, align: center}
+    type: Label
+    layout_properties: {grid_position: 'WKAFME,SBGITH IKAPPF,TKELVD'}
+  - name: label_16
+    properties: {text: '----------------'}
+    type: Label
+    layout_properties: {grid_position: 'WKAFME,HHWSYS'}
+  - name: label_11
+    properties: {align: center, icon: _/theme/bank_users/circle-5.png, font_size: 16}
+    type: Label
+    layout_properties: {grid_position: 'WKAFME,UTNBGP SGFLNS,SVOQXE'}
+  - name: label_5
+    properties: {text: Loan Details, bold: false, align: center}
+    type: Label
+    layout_properties: {grid_position: 'WKAFME,UTNBGP DVAGHM,UJEGBX'}
+  - name: label_17
+    properties: {text: '----------------'}
+    type: Label
+    layout_properties: {grid_position: 'WKAFME,GCPDAB'}
+  - name: label_12
+    properties: {align: center, icon: _/theme/bank_users/circle-6.png, font_size: 16, visible: true}
+    type: Label
+    layout_properties: {grid_position: 'WKAFME,WZVXXY EHQWHH,CSDBVB'}
+    data_bindings: []
+  - name: label_6
+    properties: {text: Bank Details, bold: false, align: center}
+    type: Label
+    layout_properties: {grid_position: 'WKAFME,WZVXXY LHEPRL,SBRKGO'}
+- name: column_panel_1
+  properties: {role: outlined-card}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'QPTZGU,HFSOMW'}
+  components:
+  - name: label_1_copy_1
+    properties: {role: null, bold: true, align: center, spacing_above: small, background: '#05264d', icon: '', underline: false, font: '', icon_align: left, foreground: white, spacing_below: small, visible: true, border: '', italic: false, font_size: 18, tooltip: '', text: Applicant Bank Details}
+    type: Label
+    layout_properties: {grid_position: 'SRNYNB,KPSMOJ'}
+  - name: label_2_copy_1
+    properties: {role: null, bold: true, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: Enter Your Account Holder Name  *}
+    type: Label
+    layout_properties: {grid_position: 'UVUDUV,VORUSX'}
+  - name: label_3_copy_1
+    properties: {role: null, bold: true, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: Select Your Account Type  *}
+    type: Label
+    layout_properties: {grid_position: 'UVUDUV,IARGJF'}
+  - name: text_box_1
+    properties: {role: outlined, bold: false, align: left, placeholder: '', spacing_above: small, background: 'theme:On Primary', type: text, underline: false, font: '', hide_text: false, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: 14, tooltip: '', text: ''}
+    type: TextBox
+    layout_properties: {grid_position: 'AXBOXF,HYMKQL'}
+  - name: drop_down_1
+    properties:
+      role: outlined
+      include_placeholder: true
+      bold: false
+      align: full
+      placeholder: Select One
+      spacing_above: small
+      background: theme:On Primary
+      underline: false
+      font: ''
+      foreground: ''
+      items: [Savings account, Salary account, Current account, NRI Account, Re-curing Deposit, Fixed Deposit account]
+      spacing_below: small
+      visible: true
+      border: ''
+      italic: false
+      enabled: true
+      font_size: 17
+      tooltip: ''
+    type: DropDown
+    layout_properties: {grid_position: 'AXBOXF,EPMKYN'}
+    event_bindings: {change: drop_down_1_change}
+  - name: label_1
+    properties: {role: null, bold: true, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: Enter Your Account Number  *}
+    type: Label
+    layout_properties: {grid_position: 'WMIETA,SGXUYW'}
+  - name: label_2
+    properties: {role: null, bold: true, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: Enter Your Bank Name  *}
+    type: Label
+    layout_properties: {grid_position: 'WMIETA,ZVTITB'}
+  - name: text_box_3
+    properties: {role: outlined, bold: false, align: left, placeholder: '', spacing_above: small, background: 'theme:On Primary', type: text, underline: false, font: '', hide_text: false, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: 14, tooltip: '', text: ''}
+    type: TextBox
+    layout_properties: {grid_position: 'XXVPRP,NVUMZC'}
+  - name: text_box_4
+    properties: {role: outlined, bold: false, align: left, placeholder: '', spacing_above: small, background: 'theme:On Primary', type: text, underline: false, font: '', hide_text: false, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: 14, tooltip: '', text: ''}
+    type: TextBox
+    layout_properties: {grid_position: 'XXVPRP,DJHEWX'}
+  - name: label_2_copy_1_copy
+    properties: {role: null, bold: true, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: Enter Your Bank Id  *}
+    type: Label
+    layout_properties: {grid_position: 'WZUCTQ,QTPJHQ'}
+  - name: label_1_copy
+    properties: {role: null, bold: true, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: Enter Your Branch Name  *}
+    type: Label
+    layout_properties: {grid_position: 'WZUCTQ,JNYUTV'}
+  - name: bank_id
+    properties: {role: outlined, font_size: 14}
+    type: TextBox
+    layout_properties: {grid_position: 'WBTDTW,PPOTIX'}
+  - name: branch_name
+    properties: {role: outlined, font_size: 14}
+    type: TextBox
+    layout_properties: {grid_position: 'WBTDTW,ETYTJY'}
+  - name: flow_panel_1_copy_1
+    properties: {}
+    type: FlowPanel
+    layout_properties: {grid_position: 'POTJHM,GSNHEP'}
+    components:
+    - name: check_box_1_copy_2
+      properties: {text: I have read and agree to the, background: ''}
+      type: CheckBox
+      layout_properties: {}
+      event_bindings: {change: check_box_1_copy_2_change}
+    - name: link_1_copy_2
+      properties: {text: Terms and Conditions, icon: 'fa:info-circle'}
+      type: Link
+      layout_properties: {}
+      event_bindings: {click: link_1_click}
+- name: button_1
+  properties: {role: elevated-button, bold: true, align: right, spacing_above: small, background: '#0b2547', icon: 'fa:angle-double-left', underline: false, font: '', icon_align: left, foreground: 'theme:On Primary', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: Prev}
+  type: Button
+  layout_properties: {grid_position: 'CSPVHT,XCGRKO'}
+  event_bindings: {click: button_1_click}
+- name: button_2
+  properties: {role: elevated-button, bold: true, align: left, spacing_above: small, background: '#0b2547', icon: '', underline: false, font: '', icon_align: right, foreground: 'theme:On Primary', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: Submit}
+  type: Button
+  layout_properties: {grid_position: 'CSPVHT,CYFTJQ'}
+  event_bindings: {click: button_2_click}
+is_package: true

@@ -34,12 +34,296 @@ class dashboard(dashboardTemplate):
         loan_count = len(self.data)
 
         # Update the UI with the count of loans
-        self.label_9.text = str(loan_count)
+        # self.label_9.text = str(loan_count)
+
+        self.notification_displayed = False
+        self.set_event_handler("show", self.form_show)
+
+        today_date = datetime.now(timezone.utc).date()
 
         data = app_tables.fin_borrower.get(customer_id=self.user_Id)
         if data:
             self.label_5.text = data['credit_limit']
             self.label_7.text = data['borrower_since']
+
+
+    def form_show(self, **event_args):
+        print("Form is shown!")  # Check if this message appears in the output
+        today_date = datetime.now(timezone.utc).date()
+        print('Todays date -',today_date)
+        
+        # Get the user's profile
+        user_profile = app_tables.fin_user_profile.get(customer_id=self.user_Id)
+        
+        if user_profile is not None:
+            last_notification_date = user_profile['last_notification_date']
+            print('last notification', last_notification_date)
+            
+            # Check if the last notification date is today
+            if last_notification_date is None or last_notification_date!=today_date:
+                self.show_due_loans_notification()
+                self.notification_displayed = True
+                
+                # Update the last notification date to today
+                user_profile['last_notification_date'] = today_date
+                user_profile.update()
+                print(today_date)
+
+    def show_due_loans_notification(self):
+        today_date = datetime.now(timezone.utc).date()
+        self.loan_details = []
+
+        all_loans_disbursed = app_tables.fin_loan_details.search(
+            loan_updated_status=q.any_of("disbursed", "extension", "foreclosure"),
+            first_emi_payment_due_date=q.less_than_or_equal_to(today_date),
+            borrower_customer_id=self.user_Id
+        )
+    
+        for loan in all_loans_disbursed:
+            loan_id = loan['loan_id']
+            borrower_customer_id = loan['borrower_customer_id']
+
+            payment_done = list(app_tables.fin_emi_table.search(
+                loan_id=loan_id,
+                next_payment=q.greater_than(today_date),
+                payment_type ='pay now',
+                borrower_customer_id=borrower_customer_id
+            ))
+            if payment_done:
+              payment_done.sort(key=lambda x: x['next_payment'], reverse=True)
+              latest_payment_done = payment_done[0]
+              if latest_payment_done:
+                continue
+              
+            all_loans = list(app_tables.fin_emi_table.search(
+                loan_id=loan_id,
+                next_payment=q.less_than_or_equal_to(today_date),
+                borrower_customer_id=borrower_customer_id
+            ))
+            
+            if all_loans:
+                all_loans.sort(key=lambda x: x['next_payment'], reverse=True)
+                latest_loan = all_loans[0]
+                loan_detail = app_tables.fin_loan_details.get(loan_id=latest_loan['loan_id'])
+                user_profile = app_tables.fin_user_profile.get(customer_id=loan_detail['lender_customer_id'])
+                if loan_detail is not None and user_profile is not None  and (loan_detail['remaining_amount'] is  None or loan_detail['remaining_amount'] > 0):        
+                    loan_amount = loan_detail['loan_amount']
+                    scheduled_payment = latest_loan['scheduled_payment']
+                    next_payment = latest_loan['next_payment']
+                    days_left = (today_date - next_payment).days
+               
+                    emi_number = latest_loan['emi_number']
+                    account_number = latest_loan['account_number']
+                    tenure = loan_detail['tenure']
+                    interest_rate = loan_detail['interest_rate']
+                    borrower_loan_created_timestamp = loan_detail['borrower_loan_created_timestamp']
+                    loan_updated_status = loan_detail['loan_updated_status']
+                    loan_disbursed_timestamp = loan_detail['loan_disbursed_timestamp']
+                    emi_payment_type = loan_detail['emi_payment_type']
+                    lender_customer_id = loan_detail['lender_customer_id']
+                    borrower_customer_id = loan_detail['borrower_customer_id']
+                    first_emi_payment_due_date = loan_detail['first_emi_payment_due_date']
+                    total_repayment_amount = loan_detail['total_repayment_amount']
+                    total_processing_fee_amount = loan_detail['total_processing_fee_amount']
+                    mobile = user_profile['mobile']
+                    user_photo = user_profile['user_photo']
+                    product_name = loan_detail['product_name']
+                    product_description = loan_detail['product_description']
+                    lender_full_name = loan_detail['lender_full_name']
+                    loan_state_status = loan_detail['loan_state_status']
+                    product_id = loan_detail['product_id']
+                    total_interest_amount = loan_detail['total_interest_amount']
+                    Scheduled_date = latest_loan['next_payment']
+                    lender_email_id = loan_detail['lender_email_id']
+                    borrower_email_id = loan_detail['borrower_email_id']
+                    total_amount_paid = loan_detail['total_amount_paid']
+                    remaining_amount = loan_detail['remaining_amount']
+                    payment_type = latest_loan['payment_type']
+                    part_payment_date = latest_loan['part_payment_date']
+                    remaining_tenure = latest_loan['remaining_tenure']
+                  
+                    self.loan_details.append({
+                        'loan_id': loan_id,
+                        'loan_amount': loan_amount,
+                        'scheduled_payment': scheduled_payment,
+                        'days_left': days_left,
+                        'tenure': tenure,
+                        'interest_rate': interest_rate,
+                        'borrower_loan_created_timestamp': borrower_loan_created_timestamp,
+                        'emi_number': emi_number,
+                        'account_number': account_number,
+                        'loan_updated_status': loan_updated_status,
+                        'loan_disbursed_timestamp': loan_disbursed_timestamp,
+                        'next_payment': next_payment,
+                        'emi_payment_type': emi_payment_type,
+                        'lender_customer_id': lender_customer_id,
+                        'first_emi_payment_due_date': first_emi_payment_due_date,
+                        'total_repayment_amount': total_repayment_amount,
+                        'total_processing_fee_amount': total_processing_fee_amount,
+                        'mobile': mobile,
+                        'product_description': product_description,
+                        'product_name': product_name,
+                        'lender_full_name': lender_full_name,
+                        'borrower_customer_id': borrower_customer_id,
+                        'loan_state_status': loan_state_status,
+                        'product_id':product_id,
+                        'total_interest_amount':total_interest_amount,
+                        'Scheduled_date':Scheduled_date,
+                        'user_photo':user_photo,
+                        'lender_email_id':lender_email_id,
+                        'borrower_email_id':borrower_email_id,
+                        'total_amount_paid':total_amount_paid,
+                        'remaining_amount':remaining_amount,
+                        'payment_type': payment_type,
+                        'part_payment_date':part_payment_date,
+                        'remaining_tenure':remaining_tenure,
+                    })
+            else:
+                pay_now_loan = app_tables.fin_emi_table.search(
+                    loan_id=loan_id,
+                    payment_type="pay now"
+                )
+                if any(pay_now_loan):
+                    continue
+
+                loan_detail = app_tables.fin_loan_details.get(loan_id=loan_id)
+
+                  
+                user_profile = app_tables.fin_user_profile.get(customer_id=loan_detail['lender_customer_id'])
+
+                if loan_detail is not None and user_profile is not None and (loan_detail['remaining_amount'] is  None or loan_detail['remaining_amount'] > 0):
+                  user_photo = user_profile['user_photo']
+                  loan_amount = loan_detail['loan_amount']
+                  first_emi_payment_due_date = loan_detail['first_emi_payment_due_date']
+                  days_left = (today_date - first_emi_payment_due_date).days
+                  # Fetch account number from user profile table based on customer_id
+                  user_profile_1 = app_tables.fin_user_profile.get(customer_id=loan_detail['borrower_customer_id'])
+                  if user_profile_1 is not None:
+                      account_number = user_profile['account_number']
+                  else:
+                      account_number = "N/A"
+                  
+                  # Set emi_number to 0
+                
+                    
+                  
+                  emi_number = 0
+                  remaining_tenure = 0
+                  tenure = loan_detail['tenure']
+                  interest_rate = loan_detail['interest_rate']
+                  borrower_loan_created_timestamp = loan_detail['borrower_loan_created_timestamp']
+                  loan_updated_status = loan_detail['loan_updated_status']
+                  loan_disbursed_timestamp = loan_detail['loan_disbursed_timestamp']
+                  emi_payment_type = loan_detail['emi_payment_type']
+                  lender_customer_id = loan_detail['lender_customer_id']
+                  total_repayment_amount = loan_detail['total_repayment_amount']
+                  total_processing_fee_amount = loan_detail['total_processing_fee_amount']
+                  mobile = user_profile['mobile']
+                  product_name = loan_detail['product_name']
+                  product_description = loan_detail['product_description']
+                  borrower_customer_id = loan_detail['borrower_customer_id']
+                  lender_full_name = loan_detail['lender_full_name']
+                  scheduled_payment = loan_disbursed_timestamp.date()
+                  loan_state_status = loan_detail['loan_state_status']
+                  product_id =loan_detail['product_id']
+                  total_interest_amount  = loan_detail['total_interest_amount']
+                  Scheduled_date = loan_detail['first_emi_payment_due_date']
+                  lender_email_id = loan_detail['lender_email_id']
+                  borrower_email_id = loan_detail['borrower_email_id']
+                  total_amount_paid = loan_detail['total_amount_paid']
+                  remaining_amount = loan_detail['remaining_amount']
+
+                  
+                  # Calculate next_payment based on first_payment_due_date
+                  if emi_payment_type == 'One Time':
+                      if tenure:
+                          next_payment = loan_disbursed_timestamp.date() + timedelta(days=30 * tenure)
+                  elif emi_payment_type == 'Monthly':
+                      # For monthly payment, set next_payment to a month after first_payment_due_date
+                      next_payment = loan_disbursed_timestamp.date() + timedelta(days=30)
+                  elif emi_payment_type == 'Three Months':
+                      # For three-month payment, set next_payment to three months after first_payment_due_date
+                      next_payment = loan_disbursed_timestamp.date() + timedelta(days=90)
+                  elif emi_payment_type == 'Six Months':
+                      # For six-month payment, set next_payment  six months after first_payment_due_date
+                      next_payment = loan_disbursed_timestamp.date() + timedelta(days=180)
+                  else:
+                      # Default to monthly calculation if emi_payment_type is not recognized
+                      next_payment = loan_disbursed_timestamp.date() + timedelta(days=30)
+                  
+                  self.loan_details.append({
+                      'loan_id': loan_id,
+                      'loan_amount': loan_amount,
+                      'scheduled_payment': scheduled_payment,   # Set scheduled_payment to first_payment_due_date first_emi_payment_due_date
+                      'next_payment': next_payment,
+                      'days_left': days_left,
+                      'tenure': tenure,
+                      'interest_rate': interest_rate,
+                      'borrower_loan_created_timestamp': borrower_loan_created_timestamp,
+                      'loan_updated_status': loan_updated_status,
+                      'loan_disbursed_timestamp': loan_disbursed_timestamp,
+                      'emi_number': emi_number,
+                      'account_number': account_number,
+                      'emi_payment_type': emi_payment_type,
+                      'lender_customer_id': lender_customer_id,
+                      'total_repayment_amount': total_repayment_amount,
+                      # 'first_payment_due_date': first_payment_due_date
+                      'total_processing_fee_amount': total_processing_fee_amount,
+                      'mobile': mobile,
+                      'product_description': product_description,
+                      'product_name': product_name,
+                      'lender_full_name': lender_full_name,  
+                      'borrower_customer_id': borrower_customer_id,
+                      'loan_state_status':loan_state_status,
+                      'product_id':product_id,
+                      'total_interest_amount':total_interest_amount,
+                      'Scheduled_date':Scheduled_date,
+                      'user_photo' : user_photo,
+                      'lender_email_id':lender_email_id,
+                      'borrower_email_id':borrower_email_id,
+                      'total_amount_paid':total_amount_paid,
+                      'remaining_amount':remaining_amount,
+                      'remaining_tenure':remaining_tenure
+                      
+                  })
+
+        if self.loan_details:
+          loan = self.loan_details[0]  # Taking the first due loan for the notification
+          message = (
+              f"Dear Borrower,\n\n"
+              f"You have a due loan that requires your attention:\n\n"
+              f"Loan ID: {loan['loan_id']}\n"
+              f"Loan Amount: {loan['loan_amount']}\n"
+              f"Due Date: {loan['Scheduled_date']}\n"
+              # f"Next Payment: {loan['next_payment']}\n"
+              f"Days Left: {loan['days_left']}\n\n"
+              f"Please click Pay Now to proceed with checkout or Cancel to go back to the dashboard."
+          )
+          while True:
+                response = alert(message, buttons=[("Pay Now", True), ("Cancel", False)])
+                print(response)
+                if response is True:
+                    user = app_tables.fin_user_profile.get(customer_id=self.user_Id)
+                    if user:
+                      user['last_notification_date'] = today_date
+                      user.update()
+                    open_form('borrower.dashboard.today_dues.check_out', selected_row=self.loan_details[0])
+                    break
+                elif response is False:
+                    user = app_tables.fin_user_profile.get(customer_id=self.user_Id)
+                    if user:
+                      user['last_notification_date'] = today_date
+                      user.update()
+                      open_form('borrower.dashboard')
+                  
+                    break
+                else:
+                    # Handle case where alert is dismissed without clicking a button
+                    user = app_tables.fin_user_profile.get(customer_id=self.user_Id)
+                    if user:
+                      user['last_notification_date'] = today_date
+                      user.update()
+                      open_form('borrower.dashboard')
 
        
 
@@ -69,7 +353,6 @@ class dashboard(dashboardTemplate):
     def update_user_profile(self):
         user_profile = app_tables.fin_user_profile.get(customer_id=self.user_Id)
         if user_profile:
-            self.label_3.text = user_profile['mobile']
             self.image_1_copy_copy.source = user_profile['user_photo']
             self.label_2_copy.text =  user_profile['full_name']
 
@@ -114,7 +397,7 @@ class dashboard(dashboardTemplate):
             alert("Error fetching existing loans.")
 
     def link_2_click(self, **event_args):
-        open_form('borrower.dashboard.today_dues')
+        open_form('borrower.dashboard.upcoming_payments')
 
     def link_3_click(self, **event_args):
         open_form('borrower.dashboard.view_loans')

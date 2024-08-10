@@ -44,4 +44,8 @@ class view_profile_8(view_profile_8Template):
 
     def back_click(self, **event_args):
       open_form('admin.dashboard.loan_management.view_loans.lapsed_loans')
+
+    def button_1_copy_click(self, **event_args):
+        """This method is called when the button is clicked"""
+        open_form('admin.dashboard.loan_management.view_loans.lapsed_loans')
     

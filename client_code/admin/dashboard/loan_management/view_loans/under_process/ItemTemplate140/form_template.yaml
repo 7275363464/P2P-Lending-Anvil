@@ -1,0 +1,7 @@
+is_package: true
+container: {type: ColumnPanel}
+components:
+- name: repeating_panel_1
+  properties: {item_template: admin.dashboard.loan_management.view_loans.loan_disbursed.ItemTemplate127}
+  type: RepeatingPanel
+  layout_properties: {grid_position: 'EHHJVB,OTXCIH'}

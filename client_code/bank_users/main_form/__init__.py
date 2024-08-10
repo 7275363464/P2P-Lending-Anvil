@@ -78,47 +78,47 @@ class main_form(main_formTemplate):
         #               open_form('bank_users.user_form')
         #             # For Borrower Registration Form  
         #             elif user_type == 'borrower' and actual_count==1:
-        #               open_form('borrower_registration_form.star_1_borrower_registration_form_1_education',user_id=userid)
+        #               open_form('borrower_registration_form.borrower_registration_form_1_education',user_id=userid)
         #             elif user_type == 'borrower' and actual_count==1.1:
-        #               open_form('borrower_registration_form.star_1_borrower_registration_form_1_education.star_1_borrower_registration_form_education_10th_class',user_id=userid) 
+        #               open_form('borrower_registration_form.borrower_registration_form_1_education.star_1_borrower_registration_form_education_10th_class',user_id=userid) 
         #             elif user_type == 'borrower' and actual_count==1.2:
-        #               open_form('borrower_registration_form.star_1_borrower_registration_form_1_education.star_1_borrower_registration_form_education_intermediate',user_id=userid) 
+        #               open_form('borrower_registration_form.borrower_registration_form_1_education.star_1_borrower_registration_form_education_intermediate',user_id=userid) 
         #             elif user_type == 'borrower' and actual_count==1.3:
-        #               open_form('borrower_registration_form.star_1_borrower_registration_form_1_education.star_1_borrower_registration_form_education_btech',user_id=userid)   
+        #               open_form('borrower_registration_form.borrower_registration_form_1_education.star_1_borrower_registration_form_education_btech',user_id=userid)   
         #             elif user_type == 'borrower' and actual_count==1.4:
-        #               open_form('borrower_registration_form.star_1_borrower_registration_form_1_education.star_1_borrower_registration_form_education_mtech',user_id=userid)
+        #               open_form('borrower_registration_form.borrower_registration_form_1_education.star_1_borrower_registration_form_education_mtech',user_id=userid)
         #             elif user_type == 'borrower' and actual_count==1.5:
-        #               open_form('borrower_registration_form.star_1_borrower_registration_form_1_education.star_1_borrower_registration_form_education_phd',user_id=userid)
+        #               open_form('borrower_registration_form.borrower_registration_form_1_education.star_1_borrower_registration_form_education_phd',user_id=userid)
         #             elif user_type == 'borrower' and actual_count==2:
-        #               open_form('borrower_registration_form.star_1_borrower_registration_form_2_employment',user_id=userid)
+        #               open_form('borrower_registration_form.borrower_registration_form_2_employment',user_id=userid)
         #             elif user_type == 'borrower' and actual_count==2.1:
-        #               open_form('borrower_registration_form.star_1_borrower_registration_form_2_employment.star_1_borrower_registration_form_2_employment_student',user_id=userid)
+        #               open_form('borrower_registration_form.borrower_registration_form_2_employment.star_1_borrower_registration_form_2_employment_student',user_id=userid)
         #             elif user_type == 'borrower' and actual_count==2.2:
-        #               open_form('borrower_registration_form.star_1_borrower_registration_form_2_employment.star_1_borrower_registration_form_2_self_employment',user_id=userid)
+        #               open_form('borrower_registration_form.borrower_registration_form_2_employment.star_1_borrower_registration_form_2_self_employment',user_id=userid)
         #             elif user_type == 'borrower' and actual_count==2.21:
-        #               open_form('borrower_registration_form.star_1_borrower_registration_form_2_employment.star_1_borrower_registration_form_2_employment_business_1',user_id=userid)
+        #               open_form('borrower_registration_form.borrower_registration_form_2_employment.star_1_borrower_registration_form_2_employment_business_1',user_id=userid)
         #             elif user_type == 'borrower' and actual_count==2.22:
-        #               open_form('borrower_registration_form.star_1_borrower_registration_form_2_employment.star_1_borrower_registration_form_2_employment_business_2',user_id=userid)
+        #               open_form('borrower_registration_form.borrower_registration_form_2_employment.star_1_borrower_registration_form_2_employment_business_2',user_id=userid)
         #             elif user_type == 'borrower' and actual_count==2.23:
-        #               open_form('borrower_registration_form.star_1_borrower_registration_form_2_employment.star_1_borrower_registration_form_2_employment_business_3',user_id=userid)
+        #               open_form('borrower_registration_form.borrower_registration_form_2_employment.star_1_borrower_registration_form_2_employment_business_3',user_id=userid)
         #             elif user_type == 'borrower' and actual_count==2.31:
-        #               open_form('borrower_registration_form.star_1_borrower_registration_form_2_employment.star_1_borrower_registration_form_2_employment_emp_detail_1',user_id=userid)
+        #               open_form('borrower_registration_form.borrower_registration_form_2_employment.star_1_borrower_registration_form_2_employment_emp_detail_1',user_id=userid)
         #             elif user_type == 'borrower' and actual_count==2.32:
-        #               open_form('borrower_registration_form.star_1_borrower_registration_form_2_employment.star_1_borrower_registration_form_2_employment_emp_detail_2',user_id=userid)
+        #               open_form('borrower_registration_form.borrower_registration_form_2_employment.star_1_borrower_registration_form_2_employment_emp_detail_2',user_id=userid)
         #             elif user_type == 'borrower' and actual_count==2.33:
-        #               open_form('borrower_registration_form.star_1_borrower_registration_form_2_employment.star_1_borrower_registration_form_2_employment_emp_detail_3',user_id=userid)
+        #               open_form('borrower_registration_form.borrower_registration_form_2_employment.star_1_borrower_registration_form_2_employment_emp_detail_3',user_id=userid)
         #             elif user_type == 'borrower' and actual_count==2.4:
-        #               open_form('borrower_registration_form.star_1_borrower_registration_form_2_employment.star_1_borrower_registration_form_2_employment_farmer',user_id=userid)
+        #               open_form('borrower_registration_form.borrower_registration_form_2_employment.star_1_borrower_registration_form_2_employment_farmer',user_id=userid)
         #             elif user_type == 'borrower' and actual_count==3:
-        #               open_form('borrower_registration_form.star_1_borrower_registration_form_3_marital',user_id=userid)
+        #               open_form('borrower_registration_form.borrower_registration_form_3_marital',user_id=userid)
         #             elif user_type == 'borrower' and actual_count==3.1:
-        #               open_form('borrower_registration_form.star_1_borrower_registration_form_3_marital.star_1_borrower_registration_form_3_marital_married',user_id=userid, marital_status = marital_status)
+        #               open_form('borrower_registration_form.borrower_registration_form_3_marital.star_1_borrower_registration_form_3_marital_married',user_id=userid, marital_status = marital_status)
         #             elif user_type == 'borrower' and actual_count==4:
-        #               open_form('borrower_registration_form.star_1_borrower_registration_form_4_loan',user_id=userid)
+        #               open_form('borrower_registration_form.borrower_registration_form_4_loan',user_id=userid)
         #             elif user_type == 'borrower' and actual_count==5:
-        #               open_form('borrower_registration_form.star_1_borrower_registration_form_5_bank_1',user_id=userid)
+        #               open_form('borrower_registration_form.borrower_registration_form_5_bank',user_id=userid)
         #             elif user_type == 'borrower' and actual_count==6:
-        #               open_form('borrower_registration_form.star_1_borrower_registration_form_5_bank_2',user_id=userid)
+        #               open_form('borrower_registration_form.borrower_registration_form_5_bank_2',user_id=userid)
         #             # For Lender Registration Form  
         #             elif user_type == 'lender' and actual_count==1:
         #                open_form('lendor_registration_form.lender_registration_form_1_education_form',user_id=userid)

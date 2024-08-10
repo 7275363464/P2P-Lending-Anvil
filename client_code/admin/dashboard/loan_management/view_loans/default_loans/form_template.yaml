@@ -24,8 +24,16 @@ components:
     properties: {height: 32}
     type: Spacer
     layout_properties: {grid_position: 'ZBOYIL,NSMNRQ', full_width_row: true}
+  - name: repeating_panel_1
+    properties: {item_template: admin.dashboard.loan_management.view_loans.default_loans.ItemTemplate123}
+    type: RepeatingPanel
+    layout_properties: {grid_position: 'ZSBBEQ,KVLXAI', full_width_row: true}
+  - name: repeating_panel_3
+    properties: {item_template: admin.dashboard.loan_management.view_loans.default_loans.ItemTemplate124}
+    type: RepeatingPanel
+    layout_properties: {grid_position: 'ZSBBEQ,JOLVKK', full_width_row: true}
   - name: repeating_panel_2
-    properties: {item_template: admin.dashboard.loan_management.view_loans.default_loans.ItemTemplate32}
+    properties: {item_template: admin.dashboard.loan_management.view_loans.default_loans.ItemTemplate32, visible: false}
     type: RepeatingPanel
     layout_properties: {grid_position: 'VZDZFF,DGFOSF'}
 is_package: true

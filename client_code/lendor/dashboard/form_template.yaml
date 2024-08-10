@@ -281,7 +281,7 @@ components:
     type: Label
     layout_properties: {grid_position: 'TOAYPK,NNLPCM ESHMKX,SIFMBU'}
     name: label_15
-  - properties: {bold: true, font_size: null, align: left, foreground: '#013065'}
+  - properties: {bold: true, font_size: null, align: left, foreground: '#013065', text: '  '}
     type: Label
     layout_properties: {grid_position: 'AHYSPT,SQSJCS'}
     name: label_11

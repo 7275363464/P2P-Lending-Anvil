@@ -138,25 +138,27 @@ class borrower_registration_form_1_education(borrower_registration_form_1_educat
    
     if qualification == '10th standard':
       anvil.server.call('add_education_tenth', tenth_class, user_id)
-      open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_2_employment', user_id=user_id) 
+      open_form('borrower.borrower_registration_forms.borrower_registration_form_2_employment', user_id=user_id) 
     elif qualification == '12th standard':
       anvil.server.call('add_education_int', tenth_class_1, intermediate, user_id)
-      open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_2_employment', user_id=user_id) 
+      open_form('borrower.borrower_registration_forms.borrower_registration_form_2_employment', user_id=user_id) 
     elif qualification == "Bachelor's degree":
       anvil.server.call('add_education_btech', tenth_class_2, intermediate_1, btech, user_id)
-      open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_2_employment', user_id=user_id) 
+      open_form('borrower.borrower_registration_forms.borrower_registration_form_2_employment', user_id=user_id) 
     elif qualification == "Master's degree":
       anvil.server.call('add_education_mtech', tenth_class_3, intermediate_2, btech_1, mtech, user_id)
-      open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_2_employment', user_id=user_id) 
+      open_form('borrower.borrower_registration_forms.borrower_registration_form_2_employment', user_id=user_id) 
     elif qualification == 'PhD':
       anvil.server.call('add_education_phd', tenth_class_4, intermediate_3, btech_2, mtech_1, phd, user_id)
-      open_form('borrower.borrower_registration_forms.star_1_borrower_registration_form_2_employment', user_id=user_id) 
+      open_form('borrower.borrower_registration_forms.borrower_registration_form_2_employment', user_id=user_id) 
     else:
-      self.drop_down_1.background = '#FF0000'
+      self.drop_down_1.role= 'outlined-error'
       # self.drop_down_1.role = out
       self.drop_down_1.focus()
       Notification("Please select a valid qualification status").show()
       return 
+    # else:
+    #     self.drop_down_1.role = 'outlined'
     if qualification not in  ['10th standard', '12th standard', "Bachelor's degree", "Master's degree", 'PhD']:
       Notification("Please select a valid qualification status").show()
     elif not user_id:
@@ -257,20 +259,7 @@ class borrower_registration_form_1_education(borrower_registration_form_1_educat
             else:
                 alert('Invalid file type. Only JPEG, PNG, and PDF are allowed')
                 self.file_loader_4.clear()
-    """This method is called when a new file is loaded into this FileLoader"""
-    if file:
-            self.label_21.text = file.name if file else ''
-            content_type = file.content_type
-            
-            if content_type in ['image/jpeg', 'image/png', 'image/jpg']:
-                # Display the image directly
-                self.image_5.source = self.file_loader_5.file
-            elif content_type == 'application/pdf':
-                # Display a default PDF image temporarily
-                self.image_5.source = '_/theme/bank_users/default%20pdf.png'
-            else:
-                alert('Invalid file type. Only JPEG, PNG, and PDF are allowed')
-                self.file_loader_5.clear()
+    
       
   def file_loader_6_change(self, file, **event_args):
     """This method is called when a new file is loaded into this FileLoader"""
@@ -429,3 +418,19 @@ class borrower_registration_form_1_education(borrower_registration_form_1_educat
             else:
                 alert('Invalid file type. Only JPEG, PNG, and PDF are allowed')
                 self.file_loader_15.clear()
+
+  def file_loader_5_change(self, file, **event_args):
+    """This method is called when a new file is loaded into this FileLoader"""
+    if file:
+            self.label_21.text = file.name if file else ''
+            content_type = file.content_type
+            
+            if content_type in ['image/jpeg', 'image/png', 'image/jpg']:
+                # Display the image directly
+                self.image_5.source = self.file_loader_5.file
+            elif content_type == 'application/pdf':
+                # Display a default PDF image temporarily
+                self.image_5.source = '_/theme/bank_users/default%20pdf.png'
+            else:
+                alert('Invalid file type. Only JPEG, PNG, and PDF are allowed')
+                self.file_loader_5.clear()

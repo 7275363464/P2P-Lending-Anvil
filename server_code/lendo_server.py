@@ -23,14 +23,14 @@ def add_lender_step1(qualification,user_id):
   row = app_tables.fin_user_profile.search(customer_id=user_id)
   if row:
     row[0]['qualification'] = qualification
-    row[0]['form_count']=1 
+    row[0]['form_count']=2
 
 @anvil.server.callable
 def add_education_tenth(tenth_class,user_id):
   row = app_tables.fin_user_profile.search(customer_id=user_id)
   if row:
     row[0]['tenth_class']=tenth_class
-    row[0]['form_count']=1.1
+    row[0]['form_count']=2
 
 @anvil.server.callable
 def add_education_int(tenth_class_1,intermediate,user_id):
@@ -38,7 +38,7 @@ def add_education_int(tenth_class_1,intermediate,user_id):
   if row:
     row[0]['tenth_class']=tenth_class_1
     row[0]['intermediate']=intermediate
-    row[0]['form_count']=1.2
+    row[0]['form_count']=2
 
 @anvil.server.callable
 def add_education_btech(tenth_class_2,intermediate_1,btech,user_id):
@@ -47,7 +47,7 @@ def add_education_btech(tenth_class_2,intermediate_1,btech,user_id):
     row[0]['tenth_class']=tenth_class_2
     row[0]['intermediate']=intermediate_1
     row[0]['btech']=btech
-    row[0]['form_count']=1.3
+    row[0]['form_count']=2
 
 @anvil.server.callable
 def add_education_mtech(tenth_class_3,intermediate_2,btech_1,mtech,user_id):
@@ -57,7 +57,7 @@ def add_education_mtech(tenth_class_3,intermediate_2,btech_1,mtech,user_id):
     row[0]['intermediate']=intermediate_2
     row[0]['btech']=btech_1
     row[0]['mtech']=mtech
-    row[0]['form_count']=1.4
+    row[0]['form_count']=2
 
 @anvil.server.callable
 def add_education_phd(tenth_class_4,intermediate_3,btech_2,mtech_1,phd,user_id):
@@ -68,7 +68,7 @@ def add_education_phd(tenth_class_4,intermediate_3,btech_2,mtech_1,phd,user_id):
     row[0]['btech']=btech_2
     row[0]['mtech']=mtech_1
     row[0]['phd']=phd
-    row[0]['form_count']=1.5
+    row[0]['form_count']=2
 
 @anvil.server.callable
 def add_lender_step2(lending_type,investment,lending_period,user_id):
@@ -79,7 +79,7 @@ def add_lender_step2(lending_type,investment,lending_period,user_id):
     row[0]['lending_period'] = lending_period
     user = app_tables.fin_user_profile.get(customer_id = user_id)
     if user:
-      user['form_count'] = 2
+      user['form_count'] = 3
 
 
 @anvil.server.callable
@@ -90,7 +90,7 @@ def add_lendor_institutional_form_1(business_name,business_add,business_type,emp
     row[0]['business_add'] = business_add
     row[0]['business_type'] = business_type    
     row[0]['employees_working'] = empolyees_working
-    row[0]['form_count'] = 2
+    row[0]['form_count'] = 3
 
 @anvil.server.callable
 def add_lendor_institutional_form_2(year,months,industry_type,six_monthturnover,last_six_statments,user_id):
@@ -101,7 +101,7 @@ def add_lendor_institutional_form_2(year,months,industry_type,six_monthturnover,
     row[0]['industry_type'] = industry_type
     row[0]['six_month_turnover'] = six_monthturnover
     row[0]['last_six_month_bank_proof'] = last_six_statments
-    row[0]['form_count'] = 2
+    row[0]['form_count'] = 3
 
 @anvil.server.callable
 def add_lendor_institutional_form_3(din,cin,reg_office_add,proof_verification,user_id):
@@ -111,7 +111,7 @@ def add_lendor_institutional_form_3(din,cin,reg_office_add,proof_verification,us
     row[0]['cin'] = cin
     row[0]['registered_off_add'] = reg_office_add
     row[0]['proof_verification'] = proof_verification
-    row[0]['form_count']=2
+    row[0]['form_count']=3
 
 @anvil.server.callable
 def add_lendor_individual_form_1(company_name,org_type,emp_type,occupation_type,user_id):
@@ -121,7 +121,7 @@ def add_lendor_individual_form_1(company_name,org_type,emp_type,occupation_type,
     row[0]['organization_type']=org_type
     row[0]['employment_type']=emp_type
     row[0]['occupation_type']=occupation_type
-    row[0]['form_count']=2
+    row[0]['form_count']=3
 
 @anvil.server.callable
 def add_lendor_individual_form_2(comp_address, landmark, business_phone_number, user_id):
@@ -130,7 +130,7 @@ def add_lendor_individual_form_2(comp_address, landmark, business_phone_number, 
     row[0]['company_address'] = comp_address
     row[0]['company_landmark'] = landmark
     row[0]['business_no'] = business_phone_number
-    row[0]['form_count']=2
+    row[0]['form_count']=3
 
 @anvil.server.callable
 def add_lendor_individual_form_3(annual_salary, designation,emp_id_proof,last_six_month,user_id,salary_type):
@@ -141,7 +141,7 @@ def add_lendor_individual_form_3(annual_salary, designation,emp_id_proof,last_si
     row[0]['emp_id_proof']=emp_id_proof
     row[0]['last_six_month_bank_proof']=last_six_month
     row[0]['salary_type']=salary_type
-    row[0]['form_count'] = 2
+    row[0]['form_count'] = 3
 
 @anvil.server.callable
 def add_lendor_education_form(qualification,certificate,user_id):
@@ -156,7 +156,7 @@ def add_lendor_marital(marital_status,user_id):
   row = app_tables.fin_user_profile.search(customer_id=user_id)
   if row:
     row[0]['marital_status']=marital_status
-    row[0]['form_count']=3
+    row[0]['form_count']=1
 
 @anvil.server.callable
 def add_lendor_father_details(another_person, father_name, father_dob, father_mbl_no, father_profession, father_address, user_id):
@@ -171,7 +171,7 @@ def add_lendor_father_details(another_person, father_name, father_dob, father_mb
         row[0].update() 
         user = app_tables.fin_user_profile.get(customer_id=user_id)
         if user:
-            user['form_count'] = 3.1
+            user['form_count'] = 4
             user.update() 
 
 @anvil.server.callable
@@ -187,7 +187,7 @@ def add_lendor_mother_details(another_person, mother_name, mother_dob, mother_mb
         row[0].update() 
         user = app_tables.fin_user_profile.get(customer_id=user_id)
         if user:
-            user['form_count'] = 3.1
+            user['form_count'] = 4
             user.update() 
 
 @anvil.server.callable
@@ -204,7 +204,7 @@ def add_lendor_spouse_details(another_person, spouse_name, spouse_mob, spouse_mb
         row[0].update() 
         user = app_tables.fin_user_profile.get(customer_id=user_id)
         if user:
-            user['form_count'] = 3.1
+            user['form_count'] = 4
             user.update() 
           
 @anvil.server.callable
@@ -220,7 +220,7 @@ def add_lendor_anotherperson_details(another_person, related_person_name, relate
         row[0].update() 
         user = app_tables.fin_user_profile.get(customer_id=user_id)
         if user:
-            user['form_count'] = 3.1
+            user['form_count'] = 4
             user.update() 
 
 @anvil.server.callable
@@ -231,7 +231,7 @@ def add_lendor_bank_details_form_1(account_name, account_type,account_number,ban
     row[0]['account_type'] = account_type
     row[0]['account_number'] = account_number
     row[0]['bank_name'] = bank_name
-    row[0]['form_count'] = 4
+    row[0]['form_count'] = 5
 
 @anvil.server.callable
 def add_lendor_bank_details_form_2(bank_id,branch_name, user_id):

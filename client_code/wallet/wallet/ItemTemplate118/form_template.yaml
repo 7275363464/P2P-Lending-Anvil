@@ -1,0 +1,40 @@
+is_package: true
+container:
+  type: ColumnPanel
+  event_bindings: {refreshing_data_bindings: form_refreshing_data_bindings}
+components:
+- name: column_panel_1
+  properties: {}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'RNWWFO,NZZZCN'}
+  components:
+  - name: label_1
+    properties: {align: center}
+    type: Label
+    layout_properties: {grid_position: 'GRSXXK,OICSUC'}
+    data_bindings:
+    - {property: text, code: 'self.item[''transaction_id'']', writeback: false}
+- name: label_2
+  properties: {align: center}
+  type: Label
+  layout_properties: {grid_position: 'RNWWFO,PENASJ'}
+  data_bindings:
+  - {property: text, code: 'self.item[''transaction_type'']', writeback: false}
+- name: label_3
+  properties: {align: center}
+  type: Label
+  layout_properties: {grid_position: 'RNWWFO,UYTEKT'}
+  data_bindings:
+  - {property: text, code: 'self.item[''status'']', writeback: false}
+- name: label_4
+  properties: {align: center}
+  type: Label
+  layout_properties: {grid_position: 'RNWWFO,TGGELE'}
+  data_bindings:
+  - {property: text, code: 'self.item[''amount'']', writeback: false}
+- name: label_5
+  properties: {align: center}
+  type: Label
+  layout_properties: {grid_position: 'RNWWFO,HUQOGC'}
+  data_bindings:
+  - {property: text, code: 'self.item[''transaction_time_stamp'']', writeback: false}

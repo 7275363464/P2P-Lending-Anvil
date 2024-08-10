@@ -14,6 +14,7 @@ class ItemTemplate56(ItemTemplate56Template):
   def __init__(self, **properties):
     self.init_components(**properties)
     self.user_id = main_form_module.userId
+    self.image_1.role = 'circular-image'
     user_data = app_tables.fin_loan_details.search()
     for row in user_data:
         borrower_customer_id = row['borrower_customer_id']

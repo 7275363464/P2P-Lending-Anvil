@@ -44,7 +44,7 @@ components:
       type: Spacer
       layout_properties: {grid_position: 'WUAZDP,FZHHNU'}
     - name: column_panel_1_copy_copy
-      properties: {role: elevated-card, col_widths: '{"EKYSFD":54,"EOHAME":6,"PKGYXY":74,"UXCVZV":40,"DOATLH":74,"PERMDT":6,"MNRTIL":6}'}
+      properties: {role: elevated-card, col_widths: '{"EKYSFD":54,"EOHAME":6,"PKGYXY":70,"UXCVZV":40,"DOATLH":70,"PERMDT":10,"MNRTIL":10}'}
       type: ColumnPanel
       layout_properties: {grid_position: 'WUAZDP,LLBEDS', full_width_row: false}
       components:
@@ -66,12 +66,12 @@ components:
         type: Link
         layout_properties: {grid_position: 'XRBTUN,EKYSFD CHTSZK,EYZZSJ'}
         event_bindings: {click: send_otp_click}
-      - name: label_3
-        properties: {icon: 'fa:address-book', font_size: 16, spacing_above: none, spacing_below: none}
-        type: Label
+      - name: image_2
+        properties: {height: '33.5', source: _/theme/bank_users/main_form/login_page/phone-book.png, horizontal_align: left}
+        type: Image
         layout_properties: {grid_position: 'XRBTUN,EOHAME'}
       - name: text_box_otp
-        properties: {visible: false, background: white, type: text, role: outlined, font_size: 14, spacing_below: none}
+        properties: {visible: false, background: white, type: text, role: outlined, font_size: 14, spacing_below: none, placeholder: Enter OTP}
         type: TextBox
         layout_properties: {grid_position: 'KADOWN,ZRHWCT'}
         data_bindings: []
@@ -80,6 +80,10 @@ components:
         type: Button
         layout_properties: {grid_position: 'KADOWN,YTCZOS'}
         event_bindings: {click: verify_otp_button_click}
+      - name: error_label
+        properties: {visible: false, foreground: red, font_size: 14, spacing_above: none, spacing_below: none}
+        type: Label
+        layout_properties: {grid_position: 'OOHXYV,HMEMON'}
       - name: label_5
         properties: {text: Password, bold: true, visible: false, font_size: 14, spacing_above: none, spacing_below: none}
         type: Label
@@ -87,10 +91,14 @@ components:
       - name: text_box_2
         properties: {role: outlined, placeholder: '', spacing_above: none, background: white, hide_text: true, spacing_below: none, visible: false, enabled: true, font_size: 14}
         type: TextBox
-        layout_properties: {grid_position: 'JHGYMR,PKGYXY'}
+        layout_properties: {grid_position: 'JHGYMR,PKGYXY ZZMDNT,NKQTZZ'}
         event_bindings: {change: text_box_2_change}
+      - name: password_error_label
+        properties: {visible: false, foreground: red}
+        type: Label
+        layout_properties: {grid_position: 'JHGYMR,PKGYXY KBHUFC,YHYEYZ'}
       - name: eye_icon_1
-        properties: {height: '33', visible: false, horizontal_align: left}
+        properties: {height: '27', visible: false, horizontal_align: left}
         type: Image
         layout_properties: {grid_position: 'JHGYMR,MNRTIL'}
         event_bindings: {mouse_up: eye_icon_1_click}
@@ -101,17 +109,17 @@ components:
       - name: text_box_2_copy
         properties: {role: outlined, placeholder: '', spacing_above: none, background: white, hide_text: true, spacing_below: none, visible: false, enabled: true, font_size: 14}
         type: TextBox
-        layout_properties: {grid_position: 'DMDHVP,DOATLH'}
+        layout_properties: {grid_position: 'DMDHVP,DOATLH MDXTMG,AGVOWQ'}
         event_bindings: {change: text_box_2_copy_change}
+      - name: retype_password_error_label
+        properties: {foreground: red}
+        type: Label
+        layout_properties: {grid_position: 'DMDHVP,DOATLH GSTCBI,OIOODB'}
       - name: eye_icon_2
-        properties: {height: '33', visible: false, horizontal_align: left}
+        properties: {height: '27', visible: false, horizontal_align: left}
         type: Image
         layout_properties: {grid_position: 'DMDHVP,PERMDT'}
         event_bindings: {mouse_up: eye_icon_2_click}
-      - name: error_label
-        properties: {visible: false, foreground: red, font_size: 14, spacing_above: none, spacing_below: none}
-        type: Label
-        layout_properties: {grid_position: 'RKOJPP,GPUIFR'}
       - name: button_1
         properties: {text: Save, background: '#094586', foreground: white, align: full, visible: false, font_size: 14, spacing_above: none, spacing_below: none}
         type: Button

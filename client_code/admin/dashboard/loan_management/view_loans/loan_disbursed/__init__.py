@@ -43,7 +43,11 @@ class loan_disbursed(loan_disbursedTemplate):
     if not self.result:
         alert("No Disbursed Loans Available!")
     else:
-        self.repeating_panel_2.items = self.result
+        # self.repeating_panel_2.items = self.result
+        panel1_data = self.result[::2]  
+        panel2_data = self.result[1::2]
+        self.repeating_panel_1.items = panel1_data
+        self.repeating_panel_3.items = panel2_data
 
       # print(self.list_1, self.list_2, self.list_3)
       # print(self.result)

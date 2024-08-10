@@ -45,7 +45,11 @@ class approved_loans(approved_loansTemplate):
     if not self.result:
         alert("No Approved Loans Available!")
     else:
-        self.repeating_panel_2.items = self.result
+        panel1_data = self.result[::2]  
+        panel2_data = self.result[1::2]
+        self.repeating_panel_1.items = panel1_data
+        self.repeating_panel_2.items = panel2_data
+        # self.repeating_panel_2.items = self.result
 
   def link_2_click(self, **event_args):
     """This method is called when the link is clicked"""

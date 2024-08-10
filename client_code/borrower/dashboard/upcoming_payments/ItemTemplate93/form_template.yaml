@@ -1,0 +1,105 @@
+is_package: true
+container: {type: ColumnPanel}
+components:
+- name: column_panel_1
+  properties: {role: outlined-card, col_widths: '{"EFEWVM":20,"TORDCN":54,"MTKUXH":30,"PVBPXK":30,"FDFNDQ":30,"CFMXEL":30,"CQQRLQ":50,"QLTUTN":10,"JYYQFO":10,"BGOQPS":50,"ITVXHE":25,"KHFUCS":35}'}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'UYIXBP,IYUPXG'}
+  components:
+  - name: image_1
+    properties: {height: 137.49996948242188, display_mode: original_size}
+    type: Image
+    layout_properties: {grid_position: 'OGKHLI,EFEWVM MRLZHQ,ZGMVBT', full_width_row: true}
+    data_bindings:
+    - {property: source, code: 'self.item[''user_photo'']', writeback: false}
+  - name: spacer_4
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'OGKHLI,EFEWVM XPFPSH,JYYQFO'}
+  - name: label_9
+    properties: {role: null, align: left, font_size: 14, bold: true, spacing_above: small}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,EFEWVM XPFPSH,BGOQPS'}
+    data_bindings:
+    - {property: text, code: 'self.item[''lender_full_name'']', writeback: false}
+  - name: label_12
+    properties: {text: 'Due Date :', bold: true, role: input-prompt, font_size: 14}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN OLCVBR,CUIZYN'}
+  - name: label_13
+    properties: {role: null, font_size: 14, foreground: 'theme:Error'}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN OLCVBR,HLAKFY'}
+    data_bindings:
+    - {property: text, code: 'self.item[''Scheduled_date'']', writeback: false}
+  - name: label_10
+    properties: {role: input-prompt, text: 'Due By :', bold: true, font_size: 14}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN GSMKAM,VPUOJR'}
+  - name: label_11
+    properties: {role: null, font_size: 14, foreground: 'theme:Error'}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN GSMKAM,QTNZVM'}
+    data_bindings:
+    - {property: text, code: 'self.item[''days_left'']', writeback: false}
+  - name: label_4
+    properties: {role: input-prompt, text: 'Product Name :', bold: true, font_size: 14}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN XEURDC,FDFNDQ'}
+  - name: link_3
+    properties: {align: left, bold: false, font_size: 14, role: null, border: '', icon: ''}
+    type: Link
+    layout_properties: {grid_position: 'OGKHLI,TORDCN XEURDC,CFMXEL'}
+    data_bindings:
+    - {property: text, code: 'self.item[''product_name'']', writeback: false}
+    event_bindings: {click: link_3_click}
+  - name: label_5
+    properties: {role: input-prompt, text: 'Loan Amount :', bold: true, font_size: 14}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN SGDIEE,CCKFUI'}
+  - name: label_1
+    properties: {role: null, font_size: 14, icon: '', foreground: ''}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN SGDIEE,TKNUSN'}
+    data_bindings:
+    - {property: text, code: 'self.item[''loan_amount'']', writeback: false}
+  - name: label_6
+    properties: {role: input-prompt, text: 'Tenure :', bold: true, font_size: 14}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN BWGTEY,MTKUXH'}
+  - name: label_2
+    properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: 14, tooltip: '', text: ''}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN BWGTEY,PVBPXK'}
+    data_bindings:
+    - {property: text, code: 'self.item[''tenure'']', writeback: false}
+  - name: label_7
+    properties: {role: input-prompt, text: 'Interest Rate :', align: left, bold: true, font_size: 14}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN CBDIFI,EJGILA'}
+  - name: label_3
+    properties: {role: null, font_size: 14, icon_align: right, icon: 'fa:percent', bold: false}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN CBDIFI,AXKMJY'}
+    data_bindings:
+    - {property: text, code: 'self.item[''interest_rate'']', writeback: false}
+  - name: spacer_3
+    properties: {height: 2.888885498046875}
+    type: Spacer
+    layout_properties: {grid_position: 'OGKHLI,TORDCN YTCZRZ,CQQRLQ XUWBHL,RNLZQT'}
+  - name: button_1_copy
+    properties: {role: outlined-button, bold: true, align: center, spacing_above: small, background: '#05264d', icon: '', underline: false, font: '', icon_align: left, foreground: 'theme:On Primary', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: View Details}
+    type: Button
+    layout_properties: {grid_position: 'OGKHLI,TORDCN YTCZRZ,CQQRLQ VGUQWY,ITVXHE'}
+    event_bindings: {click: view_details_click}
+    data_bindings: []
+  - name: button_1
+    properties: {role: outlined-button, bold: true, align: center, spacing_above: small, background: '#05264d', icon: '', underline: false, font: '', icon_align: left, foreground: 'theme:On Primary', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: '      Pay      '}
+    type: Button
+    layout_properties: {grid_position: 'OGKHLI,TORDCN YTCZRZ,CQQRLQ VGUQWY,KHFUCS'}
+    event_bindings: {click: button_1_click}
+    data_bindings: []
+  - name: spacer_1
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'OGKHLI,TORDCN YTCZRZ,QLTUTN'}

@@ -43,7 +43,10 @@ class one_time_settlement(one_time_settlementTemplate):
     if not self.result:
         alert("No OTS Loans Available!")
     else:
-        self.repeating_panel_2.items = self.result
+        panel1_data = self.result[::2]  
+        panel2_data = self.result[1::2]
+        self.repeating_panel_1.items = panel1_data
+        self.repeating_panel_3.items = panel2_data
 
   def button_1_copy_click(self, **event_args):
     open_form('admin.dashboard.loan_management.view_loans')

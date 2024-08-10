@@ -262,7 +262,7 @@ color: %color:On Primary Container%;
 /*   top: 0; */
   left: 0;
   flex-shrink: 0;
-  min-width: 300px;
+  min-width: 250px;
   max-width: 500px;
 }
 
@@ -312,7 +312,7 @@ color: %color:On Primary Container%;
   background: linear-gradient(0deg, %color:Primary Overlay 1%, %color:Primary Overlay 1%), %color:Background%;
 /*   border-right: 1px solid #e0e0e0; */
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
   color: %color:On Surface Variant%;
   overflow-x: auto;
   overflow-y: auto;
@@ -394,7 +394,7 @@ color: %color:On Primary Container%;
   
 }
 .left-nav .anvil-label{
-    padding: 4px 10px;
+    padding: 4px 8px;
     
 }
 .left-nav .anvil-component.left_edge-icon {

@@ -153,7 +153,8 @@ class apply_loan_request(apply_loan_requestTemplate):
                   self.product_description_label.text = "Product description not available"
 
     def link_1_click(self, **event_args):
-
+        self.label_29.text = f"Total Interest Amount({self.label_7_copy.text}%)"
+        self.label_31.text = f"Processing fee Amount({self.label_21.text}%)"
         loan_amount = self.loan_amount_tb.text
         tenure = self.text_box_1.text
         emi_type = self.drop_down_3.selected_value
@@ -206,7 +207,8 @@ class apply_loan_request(apply_loan_requestTemplate):
                 self.label_28.text = f"₹ {loan_amount}"
                 p = loan_amount
                 t = tenure
-                monthly_interest_rate = float(self.label_7_copy.text / 100) / 12
+                monthly_interest_rate = float(self.label_7_copy.text) / 100 / 12
+
               
                 # print("ROI:", self.roi)
                 # monthly_interest_rate = float(int(self.roi) / 100) / 12
@@ -222,7 +224,7 @@ class apply_loan_request(apply_loan_requestTemplate):
                 self.label_36.text = f"₹ {Monthly_EMI:.2f}"
                 interest_amount = Monthly_EMI * t - p
                 self.label_30.text = f"₹ {interest_amount:.2f}"
-                processing_fee_amount = (self.label_21.text / 100) * p
+                processing_fee_amount = (float(self.label_21.text) / 100) * p
                 self.label_32.text = f"₹ {processing_fee_amount:.2f}"
                 self.Total_Repayment_Amount = round(p + interest_amount + processing_fee_amount ,2)
                 self.label_34.text = f"₹ {self.Total_Repayment_Amount:.2f}"
@@ -235,7 +237,7 @@ class apply_loan_request(apply_loan_requestTemplate):
         # Toggle the visibility of the column_panel_1
         if self.column_panel_1.visible:
             self.column_panel_1.visible = False
-            self.link_3.text = "Show Details"
+            self.link_3.text = "View Payment details"
         else:
             self.column_panel_1.visible = True
             self.link_3.text = "Hide Details"

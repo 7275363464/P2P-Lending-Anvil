@@ -124,7 +124,13 @@ class foreclosure_request(foreclosure_requestTemplate):
                                 loans.append(loan_data)
 
                 # Set the filtered data as the items for the repeating panel
-                self.repeat.items = loans
+                panel1_data = loans[::2]  # Every second item starting from index 0
+                panel2_data = loans[1::2]  # Every second item starting from index 1
+                
+                # Bind data to the repeating panels
+                self.repeating_panel_1.items = panel1_data
+                self.repeating_panel_2.items = panel2_data
+                # self.repeat.items = loans
             except anvil.tables.TableError as e:
                 print(f"Error: {e}")
         else:

@@ -1,0 +1,82 @@
+container: {type: ColumnPanel}
+components:
+- name: column_panel_1
+  properties: {}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'UEZZEM,BBKDLE'}
+  components:
+  - name: column_panel_1_copy
+    properties: {}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'QIBMBT,COBZKQ'}
+    components:
+    - name: label_7
+      properties: {align: center, icon: _/theme/bank_users/circle-1.png, font_size: 16, text: '', bold: false}
+      type: Label
+      layout_properties: {grid_position: 'WKAFME,JXKWUP VKXAFE,GYTDAH'}
+    - name: label_1
+      properties:
+        text: "Basic \nDetails"
+        bold: false
+        align: center
+      type: Label
+      layout_properties: {grid_position: 'WKAFME,JXKWUP LBAMZG,YFDFNU'}
+    - name: label_13
+      properties: {text: '----------------'}
+      type: Label
+      layout_properties: {grid_position: 'WKAFME,ONKVNB'}
+    - name: label_8
+      properties: {align: center, icon: _/theme/bank_users/circle-2.png, font_size: 16}
+      type: Label
+      layout_properties: {grid_position: 'WKAFME,DUYZJV XXTEIA,QXIFMD'}
+    - name: label_2
+      properties:
+        text: "Qualification \nDetails"
+        bold: false
+        align: center
+      type: Label
+      layout_properties: {grid_position: 'WKAFME,DUYZJV PULIHK,EDASTJ'}
+    - name: label_14
+      properties: {text: '----------------'}
+      type: Label
+      layout_properties: {grid_position: 'WKAFME,GLGCEC'}
+    - name: label_9
+      properties: {align: center, icon: _/theme/bank_users/circle-3.png, font_size: 16}
+      type: Label
+      layout_properties: {grid_position: 'WKAFME,WHYLFQ TWKSNJ,VDKLXW'}
+    - name: label_3
+      properties:
+        text: "Profession \nDetails"
+        bold: false
+        align: center
+      type: Label
+      layout_properties: {grid_position: 'WKAFME,WHYLFQ QYKYIM,DXHIHJ'}
+    - name: label_15
+      properties: {text: '----------------'}
+      type: Label
+      layout_properties: {grid_position: 'WKAFME,OIFTOM'}
+    - name: label_10
+      properties: {align: center, icon: _/theme/bank_users/circle-4.png, font_size: 16}
+      type: Label
+      layout_properties: {grid_position: 'WKAFME,SBGITH ZMAMTD,WOHVTR'}
+    - name: label_4
+      properties: {text: Gurantor Details, bold: false, align: center}
+      type: Label
+      layout_properties: {grid_position: 'WKAFME,SBGITH IKAPPF,TKELVD'}
+    - name: label_16
+      properties: {text: '----------------'}
+      type: Label
+      layout_properties: {grid_position: 'WKAFME,HHWSYS'}
+    - name: label_11
+      properties: {align: center, icon: _/theme/bank_users/circle-5.png, font_size: 16}
+      type: Label
+      layout_properties: {grid_position: 'WKAFME,UTNBGP'}
+    - name: label_6
+      properties:
+        text: "Bank \nDetails"
+        bold: false
+        align: center
+      type: Label
+      layout_properties: {grid_position: 'WKAFME,UTNBGP OKNYKC,FHFJZG'}
+is_package: true
+custom_component: true

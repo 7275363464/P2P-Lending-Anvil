@@ -1,0 +1,108 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: form:borrower.navigation_bar_main
+  properties: {prop: ''}
+  name: navigation_bar_1
+  layout_properties: {grid_position: 'GHCSJS,WGEGBD', full_width_row: true}
+- name: registration_process_1
+  properties: {}
+  type: form:borrower.borrower_registration_forms.registration_process
+  layout_properties: {grid_position: 'MAMRFW,HNUUXJ'}
+- name: column_panel_2
+  properties: {role: outlined-card, col_widths: '{"DLVCWG":35,"CVLZJM":25,"BDLSWX":35,"CJYIIB":25,"LQRQMQ":35,"QODYWJ":25,"WFCYQG":35,"FHUDUV":25}'}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'GKCTCK,EVWGWH'}
+  components:
+  - name: label_1_copy_1
+    properties: {role: null, bold: true, align: center, spacing_above: small, background: '#05264d', icon: '', underline: false, font: '', icon_align: left, foreground: white, spacing_below: small, visible: true, border: '', italic: false, font_size: 16, tooltip: '', text: Loan Details}
+    type: Label
+    layout_properties: {grid_position: 'LFFUYQ,RPYLPI'}
+  - name: spacer_3
+    properties: {height: 19.499969482421875}
+    type: Spacer
+    layout_properties: {grid_position: 'RGZQUG,HEDAAZ'}
+  - type: Label
+    properties: {role: null, bold: true, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: 'Do you have any running Home Loan '}
+    name: label_3
+    layout_properties: {grid_position: 'NPXVTB,DLVCWG'}
+  - name: column_panel_1
+    properties: {col_widths: '{"BLZNWK":15,"SWRPTG":45}'}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'NPXVTB,CVLZJM'}
+    components:
+    - name: toggleswitch_1
+      properties: {}
+      type: form:lendor.Toggleswitch
+      layout_properties: {grid_position: 'KSKJRX,BLZNWK'}
+      event_bindings: {x_change: toggleswitch_1_x_change}
+    - name: label_1
+      properties: {}
+      type: Label
+      layout_properties: {grid_position: 'KSKJRX,SWRPTG'}
+  - type: Label
+    properties: {role: null, bold: true, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: 'Do you have any other loan against your name '}
+    name: label_4
+    layout_properties: {grid_position: 'UGDOUC,BDLSWX'}
+  - name: column_panel_1_copy
+    properties: {col_widths: '{"BUHPYU":15,"WSOAPN":45}'}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'UGDOUC,CJYIIB'}
+    components:
+    - name: toggleswitch_2
+      properties: {}
+      type: form:lendor.Toggleswitch
+      layout_properties: {grid_position: 'FIJPMR,BUHPYU'}
+      event_bindings: {x_change: toggleswitch_2_x_change}
+    - name: label_2
+      properties: {}
+      type: Label
+      layout_properties: {grid_position: 'FIJPMR,WSOAPN'}
+  - type: Label
+    properties: {text: Do you have any Personal Credit Card Loans, bold: true}
+    name: label_5
+    layout_properties: {grid_position: 'PBJUZL,LQRQMQ'}
+  - name: column_panel_1_copy_2
+    properties: {col_widths: '{"ZWIMBJ":15,"DHLMME":45}'}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'PBJUZL,QODYWJ'}
+    components:
+    - name: toggleswitch_3
+      properties: {}
+      type: form:lendor.Toggleswitch
+      layout_properties: {grid_position: 'GIMOVB,ZWIMBJ'}
+      event_bindings: {x_change: toggleswitch_3_x_change}
+    - name: label_7
+      properties: {}
+      type: Label
+      layout_properties: {grid_position: 'GIMOVB,DHLMME'}
+  - type: Label
+    properties: {text: Do you have any Two Wheeler / Four Wheeler Loans, bold: true}
+    name: label_6
+    layout_properties: {grid_position: 'ODLHSX,WFCYQG'}
+  - name: column_panel_1_copy_2_copy
+    properties: {col_widths: '{"IEGZJQ":15,"BSFXVE":45}'}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'ODLHSX,FHUDUV'}
+    components:
+    - name: toggleswitch_4
+      properties: {}
+      type: form:lendor.Toggleswitch
+      layout_properties: {grid_position: 'KPNGQP,IEGZJQ'}
+      event_bindings: {x_change: toggleswitch_4_x_change}
+    - name: label_8
+      properties: {}
+      type: Label
+      layout_properties: {grid_position: 'KPNGQP,BSFXVE'}
+- type: Button
+  properties: {role: elevated-button, bold: true, align: right, spacing_above: small, background: '#0b2547', icon: 'fa:angle-double-left', underline: false, font: '', icon_align: left, foreground: 'theme:On Primary', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: Prev}
+  name: button_1
+  layout_properties: {grid_position: 'WAMCJC,YXCLQI'}
+  event_bindings: {click: button_1_click}
+- type: Button
+  properties: {role: elevated-button, bold: true, align: left, spacing_above: small, background: '#0b2547', icon: 'fa:angle-double-right', underline: false, font: '', icon_align: right, foreground: 'theme:On Primary', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: Next}
+  name: next
+  layout_properties: {grid_position: 'WAMCJC,XEHGKC'}
+  event_bindings: {click: next_click}
+is_package: true

@@ -15,17 +15,17 @@ class home_button_admin(home_button_adminTemplate):
 
     # Any code you write here will run before the form opens.
 
-  def button_1_click(self, **event_args):
-    open_form('admin.dashboard')
+  # def button_1_click(self, **event_args):
+  #   open_form('admin.dashboard')
 
   def Admins_click(self, **event_args):
     open_form('admin.dashboard.admin_management')
 
   def Borrowers_click(self, **event_args):
-    open_form('admin.dashboard.borrowers')
+    open_form('admin.dashboard.customer_management.handles_customer_registration.borrowers')
 
   def Lenders_click(self, **event_args):
-    open_form('admin.dashboard.lenders')
+    open_form('admin.dashboard.customer_management.handles_customer_registration.lenders')
 
   def Management_click(self, **event_args):
     open_form('admin.dashboard.loan_management')
@@ -49,4 +49,12 @@ class home_button_admin(home_button_adminTemplate):
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('admin.dashboard')
+
+  def Bessem_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      open_form('admin.dashboard.manage_ascend_score')
+
+  def link_1_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      open_form('admin.dashboard')
 

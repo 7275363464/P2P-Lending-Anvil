@@ -7,6 +7,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+import re
 
 class forgot_password(forgot_passwordTemplate):
     def __init__(self, email, **properties):
@@ -41,33 +42,74 @@ class forgot_password(forgot_passwordTemplate):
             self.text_box_2_copy.hide_text = True  # Hide the password
             self.eye_icon_2.source = '_/theme/eye_closed.png'  # Change to closed eye icon
 
+    # def validate_password(self):
+    #     password = self.text_box_2.text.strip()
+    #     retype_password = self.text_box_2_copy.text.strip()
+
+    #     error_messages = []
+
+    #     # Validate password length
+    #     if len(password) < 8:
+    #         error_messages.append('Password must be at least 8 characters long.')
+
+    #     # Validate matching passwords
+    #     if password != retype_password:
+    #         error_messages.append('Passwords do not match.')
+
+    #     if error_messages:
+    #         self.error_label.text = ' '.join(error_messages)
+    #         self.error_label.foreground = 'red'
+    #         self.error_label.visible = True
+    #     else:
+    #         self.error_label.visible = False
+
     def validate_password(self):
         password = self.text_box_2.text.strip()
         retype_password = self.text_box_2_copy.text.strip()
-
-        error_messages = []
-
-        # Validate password length
-        if len(password) < 8:
-            error_messages.append('Password must be at least 8 characters long.')
-
+        # Clear previous error messages
+        self.password_error_label.text = ''
+        self.retype_password_error_label.text = ''
+        self.password_error_label.visible = False
+        self.retype_password_error_label.visible = False
+        
+        # Validate password
+        if not password:
+            self.password_error_label.text = "Password cannot be empty."
+            self.password_error_label.visible = True
+        elif len(password) < 8:
+            self.password_error_label.text = "Password must be at least 8 characters long."
+            self.password_error_label.visible = True
+        elif not re.match(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+=-])[A-Za-z\d!@#$%^&*()_+=-]+$', password):
+            self.password_error_label.text = "Password must include (a-z), (A-Z), (0-9), and (!@#$%^&*()_+=-)."
+            self.password_error_label.visible = True
+        else:
+            self.password_error_label.text = ""
+            self.password_error_label.visible = False
+        
         # Validate matching passwords
         if password != retype_password:
-            error_messages.append('Passwords do not match.')
-
-        if error_messages:
-            self.error_label.text = ' '.join(error_messages)
-            self.error_label.foreground = 'red'
-            self.error_label.visible = True
+            self.retype_password_error_label.text = 'Passwords do not match.'
+            # self.retype_password_error_label.visible = True
         else:
-            self.error_label.visible = False
+            self.retype_password_error_label.text = ""
+            self.retype_password_error_label.visible = False
+    
 
+  
     def text_box_2_change(self, **event_args):
         """This method is called when the text in text_box_2 changes"""
+        
+        self.error_label.visible = False
+        self.error_label.visible = True
+        self.password_error_label.visible = False
         self.validate_password()
 
     def text_box_2_copy_change(self, **event_args):
         """This method is called when the text in text_box_2_copy changes"""
+        
+        self.error_label.visible = False
+        self.error_label.visible = False
+        self.password_error_label.visible = True
         self.validate_password()
 
     def button_1_click(self, **event_args):
@@ -76,23 +118,23 @@ class forgot_password(forgot_passwordTemplate):
         email = self.text_box_1.text.strip()
 
         if password != retype_password:
-            self.error_label.text = 'Passwords do not match. Please re-enter.'
-            self.error_label.foreground = 'red'
-            self.error_label.visible = True
+            self.retype_password_error_label.text = 'Passwords do not match. Please re-enter.'
+            self.retype_password_error_label.foreground = 'red'
+            self.retype_password_error_label.visible = True
             return
 
         user = app_tables.users.get(email=email)
         if user:
             hashed_password = anvil.server.call('hash_password_2', password)
             user['password_hash'] = hashed_password
-            self.error_label.text = 'Password updated successfully.'
-            self.error_label.foreground = 'green'
+            self.retype_password_error_label.text = 'Password updated successfully.'
+            self.retype_password_error_label.foreground = 'green'
             open_form('bank_users.main_form.signin_page')
         else:
-            self.error_label.text = 'User not found.'
-            self.error_label.foreground = 'red'
+            self.retype_password_error_label.text = 'User not found.'
+            self.retype_password_error_label.foreground = 'red'
         
-        self.error_label.visible = True
+        self.retype_password_error_label.visible = True
 
     def send_otp_click(self, **event_args):
         email = self.text_box_1.text.strip()

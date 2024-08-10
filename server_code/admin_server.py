@@ -147,7 +147,7 @@ def add_basic_details(full_name, gender, dob, mobile_no, user_photo, alternate_e
     row[0]['present_address'] = present
     row[0]['duration_at_address'] = duration
     row[0]['marital_status'] = marital_status
-    row[0]['form_count'] = 0
+    row[0]['form_count'] = 1
 
 @anvil.server.callable
 def generate_admin_id():

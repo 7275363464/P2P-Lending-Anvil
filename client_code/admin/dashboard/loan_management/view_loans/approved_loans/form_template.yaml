@@ -25,11 +25,15 @@ components:
     properties: {text: View Approved loans, align: center, bold: true, role: title}
     type: Label
     layout_properties: {grid_position: 'JXHFMX,VPZZRO', full_width_row: true}
-  - name: spacer_1
-    properties: {height: 32}
-    type: Spacer
-    layout_properties: {grid_position: 'VYNPNW,RADTZK', full_width_row: true}
-  - type: RepeatingPanel
-    properties: {item_template: admin.dashboard.loan_management.view_loans.approved_loans.ItemTemplate31}
-    name: repeating_panel_2
-    layout_properties: {grid_position: 'REPIQV,GRWUDD KFMOWY,ZOIRHB'}
+  - name: repeating_panel_1
+    properties: {item_template: admin.dashboard.loan_management.view_loans.approved_loans.ItemTemplate121}
+    type: RepeatingPanel
+    layout_properties: {grid_position: 'JGDNVA,FWRPUC', full_width_row: true}
+  - name: repeating_panel_2
+    properties: {item_template: admin.dashboard.loan_management.view_loans.approved_loans.ItemTemplate122}
+    type: RepeatingPanel
+    layout_properties: {grid_position: 'JGDNVA,JLHIEB'}
+  - name: repeating_panel_4
+    properties: {item_template: admin.dashboard.loan_management.view_loans.approved_loans.ItemTemplate31, visible: false}
+    type: RepeatingPanel
+    layout_properties: {grid_position: 'VYNPNW,VQTUOB'}

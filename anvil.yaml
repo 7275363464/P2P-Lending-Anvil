@@ -179,62 +179,6 @@ db_schema:
       admin_ui: {width: 200, order: 46}
       type: date
     title: fin_loan_details
-  fin_user_beseem_score:
-    title: fin_user_ascend_score
-    client: full
-    server: full
-    columns:
-    - name: borrower_customer_id
-      admin_ui: {width: 200}
-      type: number
-    - name: borrower_email_id
-      admin_ui: {width: 200}
-      type: string
-    - name: gender_point
-      admin_ui: {width: 200}
-      type: number
-    - name: present_address_point
-      admin_ui: {width: 200}
-      type: number
-    - name: duration_at_address_point
-      admin_ui: {width: 200}
-      type: number
-    - name: qualification_point
-      admin_ui: {width: 200}
-      type: number
-    - name: profession_point
-      admin_ui: {width: 200}
-      type: number
-    - name: organization_type_point
-      admin_ui: {width: 200}
-      type: number
-    - name: salary_type_point
-      admin_ui: {width: 200}
-      type: number
-    - name: age_of_business_point
-      admin_ui: {width: 200}
-      type: number
-    - name: marital_status_point
-      admin_ui: {width: 200}
-      type: number
-    - name: spouse_profession_point
-      admin_ui: {width: 200}
-      type: number
-    - name: home_loan_point
-      admin_ui: {width: 200}
-      type: number
-    - name: other_loan_point
-      admin_ui: {width: 200}
-      type: number
-    - name: credit_card_loan_point
-      admin_ui: {width: 200}
-      type: number
-    - name: vehicle_loan_point
-      admin_ui: {width: 200}
-      type: number
-    - name: total_user_point
-      admin_ui: {width: 200}
-      type: number
   fin_lendor_salary_type:
     client: full
     server: full
@@ -1108,14 +1052,6 @@ db_schema:
     - name: name_group
       admin_ui: {width: 200}
       type: string
-  fin_category:
-    title: fin_category
-    client: full
-    server: full
-    columns:
-    - name: category
-      admin_ui: {width: 200}
-      type: string
   fin_user_profile:
     client: full
     server: full
@@ -1472,6 +1408,9 @@ db_schema:
     - name: lendor_lending_type
       admin_ui: {width: 200}
       type: string
+    - name: last_notification_date
+      admin_ui: {width: 200}
+      type: date
     title: fin_user_profile
   fin_lender:
     title: fin_lender
@@ -1570,9 +1509,6 @@ db_schema:
     - name: status
       admin_ui: {width: 200, order: 9}
       type: bool
-    - name: upi_id
-      admin_ui: {width: 200}
-      type: string
     title: fin_wallet
   fin_subcategory_technical_issue:
     client: full
@@ -1828,20 +1764,6 @@ db_schema:
       admin_ui: {width: 200, order: 0}
       type: string
     title: fin_borrower_profession
-  fin_report_issue_category:
-    title: fin_report_issue_category
-    client: full
-    server: full
-    columns:
-    - name: subcategory_technical_issue
-      admin_ui: {width: 243}
-      type: string
-    - name: borrower_subcategory_loan_issue
-      admin_ui: {width: 200}
-      type: string
-    - name: lendor_subcategory_loan_issue
-      admin_ui: {width: 200}
-      type: string
   fin_lendor_organization_type:
     client: full
     server: full

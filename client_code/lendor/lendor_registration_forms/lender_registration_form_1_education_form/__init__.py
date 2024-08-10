@@ -72,7 +72,7 @@ class lender_registration_form_1_education_form(lender_registration_form_1_educa
       
         # Validate files based on qualification
         if qualification == '10th standard' and not tenth_class:
-            self.file_loader_1.background = '#FF0000'
+            self.file_loader_1.background='#FF0000'
             self.file_loader_1.focus()
             Notification('Please upload All document before proceeding.').show()
             return
@@ -142,7 +142,7 @@ class lender_registration_form_1_education_form(lender_registration_form_1_educa
         elif qualification == 'PhD':
             anvil.server.call('add_education_phd', tenth_class_4, intermediate_3, btech_2, mtech_1, phd, user_id)
         else:
-            self.drop_down_1.background = '#FF0000'
+            self.drop_down_1.role= 'outlined-error'
             self.drop_down_1.focus()
             Notification("Please select a valid qualification status").show()
             return
@@ -247,20 +247,6 @@ class lender_registration_form_1_education_form(lender_registration_form_1_educa
             else:
                 alert('Invalid file type. Only JPEG, PNG, and PDF are allowed')
                 self.file_loader_4.clear()
-    """This method is called when a new file is loaded into this FileLoader"""
-    if file:
-            self.label_26.text = file.name if file else ''
-            content_type = file.content_type
-            
-            if content_type in ['image/jpeg', 'image/png', 'image/jpg']:
-                # Display the image directly
-                self.image_5.source = self.file_loader_5.file
-            elif content_type == 'application/pdf':
-                # Display a default PDF image temporarily
-                self.image_5.source = '_/theme/bank_users/default%20pdf.png'
-            else:
-                alert('Invalid file type. Only JPEG, PNG, and PDF are allowed')
-                self.file_loader_5.clear()
       
   def file_loader_6_change(self, file, **event_args):
     """This method is called when a new file is loaded into this FileLoader"""
@@ -419,5 +405,25 @@ class lender_registration_form_1_education_form(lender_registration_form_1_educa
             else:
                 alert('Invalid file type. Only JPEG, PNG, and PDF are allowed')
                 self.file_loader_15.clear()
+
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('bank_users.main_form.basic_registration_form')
+
+  def file_loader_5_change(self, file, **event_args):
+    """This method is called when a new file is loaded into this FileLoader"""
+    if file:
+            self.label_26.text = file.name if file else ''
+            content_type = file.content_type
+            
+            if content_type in ['image/jpeg', 'image/png', 'image/jpg']:
+                # Display the image directly
+                self.image_5.source = self.file_loader_5.file
+            elif content_type == 'application/pdf':
+                # Display a default PDF image temporarily
+                self.image_5.source = '_/theme/bank_users/default%20pdf.png'
+            else:
+                alert('Invalid file type. Only JPEG, PNG, and PDF are allowed')
+                self.file_loader_5.clear()
   
    

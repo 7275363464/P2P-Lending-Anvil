@@ -16,6 +16,7 @@ class emi_details(emi_detailsTemplate):
         self.selected_row = selected_row
         # Store the selected loan_id
         self.selected_loan_id = selected_row['loan_id']
+        print(self.selected_loan_id)
         
         # Fetch and display data for the selected loan_id
         self.fetch_and_display_data()

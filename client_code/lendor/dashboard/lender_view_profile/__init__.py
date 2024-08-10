@@ -22,12 +22,38 @@ class lender_view_profile(lender_view_profileTemplate):
     self.disable_business_details_fields()
     self.disable_bank_details_fields()
     self.load_user_profile()
+    self.load_guarantor_details()
     self.disable_company_employment_fields()
     self.disable_lender_details_fields()
     self.image_1.role = 'circular-image'
 
 
     # Any code you write here will run before the form opens.
+  def load_guarantor_details(self):
+    guarantor_details = app_tables.fin_guarantor_details.get(customer_id=self.user_id)
+
+    if guarantor_details:
+        self.gurentor_name_text.text = guarantor_details["guarantor_name"] 
+        self.date_picker_2.text = guarantor_details["guarantor_date_of_birth"] 
+        self.mbl_no_text.text = guarantor_details["guarantor_mobile_no"] 
+        self.profession_text.text = guarantor_details["guarantor_profession"]
+        self.address_text.text = guarantor_details["guarantor_address"]
+        self.relation_text.text = guarantor_details["another_person"] 
+        self.date_picker_3.text = guarantor_details['guarantor_marriage_date']
+        self.text_box_2.text = guarantor_details['guarantor_company_name']
+        self.text_box_3.text =guarantor_details['guarantor_annual_earning']
+         # Check if relation is "father" or "mother"
+        if guarantor_details["another_person"].lower() in ["Father", "Mother" ,"Other"]:
+            self.column_panel_1.visible = True
+            self.column_panel_3.visible = False
+        elif guarantor_details["another_person"].lower() in "Spouse":
+            self.column_panel_1.visible = False
+            self.column_panel_3.visible = True
+        else:
+            self.column_panel_1.visible = False
+            self.column_panel_3.visible = False
+          
+
 
   def load_user_profile(self):
     user_profile = app_tables.fin_user_profile.get(customer_id=self.user_id)
@@ -39,7 +65,7 @@ class lender_view_profile(lender_view_profileTemplate):
       self.name_text_box.text = user_profile["full_name"]
       self.email_tx.text = user_profile["email_user"]
       self.mobile_tx.text = user_profile["mobile"]
-      self.d_o_b_text_box.text = user_profile["date_of_birth"]
+      self.date_picker_1.text = user_profile["date_of_birth"]
       self.city_tx.text = user_profile["city"]
       self.g_i_1_tx.text = user_profile["aadhaar_no"]
       self.g_i_2_tx.text = user_profile["pan_number"]
@@ -183,7 +209,7 @@ class lender_view_profile(lender_view_profileTemplate):
     self.name_text_box.enabled = False
     self.email_tx.enabled = False
     self.mobile_tx.enabled = False
-    self.d_o_b_text_box.enabled = False
+    self.date_picker_1.enabled = False
     self.city_tx.enabled = False
     self.g_i_1_tx.enabled = False
     self.g_i_2_tx.enabled = False
@@ -202,6 +228,15 @@ class lender_view_profile(lender_view_profileTemplate):
     # self.credit_tx.enabled = False
     self.qualification_dropdown.enabled = False
     # self.profession_dropdown.enabled = False
+    self.gurentor_name_text.enabled = False
+    self.date_picker_2.enabled = False
+    self.mbl_no_text.enabled = False
+    self.profession_text.enabled = False
+    self.address_text.enabled = False
+    self.relation_text.enabled = False
+    self.date_picker_3.enabled=False
+    self.text_box_2.enabled=False
+    self.text_box_3.enabled = False
 
   def enable_personal_fields(self):
     self.name_text_box.enabled = True
@@ -226,6 +261,13 @@ class lender_view_profile(lender_view_profileTemplate):
     self.qualification_dropdown.enabled = True
     # self.profession_dropdown.enabled = True
     self.alternate_email.enabled = True
+    self.gurentor_name_text.enabled = True
+    self.mbl_no_text.enabled = True
+    self.profession_text.enabled = True
+    self.address_text.enabled = True
+    self.relation_text.enabled = True
+    self.text_box_2.enabled= True
+    self.text_box_3.enabled = True
 
   def edit_personal_details_click(self, **event_args):
     self.enable_personal_fields()
@@ -258,7 +300,7 @@ class lender_view_profile(lender_view_profileTemplate):
     required_fields = {
         "Full Name": self.name_text_box.text,
         "Mobile Number": self.mobile_tx.text,
-        "Date of Birth": self.d_o_b_text_box.text,
+        "Date of Birth": self.date_picker_1.text,
         "City": self.city_tx.text,
         "Aadhaar Number": self.g_i_1_tx.text,
         "PAN Number": self.g_i_2_tx.text,
@@ -278,6 +320,15 @@ class lender_view_profile(lender_view_profileTemplate):
         "Alternate email": self.alternate_email.text,
         # "Profession": self.profession_dropdown.selected_value,
         # "Other Loan": self.Language_tx.text,
+        "guarantor_name": self.gurentor_name_text.text,
+        # "guarantor_date_of_birth": self.date_of_birth.text,
+        "guarantor_mobile_no": self.mbl_no_text.text,
+        "guarantor_profession": self.profession_text.text,
+        # "guarantor_address": self.address_text.text,
+        "another_person": self.relation_text,
+        # 'guarantor_marriage_date':self.text_box_1.text , 
+        # 'guarantor_company_name': self.text_box_2.text ,
+        # 'guarantor_annual_earning':self.text_box_3.text 
     }
 
     for field_name, field_value in required_fields.items():
@@ -371,7 +422,7 @@ class lender_view_profile(lender_view_profileTemplate):
             for loans in report_problem:
               loans['email'] = new_email
               loans['name'] = new_full_name
-              loans['mobile_number'] = self.mobile_tx.text
+              loans['mobile_number'] = int(self.mobile_tx.text)
               loans.update()
   
       loan_details = app_tables.fin_loan_details.search(lender_customer_id=self.user_id)
@@ -390,6 +441,18 @@ class lender_view_profile(lender_view_profileTemplate):
       if user_table:
             user_table['email'] = new_email
             user_table.update()
+    guarantor_details = app_tables.fin_guarantor_details.get(customer_id=self.user_id)
+    if guarantor_details:
+            guarantor_details["guarantor_name"] = self.gurentor_name_text.text
+            guarantor_details["guarantor_date_of_birth"] = self.date_picker_2.text
+            guarantor_details["guarantor_mobile_no"] = int(self.mbl_no_text.text)
+            guarantor_details["guarantor_profession"] = self.profession_text.text
+            guarantor_details["guarantor_address"] = self.address_text.text
+            guarantor_details["another_person"] = self.relation_text.text
+            guarantor_details['guarantor_marriage_date'] =self.date_picker_3.text 
+            guarantor_details['guarantor_company_name'] =  self.text_box_2.text 
+            guarantor_details['guarantor_annual_earning'] =  self.text_box_3.text 
+            
         
     # If no validation errors, proceed with saving
     user_profile = app_tables.fin_user_profile.get(customer_id=self.user_id)
@@ -397,7 +460,7 @@ class lender_view_profile(lender_view_profileTemplate):
         user_profile["full_name"] = self.name_text_box.text
         user_profile['email_user'] = self.email_tx.text
         user_profile["mobile"] = self.mobile_tx.text
-        user_profile["date_of_birth"] = self.d_o_b_text_box.text
+        user_profile["date_of_birth"] = self.d.text
         user_profile["city"] = self.city_tx.text
         user_profile["aadhaar_no"] = self.g_i_1_tx.text
         user_profile["pan_number"] = self.g_i_2_tx.text
@@ -623,6 +686,7 @@ class lender_view_profile(lender_view_profileTemplate):
         "DIN": self.din_tx.text,
         "CIN": self.cin_tx.text,
         "Registered Office Address": self.office_address_tx.text,
+    
         # "Proof Verification": self.proof_varification.source
     }
     if not is_alpha(self.business_name_tex.text):
@@ -796,6 +860,7 @@ class lender_view_profile(lender_view_profileTemplate):
     self.disable_lender_details_fields()
     self.save_lender_details_button.visible = False
     self.edit_lender_details_button.visible = True
+    
 
   
   def personal_information_click(self, **event_args):
@@ -805,6 +870,7 @@ class lender_view_profile(lender_view_profileTemplate):
     self.institutional_panel.visible = False
     self.Individual_panel.visible = False
     self.bank_details_panel.visible = False
+    
 
   def Profile_Information_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -894,11 +960,14 @@ class lender_view_profile(lender_view_profileTemplate):
     self.institutional_panel.visible = False
     self.Individual_panel.visible = False
     self.bank_details_panel.visible = False
-
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('lendor.dashboard')
 
-  def edit_land_farming_details_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    pass
+
+        
+
+
+
+    
+

@@ -27,9 +27,9 @@ components:
     - {id: OJLQEN, title: '   Email', data_key: mail_id, expand: true}
     - {id: HWDHRQ, data_key: ph_no, title: '   Mobile   ', expand: false, width: 104.5555419921875}
     - {id: KLWTCJ, data_key: usertype, title: Usertype, expand: true}
-    - {id: KGTTKP, data_key: relation, title: 'Another  Person Relation ', expand: true}
-    - {id: POAYGK, data_key: G_name, title: 'Another  Person  Name ', expand: true}
-    - {id: GWUTQO, data_key: G_ph_no, title: Another  Person  Mobile, expand: true}
+    - {id: KGTTKP, data_key: relation, title: Gurantor, expand: true}
+    - {id: POAYGK, data_key: G_name, title: 'Gurantor Name ', expand: true}
+    - {id: GWUTQO, data_key: G_ph_no, title: Gurantor  Mobile, expand: true}
     role: tonal-data-grid
   type: DataGrid
   components:

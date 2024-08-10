@@ -199,30 +199,63 @@ class signup_page(signup_pageTemplate):
             self.text_box_3.hide_text = True  # Hide the password
             self.eye_icon_2.source = '_/theme/eye_closed.png'  # Change to closed eye icon
 
+    # def validate_password(self):
+    #     password = self.text_box_2.text.strip()
+    #     retype_password = self.text_box_3.text.strip()
+    
+    #     # Clear previous error messages
+    #     self.password_error_label.text = ''
+    #     self.retype_password_error_label.text = ''
+    #     self.password_error_label.visible = False
+    #     self.retype_password_error_label.visible = False
+    
+    #     # Validate password length
+    #     if len(password) < 8:
+    #         self.password_error_label.text = 'Password must be at least 8 characters long.'
+    #         # self.password_error_label.visible = True
+    
+    #     # Validate matching passwords
+    #     if password != retype_password:
+    #         self.retype_password_error_label.text = 'Passwords do not match.'
+    #         # self.retype_password_error_label.visible = True
+
     def validate_password(self):
         password = self.text_box_2.text.strip()
         retype_password = self.text_box_3.text.strip()
-    
+        
         # Clear previous error messages
         self.password_error_label.text = ''
         self.retype_password_error_label.text = ''
         self.password_error_label.visible = False
         self.retype_password_error_label.visible = False
-    
-        # Validate password length
-        if len(password) < 8:
-            self.password_error_label.text = 'Password must be at least 8 characters long.'
-            # self.password_error_label.visible = True
-    
+        
+        # Validate password
+        if not password:
+            self.password_error_label.text = "Password cannot be empty."
+            self.password_error_label.visible = True
+        elif len(password) < 8:
+            self.password_error_label.text = "Password must be at least 8 characters long."
+            self.password_error_label.visible = True
+        elif not re.match(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+=-])[A-Za-z\d!@#$%^&*()_+=-]+$', password):
+            self.password_error_label.text = "Password must include (a-z), (A-Z), (0-9), and (!@#$%^&*()_+=-)."
+            self.password_error_label.visible = True
+        else:
+            self.password_error_label.text = ""
+            self.password_error_label.visible = False
+        
         # Validate matching passwords
         if password != retype_password:
             self.retype_password_error_label.text = 'Passwords do not match.'
             # self.retype_password_error_label.visible = True
-
+        else:
+            self.retype_password_error_label.text = ""
+            self.retype_password_error_label.visible = False
+  
     def text_box_2_change(self, **event_args):
         """This method is called when the text in text_box_2 changes"""
         self.validate_password()
         self.password_error_label.visible = True
+        self.retype_password_error_label.visible = False
 
     def text_box_3_change(self, **event_args):
         """This method is called when the text in text_box_3 changes"""
@@ -323,4 +356,5 @@ class signup_page(signup_pageTemplate):
             self.retype_password_error_label.text = 'Invalid OTP. Please try again.'
             self.retype_password_error_label.visible = True
             self.send_otp.visible = True
+
 

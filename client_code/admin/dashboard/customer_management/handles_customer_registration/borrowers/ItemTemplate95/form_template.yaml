@@ -1,0 +1,124 @@
+is_package: true
+container: {type: ColumnPanel}
+components:
+- name: column_panel_1
+  properties: {role: outlined-card, col_widths: '{"EFEWVM":20,"TORDCN":55,"MTKUXH":30,"PVBPXK":30,"FDFNDQ":30,"CQQRLQ":50,"QLTUTN":10,"WQNEZH":25,"RACNDE":52,"FGYRFO":13}'}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'XKKZVO,ZVVYKL'}
+  components:
+  - name: image_1
+    properties: {height: 137.49996948242188, display_mode: original_size}
+    type: Image
+    layout_properties: {grid_position: 'OGKHLI,EFEWVM MRLZHQ,ZGMVBT', full_width_row: true}
+    data_bindings:
+    - {property: source, code: 'self.item[''user_photo'']', writeback: false}
+  - name: spacer_2
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'OGKHLI,EFEWVM XPFPSH,FGYRFO'}
+  - name: FullName_label
+    properties: {role: null, font_size: 14, foreground: '', bold: true}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,EFEWVM XPFPSH,RACNDE NKAULW,MQGIMZ'}
+    data_bindings:
+    - {property: text, code: 'self.item[''full_name'']', writeback: false}
+  - name: Customer_id_label
+    properties: {visible: false, font_size: 14}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,EFEWVM XPFPSH,RACNDE GUBHGI,VPOTSQ'}
+    data_bindings:
+    - {property: text, code: 'self.item[''customer_id'']', writeback: false}
+  - name: label_10
+    properties: {role: input-prompt, text: 'Email :', bold: true, font_size: 14}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN ZWNDNK,VXVCIT'}
+  - name: Email_label
+    properties: {role: null, font_size: 14, foreground: ''}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN ZWNDNK,IGJFTT'}
+    data_bindings:
+    - {property: text, code: 'self.item[''email_user'']', writeback: false}
+  - name: label_4
+    properties: {role: input-prompt, text: 'Mobile :', bold: true, font_size: 14}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN XEURDC,FDFNDQ'}
+  - name: Mobile_label
+    properties: {font_size: 14}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN XEURDC,UXXICW'}
+    data_bindings:
+    - {property: text, code: 'self.item[''mobile'']', writeback: false}
+  - name: label_5
+    properties: {role: input-prompt, text: 'Credit Limit :', bold: true, font_size: 14}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN GZVGZP,FWGEVP'}
+  - name: CreditLimit_label
+    properties: {role: null, font_size: 14, icon: '', foreground: ''}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN GZVGZP,VDMYNK'}
+    data_bindings:
+    - {property: text, code: 'self.item[''credit_limit'']', writeback: false}
+  - name: label_6
+    properties: {role: input-prompt, text: 'Ascend Score :', bold: true, font_size: 14}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN BWGTEY,MTKUXH'}
+  - name: AscendScore_label
+    properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: 14, tooltip: '', text: ''}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN BWGTEY,PVBPXK'}
+    data_bindings:
+    - {property: text, code: 'self.item[''ascend_score'']', writeback: false}
+  - name: label_7
+    properties: {role: input-prompt, text: 'Gurantor :', align: left, bold: true, font_size: 14}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN UWAMUW,PYNPCT'}
+  - name: Gurantor_label
+    properties: {font_size: 14}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN UWAMUW,UWFQZR'}
+    data_bindings:
+    - {property: text, code: 'self.item[''another_person'']', writeback: false}
+  - name: label_8
+    properties: {font_size: 14, text: 'Gurantor Name :', bold: true}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN RHHPRP,SVJNSJ'}
+  - name: label_14
+    properties: {font_size: 14}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN RHHPRP,JEFKOR'}
+    data_bindings:
+    - {property: text, code: 'self.item[''guarantor_name'']', writeback: false}
+  - name: label_1
+    properties: {text: 'Gurantor Mobile Number :', bold: true, font_size: 14}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN ZBHAFW,DQPROG'}
+  - name: Gurantor_mbl_nmbr_label
+    properties: {font_size: 14}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN ZBHAFW,JQXNOL'}
+    data_bindings:
+    - {property: text, code: 'self.item[''guarantor_mobile_no'']', writeback: false}
+  - name: label_2
+    properties: {text: 'Total Open Loans :', bold: true, font_size: 14}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN GLAPNZ,OLQYFW'}
+  - name: Total_open_label
+    properties: {font_size: 14}
+    type: Label
+    layout_properties: {grid_position: 'OGKHLI,TORDCN GLAPNZ,MPLWZY'}
+    data_bindings:
+    - {property: text, code: 'self.item[''loan_updated_status'']', writeback: false}
+  - name: spacer_3
+    properties: {height: 3.333343505859375}
+    type: Spacer
+    layout_properties: {grid_position: 'OGKHLI,TORDCN YTCZRZ,CQQRLQ XUWBHL,RNLZQT'}
+  - name: ViewMoreDetails_button
+    properties: {role: outlined-button, bold: true, align: center, spacing_above: small, background: '#05264d', icon: '', underline: false, font: '', icon_align: left, foreground: 'theme:On Primary', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: View More Details}
+    type: Button
+    layout_properties: {grid_position: 'OGKHLI,TORDCN YTCZRZ,CQQRLQ VGUQWY,WQNEZH'}
+    event_bindings: {click: view_details_click}
+    data_bindings: []
+  - name: spacer_1
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'OGKHLI,TORDCN YTCZRZ,QLTUTN'}

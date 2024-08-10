@@ -46,7 +46,7 @@ components:
     type: Label
     layout_properties: {grid_position: 'WKAFME,SBGITH ZMAMTD,WOHVTR'}
   - name: label_4
-    properties: {text: Marital Details, bold: false, align: center}
+    properties: {text: Gurantor Details, bold: false, align: center}
     type: Label
     layout_properties: {grid_position: 'WKAFME,SBGITH IKAPPF,TKELVD'}
   - name: label_16
@@ -66,7 +66,7 @@ components:
     type: Label
     layout_properties: {grid_position: 'WKAFME,GCPDAB'}
   - name: label_12
-    properties: {align: center, icon: _/theme/bank_users/circle-6.png, font_size: 16}
+    properties: {align: center, icon: _/theme/bank_users/circle-6.png, font_size: 16, visible: true}
     type: Label
     layout_properties: {grid_position: 'WKAFME,WZVXXY EHQWHH,CSDBVB'}
     data_bindings: []
@@ -75,5 +75,4 @@ components:
     type: Label
     layout_properties: {grid_position: 'WKAFME,WZVXXY LHEPRL,SBRKGO'}
 is_package: true
-slots: {}
 custom_component: true

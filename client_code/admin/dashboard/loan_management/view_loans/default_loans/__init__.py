@@ -45,7 +45,11 @@ class default_loans(default_loansTemplate):
     if not self.result:
         alert("No Default Loans Available!")
     else:
-        self.repeating_panel_2.items = self.result
+        panel1_data = self.result[::2]  
+        panel2_data = self.result[1::2]
+        self.repeating_panel_1.items = panel1_data
+        self.repeating_panel_3.items = panel2_data
+        # self.repeating_panel_1.items = self.result
   #   # Any code you write here will run before the form opens.
   #   self.loan = tables.app_tables.fin_loan_details.search()
   #   self.fourcloser = tables.app_tables.foreclosure.search()

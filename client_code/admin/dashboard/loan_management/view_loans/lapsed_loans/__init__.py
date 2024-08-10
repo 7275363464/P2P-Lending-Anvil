@@ -46,7 +46,10 @@ class lapsed_loans(lapsed_loansTemplate):
     if not self.result:
         alert("No Lapsed Loans Available!")
     else:
-        self.repeating_panel_1.items = self.result
+        panel1_data = self.result[::2]  
+        panel2_data = self.result[1::2]
+        self.repeating_panel_2.items = panel1_data
+        self.repeating_panel_3.items = panel2_data
 
 
   def button_1_copy_click(self, **event_args):

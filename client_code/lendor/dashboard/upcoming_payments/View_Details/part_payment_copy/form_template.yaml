@@ -1,0 +1,111 @@
+is_package: true
+container: {type: ColumnPanel}
+components:
+- properties: {col_widths: '{}'}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'CMILPI,LJKKAN', full_width_row: true}
+  name: column_panel_1
+  components:
+  - name: column_panel_1_copy
+    properties: {background: '#Edf0f4'}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'EOKIRD,OXNIGG', full_width_row: true}
+    components:
+    - name: navigation_bar_lender_dashbord_1
+      properties: {}
+      type: form:lendor.navigation_bar.Navigation_bar_lender_dashbord
+      layout_properties: {grid_position: 'XMHIEI,YBTFAP', full_width_row: true}
+    - name: spacer_4_copy
+      properties: {height: '15'}
+      type: Spacer
+      layout_properties: {grid_position: 'LACDGY,HHVTXF'}
+    - name: column_panel_2
+      properties: {role: outlined-card}
+      type: ColumnPanel
+      layout_properties: {grid_position: 'HEDZHF,HLPZCI'}
+      components:
+      - name: label_3_copy
+        properties: {text: Loan Details, bold: true, font_size: 18, align: center, background: '#0b2547', foreground: white}
+        type: Label
+        layout_properties: {grid_position: 'ZNMTMK,JVBWQJ'}
+      - name: spacer_1
+        properties: {height: 14.5}
+        type: Spacer
+        layout_properties: {grid_position: 'KPMOIB,XOCOKW'}
+      - name: label_8_copy
+        properties: {bold: true, text: 'Total Repayment Amount :', role: null}
+        type: Label
+        layout_properties: {grid_position: 'TWYTCV,ECMLQU AQTTIW,SUIAGX'}
+      - name: label_11_copy
+        properties: {bold: true, text: 'Intrest Amount :', role: null}
+        type: Label
+        layout_properties: {grid_position: 'TWYTCV,ECMLQU CAKQTK,YGMITE'}
+      - name: label_2
+        properties: {text: 'EMi Number :', bold: true}
+        type: Label
+        layout_properties: {grid_position: 'TWYTCV,ECMLQU FIFBVA,WRHHWZ'}
+      - properties: {text: Part Payment Amount, bold: true}
+        type: Label
+        layout_properties: {grid_position: 'TWYTCV,ECMLQU PLANIS,ROUNNN'}
+        name: label_5
+      - properties: {align: left, role: null}
+        type: Label
+        layout_properties: {grid_position: 'TWYTCV,GXVHMH KLOTTO,CIGERS'}
+        name: loan_amount_label
+      - properties: {align: left, role: null}
+        type: Label
+        layout_properties: {grid_position: 'TWYTCV,GXVHMH NZWQUU,XSVDZH'}
+        name: interest_label
+      - name: emi_number
+        properties: {}
+        type: Label
+        layout_properties: {grid_position: 'TWYTCV,GXVHMH MKTQTI,CIJRNR'}
+      - name: label_6
+        properties: {bold: true, role: null}
+        type: Label
+        layout_properties: {grid_position: 'TWYTCV,GXVHMH WZMEBK,PQFOJD'}
+      - properties: {text: Remaining Amount, bold: true}
+        type: Label
+        layout_properties: {grid_position: 'TWYTCV,PMIUAD YKGTBK,XIMBBA'}
+        name: label_13
+      - properties: {role: null, bold: true, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: Emi Amount}
+        type: Label
+        layout_properties: {grid_position: 'TWYTCV,PMIUAD SGEIHW,QGVOQN'}
+        name: label_4
+      - properties: {role: null, bold: true, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: Total  Amount}
+        type: Label
+        layout_properties: {grid_position: 'TWYTCV,PMIUAD GNYTWL,XCOYZF'}
+        name: label_3
+      - name: additional_fee_label
+        properties: {text: Extra fee, bold: true, visible: false}
+        type: Label
+        layout_properties: {grid_position: 'TWYTCV,PMIUAD WPFYCU,YJLNVY'}
+      - properties: {role: null}
+        type: Label
+        layout_properties: {grid_position: 'TWYTCV,RCWYQX XUBHLE,AJNUTY'}
+        name: remainining_amount
+      - properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: ''}
+        type: Label
+        layout_properties: {grid_position: 'TWYTCV,RCWYQX XCKSZX,OLMOVR'}
+        name: emi_amount_label
+      - properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: ''}
+        type: Label
+        layout_properties: {grid_position: 'TWYTCV,RCWYQX EAPSGJ,SCCXCT'}
+        name: total_emi_amount_label
+      - name: additional_fee
+        properties: {visible: false, role: null}
+        type: Label
+        layout_properties: {grid_position: 'TWYTCV,RCWYQX ZSJAGR,NLTPQU'}
+    - name: spacer_3
+      properties: {height: 15.5}
+      type: Spacer
+      layout_properties: {grid_position: 'SCBTDV,DIZRLM'}
+    - properties: {role: null, bold: true, align: center, spacing_above: small, background: '#0b2547', icon: 'fa:angle-double-left', underline: false, font: '', icon_align: left, foreground: 'theme:On Primary', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: Back}
+      type: Button
+      layout_properties: {grid_position: 'KKIPNE,SUACUQ'}
+      event_bindings: {click: button_1_copy_2_click}
+      name: button_1_copy_2
+    - name: spacer_6
+      properties: {height: 76.7000732421875}
+      type: Spacer
+      layout_properties: {grid_position: 'UAVJTK,AOQVMV'}

@@ -27,7 +27,17 @@ class borrowers(borrowersTemplate):
                 else:
                     credit_limit = None
                     ascend = None
-                
+
+                guarantor_record = app_tables.fin_guarantor_details.get(customer_id=user_profile['customer_id'])
+                if guarantor_record is not None:
+                    guarantor_name = guarantor_record['guarantor_name']
+                    guarantor_ph_no = guarantor_record['guarantor_mobile_no']
+                    guarantor = guarantor_record['another_person']
+                else:
+                    guarantor_name = None
+                    guarantor_ph_no = None
+                    guarantor = None
+
                 loan_details_count = len(
                     app_tables.fin_loan_details.search(
                         q.all_of(
@@ -40,7 +50,7 @@ class borrowers(borrowersTemplate):
                         borrower_customer_id=user_profile['customer_id']
                     )
                 )
-                #loan_details_count = len(loan_details_count)
+
                 self.result.append({
                     'customer_id': user_profile['customer_id'],
                     'full_name': user_profile['full_name'],
@@ -52,34 +62,45 @@ class borrowers(borrowersTemplate):
                     'registration_approve': user_profile['registration_approve'],
                     'adhar': user_profile['aadhaar_no'],
                     'credit_limit': credit_limit,
-                    'ascend' : ascend,
-                    'loan_details_count': loan_details_count,
-                    'user_photo':user_profile['user_photo']
+                    'ascend_score': ascend,
+                    'guarantor_name': guarantor_name,
+                    'guarantor_mobile_no': guarantor_ph_no,
+                    'another_person': guarantor,
+                    'loan_updated_status': loan_details_count,
+                    'user_photo': user_profile['user_photo']
                 })
 
         if not self.result:
             alert("No Borrowers Available!")
         else:
-            self.repeating_panel_1.items = self.result
-            # self.repeating_panel_2.items = self.result
+            panel1_data = self.result[::2]  # Every second item starting from index 0
+            panel2_data = self.result[1::2]  # Every second item starting from index 1
+
+            self.repeating_panel_1.items = panel1_data
+            self.repeating_panel_3.items = panel2_data
+
+            # Set total loan count labels for each borrower
+            for item in self.repeating_panel_1.items:
+                item['total_open_loan'] = f"Total Loans: {item['loan_updated_status']}"
+
+            for item in self.repeating_panel_3.items:
+                item['total_open_loan'] = f"Total Loans: {item['loan_updated_status']}"
 
     def link_1_click(self, **event_args):
         """This method is called when the link is clicked"""
         open_form('admin.dashboard')
 
-
     def search_borrower(self, **event_args):
         if not self.text_box_1.text.strip():
-          alert("The text box cannot be empty. Please enter some text.")
-          self.data_grid_1.visible = False
-        else:          
-          self.repeating_panel_2.items = anvil.server.call(
-          'search_borrower',
-          self.text_box_1.text
-          )
-          self.data_grid_1.visible = True
+            alert("The text box cannot be empty. Please enter some text.")
+            self.data_grid_1.visible = False
+        else:
+            self.repeating_panel_2.items = anvil.server.call(
+                'search_borrower',
+                self.text_box_1.text
+            )
+            self.data_grid_1.visible = True
 
     def button_2_click(self, **event_args):
-      """This method is called when the button is clicked"""
-      open_form('admin.dashboard.customer_management.handles_customer_registration')
-        
+        """This method is called when the button is clicked"""
+        open_form('admin.dashboard.customer_management.handles_customer_registration')

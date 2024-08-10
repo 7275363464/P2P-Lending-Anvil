@@ -13,6 +13,7 @@ from ... import main_form_module
 class ItemTemplate57(ItemTemplate57Template):
   def __init__(self, **properties):
     self.init_components(**properties)
+    self.image_1.role = 'circular-image'
     self.user_id = main_form_module.userId
     user_data = app_tables.fin_loan_details.search()
     for row in user_data:

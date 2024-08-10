@@ -1,0 +1,146 @@
+is_package: true
+container: {type: ColumnPanel}
+components:
+- name: xy_panel_1
+  properties: {height: 441, role: outlined-card}
+  type: XYPanel
+  layout_properties: {grid_position: 'XKLSWY,CIIFHE'}
+  components:
+  - name: return
+    properties: {text: '     ------Not Invested Yet-----', italic: true, bold: false, align: center}
+    type: Label
+    layout_properties: {x: 10, y: 343.261474609375, width: 200}
+    data_bindings:
+    - {property: text, code: 'self.item[''loan_disbursed_timestamp'']', writeback: false}
+  - name: label_9
+    properties: {text: 'Invested on : ', bold: true}
+    type: Label
+    layout_properties: {x: 20.795455932617188, y: 297.261474609375, width: 103.58}
+  - name: label_8
+    properties: {text: 'Principal Amount :'}
+    type: Label
+    layout_properties: {x: 20.795455932617188, y: 268.5341796875, width: 200}
+  - name: label_5
+    properties: {text: Product Name}
+    type: Label
+    layout_properties: {x: 20.795455932617188, y: 133.806884765625, width: 160}
+  - name: label_10
+    properties: {text: Product Description}
+    type: Label
+    layout_properties: {x: 20.795455932617188, y: 171.806884765625, width: 160}
+  - name: interest_rate
+    properties: {align: left, text: ''}
+    type: Label
+    layout_properties: {x: 737.8977203369141, y: 204.1591796875, width: 30.5682}
+    data_bindings:
+    - {property: text, code: 'self.item[''interest_rate'']', writeback: false}
+  - name: label_1
+    properties: {text: '%', align: left, bold: false}
+    type: Label
+    layout_properties: {x: 832.7273101806641, y: 204.1591796875, width: 30.3864}
+  - name: label_7
+    properties: {text: 'Term :'}
+    type: Label
+    layout_properties: {x: 20.795455932617188, y: 236.1591796875, width: 200}
+  - name: label_6
+    properties: {text: 'Interest Rate :'}
+    type: Label
+    layout_properties: {x: 20.795455932617188, y: 204.1591796875, width: 200}
+  - name: label_3
+    properties: {text: '---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------', foreground: grey, align: center}
+    type: Label
+    layout_properties: {x: 0, y: 94.96425737813115, width: 937.71435546875}
+  - name: image_1
+    properties: {height: '78', source: 'self.item[''borrower_photo'']'}
+    type: Image
+    layout_properties: {x: 4.446419853717089, y: 3.874993462115526, width: 79.83930969238283}
+    data_bindings:
+    - {property: source, code: 'self.item[''borrower_photo'']', writeback: false}
+  - name: borrower_name
+    properties: {bold: true}
+    type: Label
+    layout_properties: {x: 94.28566851094365, y: 6.053567070513964, width: 200.00001525878906}
+    data_bindings:
+    - {property: text, code: 'self.item[''borrower_full_name'']', writeback: false}
+  - name: borrower_mobile
+    properties: {}
+    type: Label
+    layout_properties: {x: 97.83934893086553, y: 50.160683769732714, width: 200.00001525878906}
+    data_bindings:
+    - {property: text, code: 'self.item[''borrower_mobile'']', writeback: false}
+  - name: image_1_copy
+    properties: {height: 72.42852783203125, source: 'self.item[''lender_photo'']'}
+    type: Image
+    layout_properties: {x: 843.0000544972718, y: 16.607110161334276, width: 85.16072082519531}
+    data_bindings:
+    - {property: source, code: 'self.item[''lender_photo'']', writeback: false}
+  - name: loan_id
+    properties: {visible: false}
+    type: Label
+    layout_properties: {x: 440.1785060353577, y: 38.6071406789124, width: 43.7142333984375}
+    data_bindings:
+    - {property: text, code: 'self.item[''loan_id'']', writeback: false}
+  - name: total
+    properties: {align: right}
+    type: Label
+    layout_properties: {x: 716.3062133789062, y: 340.4625642299652, width: 94.53749084472656}
+  - name: label_4
+    properties: {text: Rs, bold: true}
+    type: Label
+    layout_properties: {x: 820.3309936523438, y: 339.2624909877777, width: 22.368749618530273}
+  - name: Product
+    properties: {role: null, bold: true, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: ''}
+    type: Label
+    layout_properties: {x: 602.8000106811523, y: 123.39996337890625, width: 124.13333892822266}
+    data_bindings:
+    - {property: text, code: 'self.item[''product_name'']', writeback: false}
+  - name: product_details
+    properties: {role: null, bold: false, align: left, placeholder: '', spacing_above: small, background: white, underline: false, font: '', foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, auto_expand: false, font_size: null, tooltip: '', height: 39, text: ''}
+    type: TextArea
+    layout_properties: {x: 526.9333343505859, y: 152.46670532226562, width: 200.00001525878906}
+    data_bindings:
+    - {property: text, code: 'self.item[''product_description'']', writeback: true}
+    event_bindings: {}
+  - name: outlined_button_1
+    properties: {text: View Loan Details, role: outlined-button, align: center, font_size: null, background: '#05264d', foreground: 'theme:On Primary', bold: true}
+    type: Button
+    layout_properties: {x: 0, y: 398.86669540405273, width: 726.933349609375}
+    event_bindings: {click: outlined_button_1_click}
+  - name: principal_amount
+    properties: {}
+    type: Label
+    layout_properties: {x: 578.1334924697876, y: 271.3166809082031, width: 117.65000915527344}
+    data_bindings:
+    - {property: text, code: 'self.item[''loan_amount'']', writeback: false}
+  - name: label_2
+    properties: {text: 'Overall Return :', bold: true}
+    type: Label
+    layout_properties: {x: 577.0834436416626, y: 302.26666259765625, width: 124.9666748046875}
+  - name: label_11
+    properties: {}
+    type: Label
+    layout_properties: {x: 585.6001586914062, y: 200.44998168945312, width: 107.9666748046875}
+    data_bindings:
+    - {property: text, code: 'self.item[''interest_rate'']', writeback: false}
+  - name: term
+    properties: {align: left}
+    type: Label
+    layout_properties: {x: 600.6666870117188, y: 232.39999389648438, width: 94.50000762939453}
+    data_bindings:
+    - {property: text, code: 'self.item[''tenure'']', writeback: false}
+  - name: lendor_name
+    properties: {}
+    type: Label
+    layout_properties: {x: 526.933349609375, y: 0.1999969482421875, width: 65.8665771484375}
+  - name: image_2
+    properties: {height: '70'}
+    type: Image
+    layout_properties: {x: 663.2166786193848, y: 6.0666656494140625, width: 63.716670989990234}
+    data_bindings:
+    - {property: source, code: 'self.item[''lender_photo'']', writeback: false}
+  - name: lendor_mobile
+    properties: {align: left}
+    type: Label
+    layout_properties: {x: 515.4667444229126, y: 55.16667175292969, width: 107.0666732788086}
+    data_bindings:
+    - {property: text, code: 'self.item[''lender_mobile'']', writeback: false}

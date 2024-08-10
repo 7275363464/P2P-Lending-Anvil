@@ -68,7 +68,7 @@ class chart_tracking(chart_trackingTemplate):
 
     def button_1_click(self, **event_args):
         """This method is called when the button is clicked"""
-        open_form('admin.dashboard.loan')
+        open_form('admin.dashboard.loan_servicing.out_standing_amount')
 
     def get_extension_details(self, loan_id):
         extension_row = app_tables.fin_extends_loan.get(

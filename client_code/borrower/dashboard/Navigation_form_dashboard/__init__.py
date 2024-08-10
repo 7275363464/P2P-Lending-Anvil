@@ -26,7 +26,7 @@ class Navigation_form_dashboard(Navigation_form_dashboardTemplate):
     if self.user_type == "borrower":
         open_form("borrower.dashboard")
     else:
-        open_form("bank_users.user_form")
+        open_form("bank_users.main_form")
 
   def contact_main_form_link_click(self, **event_args):
     open_form("borrower.dashboard.dashboard_contact")
@@ -38,5 +38,13 @@ class Navigation_form_dashboard(Navigation_form_dashboardTemplate):
   def About_Us_click(self, **event_args):
     open_form("borrower.dashboard.dashboard_about")
 
+  # def Report_A_Problem_click(self, **event_args):
+  #   open_form('borrower.dashboard.dashboard_report_a_problem')
   def Report_A_Problem_click(self, **event_args):
     open_form('borrower.dashboard.dashboard_report_a_problem')
+
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    alert("Logged out sucessfully")
+    anvil.users.logout()
+    open_form('bank_users.main_form')

@@ -214,6 +214,7 @@ class risk_pool(risk_poolTemplate):
         self.all_items = []
 
         # Initialize plot with placeholder data
+        self.aggregate_counts()
         self.initialize_plot()
 
     def aggregate_counts(self):

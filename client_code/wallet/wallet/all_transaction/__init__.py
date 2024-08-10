@@ -16,7 +16,6 @@ class all_transaction(all_transactionTemplate):
     self.init_components(**properties)
     # self.repeating_panel_1.items = app_tables.fin_wallet_transactions.search()
     self.repeating_panel_1.items = app_tables.fin_wallet_transactions.search(
-    transaction_type=q.any_of('deposit', 'withdraw'),
     customer_id=self.user_id)
     # Any code you write here will run before the form opens.
 
